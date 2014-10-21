@@ -17,7 +17,7 @@ class HomeController < ApplicationController
     # res = Net::HTTP.start(url.host, url.port {|http| http.request(req)})
     #get the user
     #parse
-
+    redirect_to "/games/#{@user_id}"
   end
 
 end
