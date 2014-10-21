@@ -1,0 +1,5 @@
+<%= form_tag("/main", method: 'post') do %>
+	<%= label_tag(:user, "Steam ID") %>
+	<%= text_field_tag(:user) %>
+	<%= submit_tag("Submit") %>
+<% end %>
