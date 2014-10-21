@@ -72,13 +72,8 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
-<<<<<<< HEAD
-    pry-byebug (1.3.3)
-      byebug (~> 2.7)
-=======
     pry-byebug (2.0.0)
       byebug (~> 3.4)
->>>>>>> 6d2b95b178d6fb89ec1c634f992adb1ecfacbc02
       pry (~> 0.10)
     rack (1.5.2)
     rack-test (0.6.2)
