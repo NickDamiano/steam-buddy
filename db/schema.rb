@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141022162229) do
+ActiveRecord::Schema.define(version: 20141022170120) do
 
   create_table "friends", force: true do |t|
     t.integer  "steam_id_64"
@@ -65,6 +65,13 @@ ActiveRecord::Schema.define(version: 20141022162229) do
     t.string   "url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "game_id"
+  end
+
+  create_table "usergames", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
     t.integer  "game_id"
   end
 
