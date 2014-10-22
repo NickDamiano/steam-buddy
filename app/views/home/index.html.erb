@@ -1,4 +1,4 @@
-<%= form_tag("/main", method: 'post') do %>
+<%= form_tag("/main", method: 'post', remote: true, :id => "id1") do %>
 	<%= label_tag(:user, "Steam ID") %>
 	<%= text_field_tag(:user) %>
 	<%= submit_tag("Submit") %>
