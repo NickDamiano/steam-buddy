@@ -9,9 +9,9 @@ class GamesController < ApplicationController
     # build a list of games which need to call api
     api_list = build_api_call(users_games_list, user)
     get_and_save(api_list, user)
+    get_new_games(users_games_list, user)
     # game = Game.first
     # render :partial => "home/filters", :locals => {game: game}
-    user = Game.find(1)
     render :json => user
   end
 
