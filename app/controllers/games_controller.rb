@@ -15,7 +15,7 @@ class GamesController < ApplicationController
 
 
   def get_and_save(api_list)
-    binding.pry
+    # binding.pry
     #builds 10 at a time
     until(api_list.empty?) do 
       # puts "Iteration #{counter}"
@@ -46,22 +46,40 @@ class GamesController < ApplicationController
         game.steam_appid = id
         game.about_the_game = game_data["data"]["about_the_game"]
         game.header_image = game_data["data"]["header_image"]
-        game.pc_requirements = game_data["data"]["pc_requirements"]["minimum"]
-        game.mac_requirements = game_data["data"]["mac_requirements"]["minimum"]
-        game.linux_requirements = game_data["data"]["linux_requirements"]["minimum"]
-        game.metacritic_score = game_data["data"]["metacritic_score"]["score"]
-        if game_data["data"]["categories"].first["id"] == "1"
-          game.multiplayer = true
-        else
-          game.multiplayer = false
+        if !game_data["data"]["pc_requirements"].empty?
+          game.pc_requirements = game_data["data"]["pc_requirements"]["minimum"]
         end
-        game_data["data"]["genres"].each do |genre| 
-          game.genres.create(:genre => genre["description"])
+        if !game_data["data"]["mac_requirements"].empty?
+          game.mac_requirements = game_data["data"]["mac_requirements"]["minimum"]
         end
-        game_data["data"]["screenshots"].each do |screenshot|
-          game.screenshots.create(:url => screenshot["path_thumbnail"])
+        if !game_data["data"]["linux_requirements"].empty?
+          game.linux_requirements = game_data["data"]["linux_requirements"]["minimum"]
+        end
+        if game_data["data"]["metacritic"]
+          game.metacritic_score = game_data["data"]["metacritic"]["score"]
+        end
+        if game_data["data"]["categories"]
+          game_data["data"]["categories"].each do |cat|
+            if cat["id"] == "1" || cat["id"] == "9" || cat["id"] == "24"
+              game.multiplayer = true
+              break
+            else
+              game.multiplayer = false
+            end
+          end
         end
         game.release_date = game_data["data"]["release_date"]["date"]
+        game.save
+        if game_data["data"]["genres"]
+          game_data["data"]["genres"].each do |genre| 
+            game.genres.create(:genre => genre["description"])
+          end
+        end
+        if game_data["data"]["screenshots"]
+          game_data["data"]["screenshots"].each do |screenshot|
+            game.screenshots.create(:url => screenshot["path_thumbnail"])
+          end
+        end
       end
     end
   end
