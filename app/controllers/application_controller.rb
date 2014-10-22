@@ -15,13 +15,12 @@ class ApplicationController < ActionController::Base
   end
 
   def build_api_call(users_games_list)
-    api_list = []
-    users_games_list.each do |id|
-      game = Game.find_by(steam_appid: id)
-      if !game
-        api_list.push(id)
-      end
+    users_games_in_db = Game.where(steam_appid: users_games_list)
+    users_games_in_db_array = []
+    users_games_in_db.each do |game|
+      users_games_in_db_array.push(game.steam_appid)
     end
+    api_list = users_games_list - users_games_in_db_array
     return api_list
   end
 end
