@@ -2,26 +2,28 @@ require 'open-uri'
 class GamesController < ApplicationController
 
   def get_users_games_data
-    # binding.pry
     users_games_list = get_users_games_list(params[:id])
     # check if game id exists in database
     # if not, create api call and then save in database
-
+    user = User.find_by(steam_id_64: params[:id])
     # build a list of games which need to call api
-    api_list = build_api_call(users_games_list)
-    get_and_save(api_list)
-    redirect_to root_path
+    api_list = build_api_call(users_games_list, user)
+    get_and_save(api_list, user)
+    # game = Game.first
+    # render :partial => "home/filters", :locals => {game: game}
+    user = Game.find(1)
+    render :json => user
   end
 
 
-  def get_and_save(api_list)
+  def get_and_save(api_list, user)
     # binding.pry
     #builds 10 at a time
     until(api_list.empty?) do 
       # puts "Iteration #{counter}"
       set_of_games = api_list.pop(10)
       games_with_data = get_games(set_of_games)
-      save_games(games_with_data)
+      save_games(games_with_data, user)
     end
   end
 
@@ -35,9 +37,9 @@ class GamesController < ApplicationController
     return json_games
   end
 
-  def save_games(games)
+  def save_games(games, user)
     games.each do |id, game_data|
-      game = Game.new
+      game = user.games.new
       if games[id]["success"] == true
         game.name = game_data["data"]["name"]
         game.steam_appid = id
