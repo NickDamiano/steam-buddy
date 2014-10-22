@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141022170120) do
+ActiveRecord::Schema.define(version: 20141022175314) do
+
+  create_table "friend_games", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "friend_id"
+    t.integer  "game_id"
+  end
 
   create_table "friends", force: true do |t|
     t.integer  "steam_id_64"
