@@ -3,11 +3,3 @@
 	<%= text_field_tag(:user) %>
 	<%= submit_tag("Submit") %>
 <% end %>
-
-<%= form_for :person do |f| %>
-  First name: <%= f.text_field :first_name %><br />
-  Last name : <%= f.text_field :last_name %><br />
-  Biography : <%= f.text_area :biography %><br />
-  Admin?    : <%= f.check_box :admin %><br />
-  <%= f.submit %>
-<% end %>
