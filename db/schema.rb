@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141021211506) do
+ActiveRecord::Schema.define(version: 20141022162229) do
+
+  create_table "friends", force: true do |t|
+    t.integer  "steam_id_64"
+    t.string   "persona_name"
+    t.string   "profile_url"
+    t.string   "avatar"
+    t.integer  "primary_clan_id"
+    t.datetime "time_created"
+    t.string   "loc_country_code"
+  end
 
   create_table "game_genres", force: true do |t|
     t.integer  "game_id"
@@ -56,6 +66,19 @@ ActiveRecord::Schema.define(version: 20141021211506) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "game_id"
+  end
+
+  create_table "users", force: true do |t|
+    t.integer  "steam_id_64"
+    t.string   "steam_id"
+    t.string   "avatar_icon"
+    t.boolean  "vac_banned"
+    t.string   "custom_url"
+    t.datetime "member_since"
+    t.string   "location"
+    t.string   "real_name"
+    t.integer  "primary_group_id"
+    t.string   "primary_group_name"
   end
 
 end
