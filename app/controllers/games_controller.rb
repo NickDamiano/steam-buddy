@@ -26,19 +26,16 @@ class GamesController < ApplicationController
   end
 
   def get_games(set_of_games)
-    puts "get_games"
     joined_set = set_of_games.join(',')
     # set_of_games.each_with_index do |piece, index|
       sleep 1
       url = "http://store.steampowered.com/api/appdetails/?appids=#{joined_set}"
       games = open(url).read
       json_games = JSON.parse(games)
-      puts json_games.first
     return json_games
   end
 
   def save_games(games)
-    puts "!!!!!!SAVE GAME!!!!!!!"
     games.each do |id, game_data|
       game = Game.new
       if games[id]["success"] == true
@@ -80,6 +77,9 @@ class GamesController < ApplicationController
             game.screenshots.create(:url => screenshot["path_thumbnail"])
           end
         end
+      else
+        game.steam_appid = id
+        game.save
       end
     end
   end
