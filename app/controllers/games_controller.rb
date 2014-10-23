@@ -7,17 +7,14 @@ class GamesController < ApplicationController
     if !games_response[:success?]
       # display some error
     end
-    descriptions_response = SteamRepo.get_games_descriptions(games_response[:games])
+    new_games = FindNewGames.run(games_response[:games])
+    descriptions_response = SteamRepo.get_games_descriptions(new_games[:games])
     if !descriptions_response[:success?]
       # error
     end
-    new_games = FindNewGames.run(descriptions_response)
-    SaveGames.run(new_games)
+    SaveGames.run(descriptions_response[:games], descriptions_response[:steam_appids])
     to_be_assigned = GetGamesNotAssigned.run(user, games_response[:games])
-    AssignGamesToUser(to_be_assigned, user)
-    api_list = build_api_call(users_games_list, user)
-    get_and_save(api_list, user)
-    get_new_games(users_games_list, user)
+    AssignGamesToUser.run(to_be_assigned[:games], user)
     render :json => user
   end
 

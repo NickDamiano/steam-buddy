@@ -11,7 +11,7 @@ class HomeController < ApplicationController
       #error
       #redirect
     end
-    db_check = SaveUser.checkDb(user_hash["profile"]["steamID64"])
+    db_check = SaveUser.checkDb(user_hash[:profile]["steamID64"])
     user_to_save = ""
     if db_check[:success?]
       user_to_save = db_check[:result]

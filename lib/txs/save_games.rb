@@ -1,10 +1,10 @@
 class SaveGames
-  def run(games)
-    games.each do |id, game_data|
+  def self.run(games, ids)
+    games.each_with_index do |game_data, i|
       game = Game.new
-      if games[id]["success"] == true
+      if game_data["success"] == true
         game.name = game_data["data"]["name"]
-        game.steam_appid = id
+        game.steam_appid = game_data["data"]["steam_appid"]
         game.about_the_game = game_data["data"]["about_the_game"]
         game.header_image = game_data["data"]["header_image"]
         if !game_data["data"]["pc_requirements"].empty?
@@ -42,7 +42,7 @@ class SaveGames
           end
         end
       else
-        game.steam_appid = id
+        game.steam_appid = ids[i]
         game.save
       end
     end

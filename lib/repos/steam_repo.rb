@@ -54,6 +54,7 @@ class SteamRepo
 
   def self.get_games_descriptions(list)
     games = []
+    steam_appids = []
     until(list.empty?) do
       chunk = list.pop(10)
       chunk = chunk.join(',')
@@ -69,11 +70,13 @@ class SteamRepo
       json_games = JSON.parse(response)
       json_games.each do |id, data|
         games.push(data)
+        steam_appids.push(id)
       end
     end
     return {
       success?: true,
-      games: games
+      games: games,
+      steam_appids: steam_appids
     }
   end
 end
