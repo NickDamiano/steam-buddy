@@ -47,8 +47,10 @@ class HomeController < ApplicationController
     user.location = location.scan(/[A-Za-z]+\s[A-Za-z]*/).join
     realname = user_parsed_data["profile"]["realname"]
     user.real_name = realname.scan(/[A-Za-z]+\s[A-Za-z]*/).join
-    user.primary_group_id = user_parsed_data["profile"]["groups"]['group'].first["groupID64"]
-    user.primary_group_name = user_parsed_data["profile"]["groups"]['group'].first["groupName"]
+    if user_parsed_data["profile"]["groups"]
+      user.primary_group_id = user_parsed_data["profile"]["groups"]['group'].first["groupID64"]
+      user.primary_group_name = user_parsed_data["profile"]["groups"]['group'].first["groupName"]
+    end
     user.save
   end
 
