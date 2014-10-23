@@ -1,4 +1,3 @@
-require 'net/http'
 require 'open-uri'
 
 class HomeController < ApplicationController
@@ -7,17 +6,15 @@ class HomeController < ApplicationController
 
   def main
     @user_name = params[:user]
-    # binding.pry
-    # p "!!"
-    @user_data = open("http://steamcommunity.com/id/" + @user_name+"/?xml=1").read
-    user_parsed_data = Hash.from_xml(@user_data.gsub("\n", ""))
-    @user_id = user_parsed_data["profile"]["steamID64"]
-    modify_user(user_parsed_data)
-    # url = URI.parse('http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=' + ENV['STEAM_KEY'] + '&steamids=76561197960435530')
-    # req = Net::HTTP::Get.new(url.to_s)
-    # res = Net::HTTP.start(url.host, url.port {|http| http.request(req)})
-    #get the user
-    #parse
+    user_hash = SteamRepo.get_user_summary(@user_name)
+    # @user_id = user_parsed_data["profile"]["steamID64"]
+    # modify_user(user_parsed_data)
+    if user_hash[:success?]
+      SaveUser.run(user_hash)
+    else
+      # this will display error somewhere
+    end
+
     redirect_to "/games/#{@user_id}"
   end
 
