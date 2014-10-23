@@ -21,7 +21,7 @@ class SteamRepo
     elsif response_hash["profile"]["privacyState"] == "public"
       return {
         success?: true, 
-        profile: response_hash
+        profile: response_hash["profile"]
       }
     elsif response_hash["profile"]["privacyState"] != "public"
       return {
@@ -48,7 +48,8 @@ class SteamRepo
     end
     return {
       success?: true, 
-      games: games_array}
+      games: games_array
+    }
   end
 
   def self.get_games_descriptions(list)
