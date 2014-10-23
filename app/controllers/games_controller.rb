@@ -7,7 +7,7 @@ class GamesController < ApplicationController
     # if not, create api call and then save in database
     user = User.find_by(steam_id_64: params[:id])
     # build a list of games which need to call api
-    api_list = build_api_call(users_games_list, user)
+    api_list = build_api_call(users_games_list)
     get_and_save(api_list, user)
     get_new_games(users_games_list, user)
     # game = Game.first

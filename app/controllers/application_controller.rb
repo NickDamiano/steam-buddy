@@ -14,19 +14,19 @@ class ApplicationController < ActionController::Base
     return games_array
   end
 
-  def build_api_call(users_games_list, user)
-    users_games_in_db = user.games.where(steam_appid: users_games_list)
-    users_games_in_db_array = []
-    users_games_in_db.each do |game|
-      users_games_in_db_array.push(game.steam_appid)
+  def build_api_call(users_games_list)
+    games_in_db = Game.where(steam_appid: users_games_list)
+    games_in_db_array = []
+    games_in_db.each do |game|
+      games_in_db_array.push(game.steam_appid)
     end
-    api_list = users_games_list - users_games_in_db_array
+    api_list = users_games_list - games_in_db_array
     return api_list
   end
 
   def get_new_games(users_games_list, user)
     games_in_db_but_not_assigned = Game.where(steam_appid: users_games_list)
-    users_games_in_db = user.games.where(steam_appid: users_games_list)
+    users_games_in_db = user.games
     users_games_in_db_array = []
     users_games_in_db.each do |game|
       users_games_in_db_array.push(game.steam_appid)
