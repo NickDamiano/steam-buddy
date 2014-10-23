@@ -1,1 +1,2 @@
-save_user.rb
+class SaveUser
+end
