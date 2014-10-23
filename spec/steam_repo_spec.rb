@@ -31,16 +31,29 @@ RSpec.describe SteamRepo do
 
   describe ".get_user_games" do
     it "should return a hash with success true and a list of games the user has" do
-      id = 76561197995163285
+      id = "76561197995163285"
       response = SteamRepo.get_user_games(id)
       expect(response[:success?]).to be true
       expect(response[:games]).to be_an(Array)
       expect(response[:games].size).to be > 200
       expect(response[:games].size).to be < 300
     end
+
+    it "shoud return a hash with success false and an error message for invalid id" do
+      id = "7324247324792364283472378423423949"
+      response = SteamRepo.get_user_games(id)
+      expect(response[:success?]).to be false
+      expect(response[:error]).to eq("Internal Server Error")
+    end
   end
 
   describe '.get_games_descriptions' do
-
+    it "should return a hash with success true and an array of all the games" do 
+      games = [10,20,30,40,50,60,70,130,80,100,220,240,280,300,320,340,360,380,400,420,500]
+      length = games.length
+      response = SteamRepo.get_games_descriptions(games)
+      expect(response[:success?]).to be true
+      expect(response[:games].length).to eq(length)
+    end
   end
 end

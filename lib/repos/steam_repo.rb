@@ -36,7 +36,10 @@ class SteamRepo
     begin
       response = open(url).read
     rescue OpenURI::HTTPError
-      return {success?: false, error: "Internal Server Error"}
+      return {
+        success?: false, 
+        error: "Internal Server Error"
+      }
     end
     users_games = JSON.parse(response)
     games_array = []
@@ -46,5 +49,30 @@ class SteamRepo
     return {
       success?: true, 
       games: games_array}
+  end
+
+  def self.get_games_descriptions(list)
+    games = []
+    until(list.empty?) do
+      chunk = list.pop(10)
+      chunk = chunk.join(',')
+      url = "http://store.steampowered.com/api/appdetails/?appids=#{chunk}"
+      begin
+        response = open(url).read
+      rescue OpenURI::HTTPError
+        return {
+          success?: false,
+          error: "Internal Server Error"
+        }
+      end
+      json_games = JSON.parse(response)
+      json_games.each do |id, data|
+        games.push(data)
+      end
+    end
+    return {
+      success?: true,
+      games: games
+    }
   end
 end
