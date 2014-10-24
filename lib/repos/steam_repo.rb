@@ -5,7 +5,11 @@ require 'active_support/core_ext/hash'
 class SteamRepo
   def self.get_user_summary(name)
     begin
-      response = open("http://steamcommunity.com/id/#{name}/?xml=1").read
+      if name[-5..-1] == "/home"
+        name.slice![-5..-1]
+      end
+      response = open("#{name}/?xml=1").read
+
     rescue URI::InvalidURIError
       return {
         success?: false,
