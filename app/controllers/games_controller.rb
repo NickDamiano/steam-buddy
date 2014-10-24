@@ -16,7 +16,7 @@ class GamesController < ApplicationController
     to_be_assigned = GetGamesNotAssigned.run(user, games_response[:games])
     AssignGamesToUser.run(to_be_assigned[:games], user)
     UpdatePlaytimes.run(user, games_response[:games], games_response[:playtimes])
-    render :json => user
+    redirect_to "/filters/#{user.steam_id_64}"
   end
 
 end

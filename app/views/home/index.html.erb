@@ -1,4 +1,4 @@
-<%= form_tag("/main", method: 'post', remote: true, :id => "id1") do %>
+<%= form_tag("/main", method: 'post', :id => "id1") do %>
 <!-- 	<%= label_tag(:user, "Steam ID") %> -->
 	<%= text_field_tag :user, nil, :placeholder => "Paste a link to your Steam profile", :size => "35 X 10" %>
 	<%= submit_tag("Submit") %>
