@@ -1,6 +1,5 @@
 class FindNewGames
   def self.run(games)
-    binding.pry
     in_db = Game.where(steam_appid: games)
     arr = []
     in_db.each do |game|

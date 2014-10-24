@@ -7,14 +7,14 @@ RSpec.describe FindNewGames do
 
   describe '.run' do
     it 'should find the games which are not in the db, return hash' do
-      arr =[]
-      arr.push(Game.create(steam_appid: 0))
-      arr.push(Game.create(steam_appid: 1))
-      arr.push(Game.new(steam_appid: 2))
+      arr =[0,1,2]
+      Game.create(steam_appid: 0)
+      Game.create(steam_appid: 1)
+      Game.new(steam_appid: 2)
       response = FindNewGames.run(arr)
       expect(response[:success?]).to be true
       expect(response[:games].size).to eq(1) 
-      expect(response[:games].first.steam_appid).to eq(2)
+      expect(response[:games].first).to eq(2)
     end
   end
 end
