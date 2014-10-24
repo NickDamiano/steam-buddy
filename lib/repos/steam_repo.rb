@@ -43,12 +43,15 @@ class SteamRepo
     end
     users_games = JSON.parse(response)
     games_array = []
+    playtimes_array = []
     users_games["response"]["games"].each do |game|
       games_array.push(game["appid"])
+      playtimes_array.push(game["playtime_forever"])
     end
     return {
       success?: true, 
-      games: games_array
+      games: games_array,
+      playtimes_forever: playtimes_array
     }
   end
 

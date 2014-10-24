@@ -1,0 +1,73 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://steamcommunity.com/id/youda/?xml=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Apache
+      Cache-Control:
+      - public,max-age=3600
+      Expires:
+      - Fri, 24 Oct 2014 15:20:07 GMT
+      Last-Modified:
+      - Fri, 24 Oct 2014 14:00:00 GMT
+      Content-Type:
+      - text/xml; charset=utf-8
+      X-Varnish:
+      - '3016525963'
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Fri, 24 Oct 2014 14:20:08 GMT
+      Content-Length:
+      - '6816'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><profile>\r\n\t<steamID64>76561197995163285</steamID64>\r\n\t<steamID><![CDATA[goat[yusef]]]></steamID>\r\n\t<onlineState>online</onlineState>\r\n\t<stateMessage><![CDATA[Online]]></stateMessage>\r\n\t<privacyState>public</privacyState>\r\n\t<visibilityState>3</visibilityState>\r\n\t<avatarIcon><![CDATA[http://cdn.akamai.steamstatic.com/steamcommunity/public/images/avatars/45/450a776d730958630478bf183e509d0fa0abc4ec.jpg]]></avatarIcon>\r\n\t<avatarMedium><![CDATA[http://cdn.akamai.steamstatic.com/steamcommunity/public/images/avatars/45/450a776d730958630478bf183e509d0fa0abc4ec_medium.jpg]]></avatarMedium>\r\n\t<avatarFull><![CDATA[http://cdn.akamai.steamstatic.com/steamcommunity/public/images/avatars/45/450a776d730958630478bf183e509d0fa0abc4ec_full.jpg]]></avatarFull>\r\n\t<vacBanned>0</vacBanned>\r\n\t<tradeBanState>None</tradeBanState>\r\n\t<isLimitedAccount>0</isLimitedAccount>\r\n\t<customURL><![CDATA[youda]]></customURL>\r\n\t<memberSince>December
+        24, 2007</memberSince>\r\n\t<steamRating></steamRating>\r\n\t<hoursPlayed2Wk>0.0</hoursPlayed2Wk>\r\n\t<headline><![CDATA[]]></headline>\r\n\t<location><![CDATA[Austin,
+        Texas, United States]]></location>\r\n\t<realname><![CDATA[Yusef]]></realname>\r\n\t<summary><![CDATA[No
+        information given.]]></summary>\r\n \t<mostPlayedGames>\r\n\t\t<mostPlayedGame>\r\n\t\t\t<gameName><![CDATA[Awesomenauts]]></gameName>\r\n\t\t\t<gameLink><![CDATA[http://steamcommunity.com/app/204300]]></gameLink>\r\n\t\t\t<gameIcon><![CDATA[http://cdn.akamai.steamstatic.com/steamcommunity/public/images/apps/204300/4996933171d0804bd0ceb7b9a0e224b3139d18ba.jpg]]></gameIcon>\r\n\t\t\t<gameLogo><![CDATA[http://cdn.akamai.steamstatic.com/steamcommunity/public/images/apps/204300/a2eba6157703c60bfcc199f06df5f1568c9835bb.jpg]]></gameLogo>\r\n\t\t\t<gameLogoSmall><![CDATA[http://cdn.akamai.steamstatic.com/steamcommunity/public/images/apps/204300/a2eba6157703c60bfcc199f06df5f1568c9835bb_thumb.jpg]]></gameLogoSmall>\r\n\t\t\t<hoursPlayed>11.6</hoursPlayed>\r\n\t\t\t<hoursOnRecord>11.6</hoursOnRecord>\r\n\t\t\t<statsName><![CDATA[204300]]></statsName>\r\n\t\t</mostPlayedGame>\r\n\t\t<mostPlayedGame>\r\n\t\t\t<gameName><![CDATA[Counter-Strike:
+        Global Offensive]]></gameName>\r\n\t\t\t<gameLink><![CDATA[http://steamcommunity.com/app/730]]></gameLink>\r\n\t\t\t<gameIcon><![CDATA[http://cdn.akamai.steamstatic.com/steamcommunity/public/images/apps/730/69f7ebe2735c366c65c0b33dae00e12dc40edbe4.jpg]]></gameIcon>\r\n\t\t\t<gameLogo><![CDATA[http://cdn.akamai.steamstatic.com/steamcommunity/public/images/apps/730/d0595ff02f5c79fd19b06f4d6165c3fda2372820.jpg]]></gameLogo>\r\n\t\t\t<gameLogoSmall><![CDATA[http://cdn.akamai.steamstatic.com/steamcommunity/public/images/apps/730/d0595ff02f5c79fd19b06f4d6165c3fda2372820_thumb.jpg]]></gameLogoSmall>\r\n\t\t\t<hoursPlayed>8.8</hoursPlayed>\r\n\t\t\t<hoursOnRecord>702</hoursOnRecord>\r\n\t\t\t<statsName><![CDATA[CSGO]]></statsName>\r\n\t\t</mostPlayedGame>\r\n\t</mostPlayedGames>\r\n\r\n\r\n\t<groups>\r\n\t\t<group
+        isPrimary=\"1\">\r\n\t\t\t<groupID64>103582791434636960</groupID64>\r\n\t\t\t<groupName><![CDATA[Steam
+        Family Sharing]]></groupName>\r\n\t\t\t<groupURL><![CDATA[familysharing]]></groupURL>\r\n\t\t\t<headline><![CDATA[Players
+        who share computers can also share their Steam games with Family Sharing]]></headline>\r\n\t\t\t<summary><![CDATA[Steam
+        Family Sharing allows friends and family members to play one another's games
+        while earning their own Steam achievements and saving their own game progress
+        to the Steam cloud. \r<br>\r<br>Once authorized by the lender, family members
+        on shared computers may access, download and play a lender's library of Steam
+        games.]]></summary>\r\n\t\t\t<avatarIcon><![CDATA[http://cdn.akamai.steamstatic.com/steamcommunity/public/images/avatars/de/de0447b6d0b23d766f804e0923706a8642b5fc3d.jpg]]></avatarIcon>\r\n\t\t\t<avatarMedium><![CDATA[http://cdn.akamai.steamstatic.com/steamcommunity/public/images/avatars/de/de0447b6d0b23d766f804e0923706a8642b5fc3d_medium.jpg]]></avatarMedium>\r\n\t\t\t<avatarFull><![CDATA[http://cdn.akamai.steamstatic.com/steamcommunity/public/images/avatars/de/de0447b6d0b23d766f804e0923706a8642b5fc3d_full.jpg]]></avatarFull>\r\n\t\t\t<memberCount>674968</memberCount>\r\n\t\t\t<membersInChat>6</membersInChat>\r\n\t\t\t<membersInGame>47222</membersInGame>\r\n\t\t\t<membersOnline>170951</membersOnline>\r\n\t\t</group>\r\n\t\t<group
+        isPrimary=\"0\">\r\n\t\t\t<groupID64>103582791434672565</groupID64>\r\n\t\t\t<groupName><![CDATA[Steam
+        Universe]]></groupName>\r\n\t\t\t<groupURL><![CDATA[steamuniverse]]></groupURL>\r\n\t\t\t<headline><![CDATA[Welcome
+        to The Steam Universe]]></headline>\r\n\t\t\t<summary><![CDATA[Discussion
+        about SteamOS, Beta Hardware, and Big Picture Mode.]]></summary>\r\n\t\t\t<avatarIcon><![CDATA[http://cdn.akamai.steamstatic.com/steamcommunity/public/images/avatars/e3/e34e65ef2ef16093d4428c930fbcc42490522ed3.jpg]]></avatarIcon>\r\n\t\t\t<avatarMedium><![CDATA[http://cdn.akamai.steamstatic.com/steamcommunity/public/images/avatars/e3/e34e65ef2ef16093d4428c930fbcc42490522ed3_medium.jpg]]></avatarMedium>\r\n\t\t\t<avatarFull><![CDATA[http://cdn.akamai.steamstatic.com/steamcommunity/public/images/avatars/e3/e34e65ef2ef16093d4428c930fbcc42490522ed3_full.jpg]]></avatarFull>\r\n\t\t\t<memberCount>1102091</memberCount>\r\n\t\t\t<membersInChat>24</membersInChat>\r\n\t\t\t<membersInGame>89505</membersInGame>\r\n\t\t\t<membersOnline>314929</membersOnline>\r\n\t\t</group>\r\n\t\t<group
+        isPrimary=\"0\">\r\n\t\t\t<groupID64>103582791434796278</groupID64>\r\n\t\t\t<groupName><![CDATA[Steam
+        In-Home Streaming]]></groupName>\r\n\t\t\t<groupURL><![CDATA[homestream]]></groupURL>\r\n\t\t\t<headline><![CDATA[Welcome
+        to Steam In-Home Streaming]]></headline>\r\n\t\t\t<summary><![CDATA[Steam
+        In-Home Streaming a way for people with good home networks to seamlessly play
+        their Steam games between two computers anywhere in the house.\r<br>\r<br>This
+        feature will be available for early feedback in an upcoming beta test. Beta
+        participants will be randomly selected from members of this group, so join,
+        have fun, and stay tuned for more details!]]></summary>\r\n\t\t\t<avatarIcon><![CDATA[http://cdn.akamai.steamstatic.com/steamcommunity/public/images/avatars/43/4302a6bc64a305889d41eafa5fb9aca52108cd98.jpg]]></avatarIcon>\r\n\t\t\t<avatarMedium><![CDATA[http://cdn.akamai.steamstatic.com/steamcommunity/public/images/avatars/43/4302a6bc64a305889d41eafa5fb9aca52108cd98_medium.jpg]]></avatarMedium>\r\n\t\t\t<avatarFull><![CDATA[http://cdn.akamai.steamstatic.com/steamcommunity/public/images/avatars/43/4302a6bc64a305889d41eafa5fb9aca52108cd98_full.jpg]]></avatarFull>\r\n\t\t\t<memberCount>138012</memberCount>\r\n\t\t\t<membersInChat>1</membersInChat>\r\n\t\t\t<membersInGame>9290</membersInGame>\r\n\t\t\t<membersOnline>43842</membersOnline>\r\n\t\t</group>\r\n\t\t\t\t<group
+        isPrimary=\"0\">\r\n\t\t\t\t\t<groupID64>103582791433980119</groupID64>\r\n\t\t\t\t</group>\r\n\t\t\t\t\t\t\t<group
+        isPrimary=\"0\">\r\n\t\t\t\t\t<groupID64>103582791435112065</groupID64>\r\n\t\t\t\t</group>\r\n\t\t\t\t\t\t\t<group
+        isPrimary=\"0\">\r\n\t\t\t\t\t<groupID64>103582791435994765</groupID64>\r\n\t\t\t\t</group>\r\n\t\t\t\t</groups>\r\n</profile>"
+    http_version: 
+  recorded_at: Fri, 24 Oct 2014 14:20:08 GMT
+recorded_with: VCR 2.9.3

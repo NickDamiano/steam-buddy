@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://steamcommunity.com/id/blitzcat/?xml=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Apache
+      Cache-Control:
+      - public,max-age=3600
+      Expires:
+      - Fri, 24 Oct 2014 15:21:06 GMT
+      Last-Modified:
+      - Fri, 24 Oct 2014 14:00:00 GMT
+      Content-Type:
+      - text/xml; charset=utf-8
+      X-Varnish:
+      - '3016901944'
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Fri, 24 Oct 2014 14:21:07 GMT
+      Content-Length:
+      - '940'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><profile>\r\n\t<steamID64>76561198002572492</steamID64>\r\n\t<steamID><![CDATA[blitzcat]]></steamID>\r\n\t<onlineState>offline</onlineState>\r\n\t<stateMessage><![CDATA[Last
+        Online: ]]></stateMessage>\r\n\t<privacyState>friendsfriendsonly</privacyState>\r\n\t<visibilityState>1</visibilityState>\r\n\t<avatarIcon><![CDATA[http://cdn.akamai.steamstatic.com/steamcommunity/public/images/avatars/73/738efa08adee0ee5ec7ef594a53b1fa04808c29d.jpg]]></avatarIcon>\r\n\t<avatarMedium><![CDATA[http://cdn.akamai.steamstatic.com/steamcommunity/public/images/avatars/73/738efa08adee0ee5ec7ef594a53b1fa04808c29d_medium.jpg]]></avatarMedium>\r\n\t<avatarFull><![CDATA[http://cdn.akamai.steamstatic.com/steamcommunity/public/images/avatars/73/738efa08adee0ee5ec7ef594a53b1fa04808c29d_full.jpg]]></avatarFull>\r\n\t<vacBanned>0</vacBanned>\r\n\t<tradeBanState>None</tradeBanState>\r\n\t<isLimitedAccount>0</isLimitedAccount>\r\n</profile>"
+    http_version: 
+  recorded_at: Fri, 24 Oct 2014 14:21:07 GMT
+recorded_with: VCR 2.9.3

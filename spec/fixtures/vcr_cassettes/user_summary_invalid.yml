@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://steamcommunity.com/id/yauihsdfauihsdf98237498234dhjsafdafhuiasdfhu/?xml=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Apache
+      Cache-Control:
+      - public,max-age=3600
+      Expires:
+      - Fri, 24 Oct 2014 15:21:05 GMT
+      Last-Modified:
+      - Fri, 24 Oct 2014 14:00:00 GMT
+      Content-Type:
+      - text/xml
+      X-Varnish:
+      - '3016897263'
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Fri, 24 Oct 2014 14:21:06 GMT
+      Content-Length:
+      - '144'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><response><error><![CDATA[The
+        specified profile could not be found.]]></error></response>
+    http_version: 
+  recorded_at: Fri, 24 Oct 2014 14:21:06 GMT
+recorded_with: VCR 2.9.3

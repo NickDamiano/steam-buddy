@@ -4,7 +4,7 @@ class SaveGames
       game = Game.new
       if game_data["success"] == true
         game.name = game_data["data"]["name"]
-        game.steam_appid = game_data["data"]["steam_appid"]
+        game.steam_appid = ids[i]
         game.about_the_game = game_data["data"]["about_the_game"]
         game.header_image = game_data["data"]["header_image"]
         if !game_data["data"]["pc_requirements"].empty?

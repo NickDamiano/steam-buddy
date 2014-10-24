@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
-
+group :test do
+  gem 'vcr'
+  gem 'rspec-rails', '~> 3.0.0'
+  gem 'webmock'
+end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
@@ -30,7 +34,7 @@ gem 'pry-byebug'
 
 gem 'hirb'
 
-gem 'rspec-rails', '~> 3.0.0'
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
