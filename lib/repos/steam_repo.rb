@@ -6,7 +6,10 @@ class SteamRepo
   def self.get_user_summary(name)
     begin
       if name[-5..-1] == "/home"
-        name.slice![-5..-1]
+        name.slice!(-5..-1)
+      end
+      if name[0..6] != 'http://'
+        name = "http://#{name}"
       end
       response = open("#{name}/?xml=1").read
 
