@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   get '/games/:id', to: 'games#get_users_games_data'
   get '/users/:name', to: 'user#index'
   get '/filters/:id', to: 'filter#index'
+  post '/filters', to: 'filter#apply_filters'
 end
