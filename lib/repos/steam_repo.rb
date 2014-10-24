@@ -51,7 +51,7 @@ class SteamRepo
     return {
       success?: true, 
       games: games_array,
-      playtimes_forever: playtimes_array
+      playtimes: playtimes_array
     }
   end
 

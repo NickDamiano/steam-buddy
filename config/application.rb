@@ -5,6 +5,7 @@ require './lib/txs/assign_games_to_user.rb'
 require './lib/txs/find_new_games.rb'
 require './lib/txs/get_games_not_assigned.rb'
 require './lib/txs/save_games.rb'
+require './lib/txs/update_playtimes.rb'
 require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems

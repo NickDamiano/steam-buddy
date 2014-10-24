@@ -15,6 +15,7 @@ class GamesController < ApplicationController
     SaveGames.run(descriptions_response[:games], descriptions_response[:steam_appids])
     to_be_assigned = GetGamesNotAssigned.run(user, games_response[:games])
     AssignGamesToUser.run(to_be_assigned[:games], user)
+    UpdatePlaytimes.run(user, games_response[:games], games_response[:playtimes])
     render :json => user
   end
 
