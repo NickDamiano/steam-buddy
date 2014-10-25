@@ -8,8 +8,9 @@ class HomeController < ApplicationController
     @user_name = params[:user]
     user_hash = SteamRepo.get_user_summary(@user_name)
     if !user_hash[:success?]
-      #error
-      #redirect
+      @error = user_hash[:error]
+      @user_text = params[:user]
+      render :index and return
     end
     db_check = SaveUser.checkDb(user_hash[:profile]["steamID64"])
     user_to_save = ""

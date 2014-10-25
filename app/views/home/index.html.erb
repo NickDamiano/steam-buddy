@@ -1,7 +1,18 @@
 <%= form_tag("/main", method: 'post', :id => "id1") do %>
-<!-- 	<%= label_tag(:user, "Steam ID") %> -->
-	<%= text_field_tag :user, nil, :placeholder => "Paste a link to your Steam profile", :size => "35 X 10" %>
+	<% if @error %>
+	 <%= text_field_tag :user, @user_text, 
+	 :size => "35 X 10"
+	 %>
+	<% else %>
+	<%= text_field_tag :user, nil, :placeholder =>
+	 "Paste a link to your Steam profile", 
+	 :size => "35 X 10"
+	 %>
+	 <% end %>
 	<%= submit_tag("Submit") %>
+<% end %>
+<% if @error %>
+	<p><%= @error %></p>
 <% end %>
 <div id='profile_suggestion'>
 	<a href='steam://url/SteamIDControlPage'>Look up your profile id (opens steam profile page - link at top)</a>
