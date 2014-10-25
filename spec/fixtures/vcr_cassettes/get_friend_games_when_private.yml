@@ -1,0 +1,374 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?format=json&key=<API_KEY>&steamid=76561197964282412
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Eresult:
+      - '1'
+      Date:
+      - Sat, 25 Oct 2014 16:00:16 GMT
+      Expires:
+      - Sat, 25 Oct 2014 16:00:16 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '13051'
+    body:
+      encoding: UTF-8
+      string: "{\n\t\"response\": {\n\t\t\"game_count\": 220,\n\t\t\"games\": [\n\t\t\t{\n\t\t\t\t\"appid\":
+        10,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        20,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        30,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        40,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        50,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        60,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        70,\n\t\t\t\t\"playtime_forever\": 1\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        130,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        80,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        100,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        220,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        240,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        320,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        340,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        1300,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        1309,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        1313,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        4000,\n\t\t\t\t\"playtime_forever\": 60\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        3200,\n\t\t\t\t\"playtime_forever\": 51\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        6860,\n\t\t\t\t\"playtime_forever\": 1103\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        6510,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        2280,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        2290,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        2300,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        9050,\n\t\t\t\t\"playtime_forever\": 426\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        9070,\n\t\t\t\t\"playtime_forever\": 55\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        9160,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        380,\n\t\t\t\t\"playtime_forever\": 28\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        400,\n\t\t\t\t\"playtime_forever\": 732\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        420,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        3270,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        12900,\n\t\t\t\t\"playtime_forever\": 193\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        15100,\n\t\t\t\t\"playtime_forever\": 1471\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        20900,\n\t\t\t\t\"playtime_forever\": 3765\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        500,\n\t\t\t\t\"playtime_forever\": 381\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        17460,\n\t\t\t\t\"playtime_forever\": 3102\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        17470,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        24740,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        1250,\n\t\t\t\t\"playtime_forever\": 96\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        35420,\n\t\t\t\t\"playtime_forever\": 7\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        22330,\n\t\t\t\t\"playtime_forever\": 203\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        6060,\n\t\t\t\t\"playtime_forever\": 118\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        32370,\n\t\t\t\t\"playtime_forever\": 94\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        17450,\n\t\t\t\t\"playtime_forever\": 2269\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        11450,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        12710,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        12810,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        45700,\n\t\t\t\t\"playtime_forever\": 76\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        24980,\n\t\t\t\t\"playtime_forever\": 5042\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        33230,\n\t\t\t\t\"playtime_forever\": 1549\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        43110,\n\t\t\t\t\"playtime_forever\": 639\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        13560,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        13570,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        13580,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        33220,\n\t\t\t\t\"playtime_forever\": 295\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        32470,\n\t\t\t\t\"playtime_forever\": 83\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        42650,\n\t\t\t\t\"playtime_forever\": 465\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        17410,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        2800,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        2810,\n\t\t\t\t\"playtime_forever\": 38\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        2820,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        2840,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        2850,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        201310,\n\t\t\t\t\"playtime_forever\": 183\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        12210,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        12220,\n\t\t\t\t\"playtime_forever\": 93\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        40800,\n\t\t\t\t\"playtime_forever\": 1332\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        6330,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        6850,\n\t\t\t\t\"playtime_forever\": 43\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        6870,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        6880,\n\t\t\t\t\"playtime_forever\": 39\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        6900,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        6910,\n\t\t\t\t\"playtime_forever\": 2217\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        6920,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        6980,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        7000,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        7010,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        7020,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        7060,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        8000,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        8080,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        8100,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        8140,\n\t\t\t\t\"playtime_forever\": 39\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        8160,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        8170,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        8190,\n\t\t\t\t\"playtime_forever\": 5189\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        23300,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        23310,\n\t\t\t\t\"playtime_forever\": 823\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        23380,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        23390,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        28000,\n\t\t\t\t\"playtime_forever\": 40\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        34600,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        35000,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        35070,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        35130,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        35140,\n\t\t\t\t\"playtime_forever\": 103\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        39110,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        40100,\n\t\t\t\t\"playtime_forever\": 3468\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        43000,\n\t\t\t\t\"playtime_forever\": 180\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        2760,\n\t\t\t\t\"playtime_forever\": 2097\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        47780,\n\t\t\t\t\"playtime_forever\": 1835\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        21100,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        42910,\n\t\t\t\t\"playtime_forever\": 230\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        620,\n\t\t\t\t\"playtime_forever\": 2724\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        34330,\n\t\t\t\t\"playtime_forever\": 457\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        48190,\n\t\t\t\t\"playtime_forever\": 1951\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        28050,\n\t\t\t\t\"playtime_forever\": 4340\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        105600,\n\t\t\t\t\"playtime_forever\": 15278\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        20920,\n\t\t\t\t\"playtime_forever\": 3510\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        104600,\n\t\t\t\t\"playtime_forever\": 18\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        13500,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        13530,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        13600,\n\t\t\t\t\"playtime_forever\": 185\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        19980,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        33320,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        91700,\n\t\t\t\t\"playtime_forever\": 235\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        21090,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        21110,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        21120,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        16450,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        48000,\n\t\t\t\t\"playtime_forever\": 112\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        32800,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        107100,\n\t\t\t\t\"playtime_forever\": 18\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        17710,\n\t\t\t\t\"playtime_forever\": 33\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        9350,\n\t\t\t\t\"playtime_forever\": 647\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        9420,\n\t\t\t\t\"playtime_2weeks\": 223,\n\t\t\t\t\"playtime_forever\": 2095\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        113200,\n\t\t\t\t\"playtime_forever\": 1188\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        34270,\n\t\t\t\t\"playtime_forever\": 31\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        71340,\n\t\t\t\t\"playtime_forever\": 2105\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        201280,\n\t\t\t\t\"playtime_forever\": 24\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        201870,\n\t\t\t\t\"playtime_forever\": 1530\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        39160,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        39190,\n\t\t\t\t\"playtime_forever\": 389\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        39200,\n\t\t\t\t\"playtime_forever\": 3\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        72850,\n\t\t\t\t\"playtime_forever\": 9780\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        55230,\n\t\t\t\t\"playtime_forever\": 2678\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        200900,\n\t\t\t\t\"playtime_forever\": 1076\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        98800,\n\t\t\t\t\"playtime_forever\": 131\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        104700,\n\t\t\t\t\"playtime_forever\": 215\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        207320,\n\t\t\t\t\"playtime_forever\": 271\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        207490,\n\t\t\t\t\"playtime_forever\": 112\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        102500,\n\t\t\t\t\"playtime_forever\": 178\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        207610,\n\t\t\t\t\"playtime_forever\": 911\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        205350,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        104900,\n\t\t\t\t\"playtime_forever\": 232\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        200260,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        108800,\n\t\t\t\t\"playtime_forever\": 131\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        207350,\n\t\t\t\t\"playtime_forever\": 566\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        209080,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        213120,\n\t\t\t\t\"playtime_forever\": 128\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        212680,\n\t\t\t\t\"playtime_forever\": 9\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        49520,\n\t\t\t\t\"playtime_forever\": 4768\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        205790,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        219640,\n\t\t\t\t\"playtime_forever\": 1001\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        232210,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        218680,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        7670,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        8870,\n\t\t\t\t\"playtime_forever\": 811\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        200510,\n\t\t\t\t\"playtime_forever\": 2403\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        223220,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        211400,\n\t\t\t\t\"playtime_forever\": 74\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        4920,\n\t\t\t\t\"playtime_forever\": 1743\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        113020,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        34190,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        71250,\n\t\t\t\t\"playtime_forever\": 632\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        200940,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        202530,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        203650,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        213610,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        209540,\n\t\t\t\t\"playtime_forever\": 244\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        219890,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        99900,\n\t\t\t\t\"playtime_forever\": 1004\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        212070,\n\t\t\t\t\"playtime_forever\": 139\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        218230,\n\t\t\t\t\"playtime_2weeks\": 1,\n\t\t\t\t\"playtime_forever\": 47215\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        230410,\n\t\t\t\t\"playtime_forever\": 439\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        231060,\n\t\t\t\t\"playtime_forever\": 79\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        286080,\n\t\t\t\t\"playtime_forever\": 10\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        39120,\n\t\t\t\t\"playtime_forever\": 37\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        209870,\n\t\t\t\t\"playtime_forever\": 5125\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        1500,\n\t\t\t\t\"playtime_forever\": 472\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        1510,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        1520,\n\t\t\t\t\"playtime_forever\": 31\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        1530,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        233450,\n\t\t\t\t\"playtime_forever\": 932\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        225140,\n\t\t\t\t\"playtime_forever\": 87\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        220200,\n\t\t\t\t\"playtime_2weeks\": 2608,\n\t\t\t\t\"playtime_forever\":
+        14543\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 236090,\n\t\t\t\t\"playtime_forever\":
+        0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 231160,\n\t\t\t\t\"playtime_forever\":
+        0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 233250,\n\t\t\t\t\"playtime_2weeks\":
+        7,\n\t\t\t\t\"playtime_forever\": 779\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        39140,\n\t\t\t\t\"playtime_forever\": 34\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        244850,\n\t\t\t\t\"playtime_forever\": 238\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        246700,\n\t\t\t\t\"playtime_forever\": 7\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        214770,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        225180,\n\t\t\t\t\"playtime_forever\": 54\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        248820,\n\t\t\t\t\"playtime_forever\": 906\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        206420,\n\t\t\t\t\"playtime_forever\": 37\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        234670,\n\t\t\t\t\"playtime_forever\": 1239\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        233130,\n\t\t\t\t\"playtime_2weeks\": 112,\n\t\t\t\t\"playtime_forever\":
+        762\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 255520,\n\t\t\t\t\"playtime_forever\":
+        0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 257350,\n\t\t\t\t\"playtime_forever\":
+        0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 213670,\n\t\t\t\t\"playtime_forever\":
+        2121\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 221910,\n\t\t\t\t\"playtime_forever\":
+        248\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 261030,\n\t\t\t\t\"playtime_forever\":
+        492\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 265930,\n\t\t\t\t\"playtime_forever\":
+        0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 266430,\n\t\t\t\t\"playtime_forever\":
+        22\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 211820,\n\t\t\t\t\"playtime_forever\":
+        2920\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 202170,\n\t\t\t\t\"playtime_forever\":
+        1085\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 8930,\n\t\t\t\t\"playtime_forever\":
+        2874\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 235460,\n\t\t\t\t\"playtime_forever\":
+        3129\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 271290,\n\t\t\t\t\"playtime_forever\":
+        151\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 272510,\n\t\t\t\t\"playtime_forever\":
+        153\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 273070,\n\t\t\t\t\"playtime_forever\":
+        327\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 256290,\n\t\t\t\t\"playtime_forever\":
+        65\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 304030,\n\t\t\t\t\"playtime_2weeks\":
+        365,\n\t\t\t\t\"playtime_forever\": 6894\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        240760,\n\t\t\t\t\"playtime_2weeks\": 769,\n\t\t\t\t\"playtime_forever\":
+        769\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 259130,\n\t\t\t\t\"playtime_forever\":
+        0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 244630,\n\t\t\t\t\"playtime_forever\":
+        0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 17580,\n\t\t\t\t\"playtime_forever\":
+        2414\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 65980,\n\t\t\t\t\"playtime_2weeks\":
+        322,\n\t\t\t\t\"playtime_forever\": 322\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        107410,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t}\n\t\t]\n\t\t\n\t}\n}"
+    http_version: 
+  recorded_at: Sat, 25 Oct 2014 16:00:16 GMT
+- request:
+    method: get
+    uri: http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?format=json&key=<API_KEY>&steamid=76561197970623174
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Eresult:
+      - '1'
+      Date:
+      - Sat, 25 Oct 2014 16:00:21 GMT
+      Expires:
+      - Sat, 25 Oct 2014 16:00:21 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '2894'
+    body:
+      encoding: UTF-8
+      string: "{\n\t\"response\": {\n\t\t\"game_count\": 49,\n\t\t\"games\": [\n\t\t\t{\n\t\t\t\t\"appid\":
+        10,\n\t\t\t\t\"playtime_forever\": 94\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        20,\n\t\t\t\t\"playtime_forever\": 17\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        30,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        40,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        50,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        60,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        70,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        80,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        100,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        130,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        220,\n\t\t\t\t\"playtime_forever\": 1358\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        240,\n\t\t\t\t\"playtime_forever\": 47594\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        280,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        300,\n\t\t\t\t\"playtime_forever\": 87\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        320,\n\t\t\t\t\"playtime_forever\": 186\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        340,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        360,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        380,\n\t\t\t\t\"playtime_forever\": 310\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        400,\n\t\t\t\t\"playtime_forever\": 47\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        420,\n\t\t\t\t\"playtime_forever\": 434\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        7940,\n\t\t\t\t\"playtime_forever\": 7360\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        7670,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        22330,\n\t\t\t\t\"playtime_forever\": 1256\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        32370,\n\t\t\t\t\"playtime_forever\": 3571\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        22370,\n\t\t\t\t\"playtime_forever\": 8961\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        8930,\n\t\t\t\t\"playtime_forever\": 29755\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        22380,\n\t\t\t\t\"playtime_forever\": 24327\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        12210,\n\t\t\t\t\"playtime_forever\": 4819\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        12220,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        105600,\n\t\t\t\t\"playtime_forever\": 11050\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        20920,\n\t\t\t\t\"playtime_forever\": 701\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        72850,\n\t\t\t\t\"playtime_forever\": 63921\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        730,\n\t\t\t\t\"playtime_forever\": 528\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        200510,\n\t\t\t\t\"playtime_forever\": 5303\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        49520,\n\t\t\t\t\"playtime_forever\": 2474\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        208480,\n\t\t\t\t\"playtime_forever\": 4654\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        220240,\n\t\t\t\t\"playtime_forever\": 5855\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        17460,\n\t\t\t\t\"playtime_forever\": 4317\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        24980,\n\t\t\t\t\"playtime_forever\": 3537\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        212500,\n\t\t\t\t\"playtime_forever\": 3048\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        218230,\n\t\t\t\t\"playtime_forever\": 157544\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        8870,\n\t\t\t\t\"playtime_forever\": 1155\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        227300,\n\t\t\t\t\"playtime_forever\": 5791\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        41900,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        240760,\n\t\t\t\t\"playtime_forever\": 386\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        259130,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        550,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        43160,\n\t\t\t\t\"playtime_forever\": 49\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        107410,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t}\n\t\t]\n\t\t\n\t}\n}"
+    http_version: 
+  recorded_at: Sat, 25 Oct 2014 16:00:22 GMT
+- request:
+    method: get
+    uri: http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?format=json&key=<API_KEY>&steamid=76561198002572492
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Eresult:
+      - '15'
+      Date:
+      - Sat, 25 Oct 2014 16:00:22 GMT
+      Expires:
+      - Sat, 25 Oct 2014 16:00:22 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '22'
+    body:
+      encoding: UTF-8
+      string: "{\n\t\"response\": {\n\n\t}\n}"
+    http_version: 
+  recorded_at: Sat, 25 Oct 2014 16:00:22 GMT
+recorded_with: VCR 2.9.3

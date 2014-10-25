@@ -26,39 +26,35 @@ class FriendRepo
 
   def self.save_friends(user, friends_array)
     #user is a db object
-    #friends_array is array of numbers
-    #////////////////////////////////
-    #this shit right here is more or less working, but i need to get 
-    #username/personaname from the json_players loop before writing it
-    #to the db down on line 58 - commented out because the pop
-    #was messing up the test/////////////////////////
-    # until(friends_array.empty?) do 
-    #   chunk = friends_array.pop(99)
-    #   chunk = chunk.join(',')
-    #   url = "http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=#{ENV['STEAM_KEY']}&steamids=#{chunk}"
-    #   begin
-    #     response = open(url).read
-    #   rescue OpenURI::HTTPError
-    #     return {
-    #       success?: false,
-    #       error: "Internal Server Error"
-    #     }
-    #   end
-    #   json_players = JSON.parse(response)
-    # end
-      # steam_id_64 = ""
-      # persona_name = ""
-      # json_players["response"]["players"].each do |player|
-      #   #player["fieldName"] is how you access each field
-      #   #grab persona name
-      #   #maybe personastate? i think that tells you which game they're in
-      #   #mvp, i know i know. 
-      # end
-    friends_obj = []
-    friends_array.each do |friend|
-      persona_name = ""
-      friends_obj.push(user.friends.create(:steam_id_64 => friend))
+    #friends_array is array of player_ids
+    new_friend_data = {}
+    #loop through each friend id until the array is empty - pop out 99, call the api, build up the players hash
+    until(friends_array.empty?) do 
+      chunk = friends_array.pop(99)
+      chunk = chunk.join(',')
+      url = "http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=#{ENV['STEAM_KEY']}&steamids=#{chunk}"
+      begin
+        response = open(url).read
+      rescue OpenURI::HTTPError
+        return {
+          success?: false,
+          error: "Internal Server Error"
+        }
+      end
+      json_players = JSON.parse(response)
+      json_players["response"]["players"].each do |player|
+        new_friend_data[player["steamid"]] = {:id => player["steamid"], :name => player["personaname"] }
+      end
+      #after this loop we have current group of 99 in a hash like {4343939393 => {id: 4343939393, name: Blitzcat}, 34342343 => {id: 34342343, name: japutie}}
     end
+    #after this loop we have all the friends from their friends list inside of new_friend_data in the same format as above
+    friends_obj = []
+    new_friend_data.each do |friend_id, friend_data|
+      id = friend_id
+      name = friend_data[:name]
+      friends_obj.push(user.friends.create(:steam_id_64 => id, :persona_name => name))
+    end
+    #after this loop we have friends_obj as an array of db objects
     return {
       success?: true,
       friends: friends_obj
@@ -79,10 +75,12 @@ class FriendRepo
           error: "Internal Server Error"
         }
       end
-      #ADD CODE IN CASE THEY ARE PRIVATE IN WHICH CASE
-      #THE ONLY THING THAT RETURNS IS A HASH WITH RESPONSE POINTING
-      #TO AN EMPTY HASH
       games = JSON.parse(response)
+      #check to see if user is private and empty hash is returned
+      if games["response"] == {}
+        #skip loop iteration
+        next
+      end
       games["response"]["games"].each do |game|
         games_list.push(game["appid"])
       end
