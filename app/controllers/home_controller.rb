@@ -4,6 +4,11 @@ class HomeController < ApplicationController
   def index
   end
 
+  def show
+    @game = Game.find_by(steam_appid: params[:id])
+    @screenshots = @game.screenshots
+  end
+
   def main
     @user_name = params[:user]
     user_hash = SteamRepo.get_user_summary(@user_name)
