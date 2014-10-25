@@ -1,12 +1,16 @@
 <%= form_tag("/filters/#{@id}", method: 'post', :id => "filter") do %>
-	<%= label_tag(:filter, "Multiplayer Only") %>
-	<%= check_box("filters", "multiplayer", {checked: false}) %></br>
-	<%= label_tag(:filter, "Select Genres", class: 'genre-label') %></br>
-	<div class="genres">
-		<% @genres.each do |genre| %>
-			<%= label_tag(:filter, genre) %>
-			<%= check_box("genres", genre, {checked: false}) %></br>
-		<% end %>
+	<div class="form-group">
+		<%= label_tag(:filter, "Multiplayer Only") %>
+		<%= check_box("filters", "multiplayer", {checked: false}, class: "form-control") %>
+	</div>
+	<div class="form-group">
+		<%= label_tag(:filter, "Select Genres", class: 'genre-label') %>
+			<% @genres.each do |genre| %>
+				<div class="genres checkbox">
+					<%= check_box("genres", genre, {checked: false}) %>
+					<%= label_tag(:genres, genre) %>
+				</div>
+			<% end %>
 	</div>
 	<%= submit_tag("Submit") %>
 <% end %> 

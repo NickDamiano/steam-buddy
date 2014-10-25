@@ -1,6 +1,41 @@
-<%= @game.name %>
+<h2><%= @game.name %></h2>
 <img src="<%= @game.header_image %>">
-<% @screenshots.each do |ss| %>
-	<img src="<%= ss.url %>" height="100", width="150">
-<% end %>
 <p>You have played this game for <%=@playtime%> minute(s)</p>
+<div class="row">
+<div id="carousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+  <% @screenshots.each_with_index do |ss, i| %>
+  	<% if i == 0 %>
+  		<li data-target="#carousel" data-slide-to="0" class="active"></li>
+  	<% else %>
+  		<li data-target="#carousel" data-slide-to="<%=i%>"></li>
+  	<% end %>
+  <% end %>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+  	<% @screenshots.each_with_index do |ss, i| %>
+  		<% if i == 0 %>
+  		<div class='item active'>
+			<img src="<%= ss.url %>" alt="<%=@game.name%>">
+		</div>
+  		<% else %>
+  		<div class='item'>
+			<img src="<%= ss.url %>" alt="<%=@game.name%>">
+		</div>
+		<% end %>
+	<% end %>
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div>
+</div>
+</div>
