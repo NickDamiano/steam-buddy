@@ -8,6 +8,7 @@ require './lib/txs/save_games.rb'
 require './lib/txs/update_playtimes.rb'
 require './lib/txs/multiplayer_filter.rb'
 require './lib/txs/find_genres.rb'
+require './lib/txs/genres_filter.rb'
 require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
