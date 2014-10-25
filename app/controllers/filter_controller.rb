@@ -4,7 +4,5 @@ class FilterController < ApplicationController
   end
 
   def apply_filters 
-    binding.pry
-    1
   end
 end

@@ -3,20 +3,20 @@ require 'JSON'
 require 'active_support/core_ext/hash'
 
 class SteamRepo
-  def self.get_user_summary(name)
+  def self.get_user_summary(url)
     begin
-      if name[-5..-1] == "/home"
-        name.slice!(-5..-1)
+      if url[-5..-1] == "/home"
+        url.slice!(-5..-1)
       end
-      if name[0..6] != 'http://'
-        name = "http://#{name}"
+      if url[0..6] != 'http://'
+        url = "http://#{url}"
       end
-      response = open("#{name}/?xml=1").read
+      response = open("#{url}/?xml=1").read
 
     rescue URI::InvalidURIError
       return {
         success?: false,
-        error: "Invalid Steam name"
+        error: "Invalid Steam URL"
       }
     end
     response_hash = Hash.from_xml(response.gsub("\n", ""))
@@ -33,7 +33,7 @@ class SteamRepo
     elsif response_hash["profile"]["privacyState"] != "public"
       return {
         success?: false,
-        error: "The specified profile is private."
+        error: "The specified URL has a private profile."
       }
     end
   end

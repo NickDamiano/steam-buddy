@@ -3,37 +3,37 @@ RSpec.describe SteamRepo do
   describe ".get_user_summary" do
     it "should get a user's XML file from Steam API converted into a hash" do
       VCR.use_cassette('user_summary_youda') do
-        name = "youda"
-        hash = SteamRepo.get_user_summary(name)
+        url = "http://steamcommunity.com/id/youda"
+        hash = SteamRepo.get_user_summary(url)
         expect(hash[:success?]).to be true
         expect(hash[:profile]).to_not be_nil
       end
     end
     it "should return a hash when the user is not found" do
       VCR.use_cassette('user_summary_invalid') do
-      name = "yauihsdfauihsdf98237498234dhjsafdafhuiasdfhu"
-      hash = SteamRepo.get_user_summary(name)
-      expect(hash[:success?]).to be false
-      expect(hash[:error]).to eq("The specified profile could not be found.")
-    end
+        url = "http://steamcommunity.com/id/yauihsdfauihsdf98237498234dhjsafdafhuiasdfhu"
+        hash = SteamRepo.get_user_summary(url)
+        expect(hash[:success?]).to be false
+        expect(hash[:error]).to eq("The specified profile could not be found.")
+      end
     end
 
     it "should return a hash when user enters invalid name (invalid url)" do
       VCR.use_cassette('user_summary_invalid_url') do
-      name = "    "
-      hash = SteamRepo.get_user_summary(name)
-      expect(hash[:success?]).to be false
-      expect(hash[:error]).to eq("Invalid Steam name")
-    end
+        url = "    "
+        hash = SteamRepo.get_user_summary(url)
+        expect(hash[:success?]).to be false
+        expect(hash[:error]).to eq("Invalid Steam URL")
+      end
     end
 
     it "should return a hash when the user is private" do
       VCR.use_cassette('user_summary_private') do
-      name = "blitzcat"
-      hash = SteamRepo.get_user_summary(name)
-      expect(hash[:success?]).to be false
-      expect(hash[:error]).to eq("The specified profile is private.")
-    end
+        url = "http://steamcommunity.com/id/blitzcat/home"
+        hash = SteamRepo.get_user_summary(url)
+        expect(hash[:success?]).to be false
+        expect(hash[:error]).to eq("The specified URL has a private profile.")
+      end
     end
   end
 
@@ -42,6 +42,7 @@ RSpec.describe SteamRepo do
       VCR.use_cassette('get_user_games_youda') do
         id = "76561197995163285"
         response = SteamRepo.get_user_games(id)
+
         expect(response[:success?]).to be true
         expect(response[:games]).to be_an(Array)
         expect(response[:games].size).to be > 200
