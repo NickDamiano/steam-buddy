@@ -1,0 +1,272 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=<API_KEY>&steamids=76561197964282412,76561197970623174,76561197972533015,76561197974442188,76561197976572599,76561197978638574,76561197988762001,76561197992028918,76561197995163285,76561198001830898,76561198002572492,76561198005129680,76561198008887970,76561198009220906,76561198026508218,76561198044209292,76561198047040418,76561198050505998,76561198051831682,76561198053159586,76561198056433829,76561198059279901,76561198062010300,76561198062797493,76561198072218295,76561198122509603,76561198129078372,76561198134716933,76561198139251454
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 25 Oct 2014 06:12:45 GMT
+      Expires:
+      - Sat, 25 Oct 2014 06:12:45 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '24118'
+    body:
+      encoding: UTF-8
+      string: "{\n\t\"response\": {\n\t\t\"players\": [\n\t\t\t{\n\t\t\t\t\"steamid\":
+        \"76561197976572599\",\n\t\t\t\t\"communityvisibilitystate\": 3,\n\t\t\t\t\"profilestate\":
+        1,\n\t\t\t\t\"personaname\": \"Ternads\",\n\t\t\t\t\"lastlogoff\": 1414196718,\n\t\t\t\t\"profileurl\":
+        \"http://steamcommunity.com/profiles/76561197976572599/\",\n\t\t\t\t\"avatar\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/85/8551ff087779c00dba732ef60d2aa7d3f534b8cf.jpg\",\n\t\t\t\t\"avatarmedium\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/85/8551ff087779c00dba732ef60d2aa7d3f534b8cf_medium.jpg\",\n\t\t\t\t\"avatarfull\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/85/8551ff087779c00dba732ef60d2aa7d3f534b8cf_full.jpg\",\n\t\t\t\t\"personastate\":
+        3,\n\t\t\t\t\"realname\": \"Chris\",\n\t\t\t\t\"primaryclanid\": \"103582791433766578\",\n\t\t\t\t\"timecreated\":
+        1119347202,\n\t\t\t\t\"personastateflags\": 0,\n\t\t\t\t\"loccountrycode\":
+        \"US\",\n\t\t\t\t\"locstatecode\": \"ND\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"steamid\":
+        \"76561198008887970\",\n\t\t\t\t\"communityvisibilitystate\": 3,\n\t\t\t\t\"profilestate\":
+        1,\n\t\t\t\t\"personaname\": \"C00Kies\",\n\t\t\t\t\"lastlogoff\": 1413882359,\n\t\t\t\t\"commentpermission\":
+        1,\n\t\t\t\t\"profileurl\": \"http://steamcommunity.com/id/CO0Kies/\",\n\t\t\t\t\"avatar\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/e9/e924c2d90f689c84e66db3bb90beb8f0b53d1e0a.jpg\",\n\t\t\t\t\"avatarmedium\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/e9/e924c2d90f689c84e66db3bb90beb8f0b53d1e0a_medium.jpg\",\n\t\t\t\t\"avatarfull\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/e9/e924c2d90f689c84e66db3bb90beb8f0b53d1e0a_full.jpg\",\n\t\t\t\t\"personastate\":
+        0,\n\t\t\t\t\"realname\": \"Emilio Ingrasci\",\n\t\t\t\t\"primaryclanid\":
+        \"103582791429594873\",\n\t\t\t\t\"timecreated\": 1239394964,\n\t\t\t\t\"personastateflags\":
+        0,\n\t\t\t\t\"loccountrycode\": \"US\",\n\t\t\t\t\"locstatecode\": \"CA\",\n\t\t\t\t\"loccityid\":
+        508\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"steamid\": \"76561197988762001\",\n\t\t\t\t\"communityvisibilitystate\":
+        3,\n\t\t\t\t\"profilestate\": 1,\n\t\t\t\t\"personaname\": \"archiei40\",\n\t\t\t\t\"lastlogoff\":
+        1413958026,\n\t\t\t\t\"profileurl\": \"http://steamcommunity.com/profiles/76561197988762001/\",\n\t\t\t\t\"avatar\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/df/df87d211ec53ef968f54bc7fca2384f81c0253e7.jpg\",\n\t\t\t\t\"avatarmedium\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/df/df87d211ec53ef968f54bc7fca2384f81c0253e7_medium.jpg\",\n\t\t\t\t\"avatarfull\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/df/df87d211ec53ef968f54bc7fca2384f81c0253e7_full.jpg\",\n\t\t\t\t\"personastate\":
+        0,\n\t\t\t\t\"realname\": \"Jack\",\n\t\t\t\t\"primaryclanid\": \"103582791431576736\",\n\t\t\t\t\"timecreated\":
+        1174017782,\n\t\t\t\t\"personastateflags\": 0,\n\t\t\t\t\"loccountrycode\":
+        \"US\",\n\t\t\t\t\"locstatecode\": \"TX\",\n\t\t\t\t\"loccityid\": 3577\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"steamid\":
+        \"76561198059279901\",\n\t\t\t\t\"communityvisibilitystate\": 3,\n\t\t\t\t\"profilestate\":
+        1,\n\t\t\t\t\"personaname\": \"WillDangerous\",\n\t\t\t\t\"lastlogoff\": 1414212822,\n\t\t\t\t\"profileurl\":
+        \"http://steamcommunity.com/profiles/76561198059279901/\",\n\t\t\t\t\"avatar\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/e8/e87ee698a3d272f447c00838ea8ca77ab19c3689.jpg\",\n\t\t\t\t\"avatarmedium\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/e8/e87ee698a3d272f447c00838ea8ca77ab19c3689_medium.jpg\",\n\t\t\t\t\"avatarfull\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/e8/e87ee698a3d272f447c00838ea8ca77ab19c3689_full.jpg\",\n\t\t\t\t\"personastate\":
+        0,\n\t\t\t\t\"realname\": \"Bubba\",\n\t\t\t\t\"primaryclanid\": \"103582791434277245\",\n\t\t\t\t\"timecreated\":
+        1330020951,\n\t\t\t\t\"personastateflags\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"steamid\":
+        \"76561198062010300\",\n\t\t\t\t\"communityvisibilitystate\": 3,\n\t\t\t\t\"profilestate\":
+        1,\n\t\t\t\t\"personaname\": \"Hypnosis\",\n\t\t\t\t\"lastlogoff\": 1414170939,\n\t\t\t\t\"profileurl\":
+        \"http://steamcommunity.com/id/madams03/\",\n\t\t\t\t\"avatar\": \"http://media.steampowered.com/steamcommunity/public/images/avatars/60/604ff62a0ceb5eb619999fc8e765bc6eaad644f5.jpg\",\n\t\t\t\t\"avatarmedium\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/60/604ff62a0ceb5eb619999fc8e765bc6eaad644f5_medium.jpg\",\n\t\t\t\t\"avatarfull\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/60/604ff62a0ceb5eb619999fc8e765bc6eaad644f5_full.jpg\",\n\t\t\t\t\"personastate\":
+        4,\n\t\t\t\t\"realname\": \"Megan Adams\",\n\t\t\t\t\"primaryclanid\": \"103582791429521408\",\n\t\t\t\t\"timecreated\":
+        1334462929,\n\t\t\t\t\"personastateflags\": 0,\n\t\t\t\t\"loccountrycode\":
+        \"US\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"steamid\": \"76561197995163285\",\n\t\t\t\t\"communityvisibilitystate\":
+        3,\n\t\t\t\t\"profilestate\": 1,\n\t\t\t\t\"personaname\": \"goat[yusef]\",\n\t\t\t\t\"lastlogoff\":
+        1414187075,\n\t\t\t\t\"profileurl\": \"http://steamcommunity.com/id/youda/\",\n\t\t\t\t\"avatar\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/45/450a776d730958630478bf183e509d0fa0abc4ec.jpg\",\n\t\t\t\t\"avatarmedium\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/45/450a776d730958630478bf183e509d0fa0abc4ec_medium.jpg\",\n\t\t\t\t\"avatarfull\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/45/450a776d730958630478bf183e509d0fa0abc4ec_full.jpg\",\n\t\t\t\t\"personastate\":
+        2,\n\t\t\t\t\"realname\": \"Yusef\",\n\t\t\t\t\"primaryclanid\": \"103582791434636960\",\n\t\t\t\t\"timecreated\":
+        1198539183,\n\t\t\t\t\"personastateflags\": 0,\n\t\t\t\t\"gameextrainfo\":
+        \"Counter-Strike: Global Offensive\",\n\t\t\t\t\"gameid\": \"730\",\n\t\t\t\t\"loccountrycode\":
+        \"US\",\n\t\t\t\t\"locstatecode\": \"TX\",\n\t\t\t\t\"loccityid\": 3577\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"steamid\":
+        \"76561197974442188\",\n\t\t\t\t\"communityvisibilitystate\": 3,\n\t\t\t\t\"personaname\":
+        \"Holyclap\",\n\t\t\t\t\"lastlogoff\": 1411688866,\n\t\t\t\t\"profileurl\":
+        \"http://steamcommunity.com/profiles/76561197974442188/\",\n\t\t\t\t\"avatar\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/fe/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb.jpg\",\n\t\t\t\t\"avatarmedium\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/fe/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_medium.jpg\",\n\t\t\t\t\"avatarfull\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/fe/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_full.jpg\",\n\t\t\t\t\"personastate\":
+        0,\n\t\t\t\t\"primaryclanid\": \"103582791429521408\",\n\t\t\t\t\"timecreated\":
+        1109216775,\n\t\t\t\t\"personastateflags\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"steamid\":
+        \"76561198002572492\",\n\t\t\t\t\"communityvisibilitystate\": 1,\n\t\t\t\t\"profilestate\":
+        1,\n\t\t\t\t\"personaname\": \"blitzcat\",\n\t\t\t\t\"lastlogoff\": 1414209451,\n\t\t\t\t\"profileurl\":
+        \"http://steamcommunity.com/id/blitzcat/\",\n\t\t\t\t\"avatar\": \"http://media.steampowered.com/steamcommunity/public/images/avatars/73/738efa08adee0ee5ec7ef594a53b1fa04808c29d.jpg\",\n\t\t\t\t\"avatarmedium\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/73/738efa08adee0ee5ec7ef594a53b1fa04808c29d_medium.jpg\",\n\t\t\t\t\"avatarfull\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/73/738efa08adee0ee5ec7ef594a53b1fa04808c29d_full.jpg\",\n\t\t\t\t\"personastate\":
+        0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"steamid\": \"76561198044209292\",\n\t\t\t\t\"communityvisibilitystate\":
+        3,\n\t\t\t\t\"profilestate\": 1,\n\t\t\t\t\"personaname\": \"reaper\",\n\t\t\t\t\"lastlogoff\":
+        1409802834,\n\t\t\t\t\"profileurl\": \"http://steamcommunity.com/profiles/76561198044209292/\",\n\t\t\t\t\"avatar\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/0a/0a727485c20e612b486de9de5a9a474ca4b02914.jpg\",\n\t\t\t\t\"avatarmedium\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/0a/0a727485c20e612b486de9de5a9a474ca4b02914_medium.jpg\",\n\t\t\t\t\"avatarfull\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/0a/0a727485c20e612b486de9de5a9a474ca4b02914_full.jpg\",\n\t\t\t\t\"personastate\":
+        0,\n\t\t\t\t\"primaryclanid\": \"103582791429521408\",\n\t\t\t\t\"timecreated\":
+        1309215875,\n\t\t\t\t\"personastateflags\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"steamid\":
+        \"76561198062797493\",\n\t\t\t\t\"communityvisibilitystate\": 3,\n\t\t\t\t\"profilestate\":
+        1,\n\t\t\t\t\"personaname\": \"JangoFett\",\n\t\t\t\t\"lastlogoff\": 1414206269,\n\t\t\t\t\"profileurl\":
+        \"http://steamcommunity.com/profiles/76561198062797493/\",\n\t\t\t\t\"avatar\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/e9/e9fa5c5fe802c798843533066e1d282a4023043c.jpg\",\n\t\t\t\t\"avatarmedium\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/e9/e9fa5c5fe802c798843533066e1d282a4023043c_medium.jpg\",\n\t\t\t\t\"avatarfull\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/e9/e9fa5c5fe802c798843533066e1d282a4023043c_full.jpg\",\n\t\t\t\t\"personastate\":
+        3,\n\t\t\t\t\"realname\": \"Alejandro Chavez\",\n\t\t\t\t\"primaryclanid\":
+        \"103582791433287821\",\n\t\t\t\t\"timecreated\": 1335671308,\n\t\t\t\t\"personastateflags\":
+        0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"steamid\": \"76561198122509603\",\n\t\t\t\t\"communityvisibilitystate\":
+        3,\n\t\t\t\t\"profilestate\": 1,\n\t\t\t\t\"personaname\": \"Ben Dover\",\n\t\t\t\t\"lastlogoff\":
+        1410207191,\n\t\t\t\t\"profileurl\": \"http://steamcommunity.com/profiles/76561198122509603/\",\n\t\t\t\t\"avatar\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/44/44aa0ce2d9b3e94bdcc5bfd39914273468b78030.jpg\",\n\t\t\t\t\"avatarmedium\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/44/44aa0ce2d9b3e94bdcc5bfd39914273468b78030_medium.jpg\",\n\t\t\t\t\"avatarfull\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/44/44aa0ce2d9b3e94bdcc5bfd39914273468b78030_full.jpg\",\n\t\t\t\t\"personastate\":
+        0,\n\t\t\t\t\"primaryclanid\": \"103582791429521408\",\n\t\t\t\t\"timecreated\":
+        1389413305,\n\t\t\t\t\"personastateflags\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"steamid\":
+        \"76561197992028918\",\n\t\t\t\t\"communityvisibilitystate\": 3,\n\t\t\t\t\"profilestate\":
+        1,\n\t\t\t\t\"personaname\": \"Dringus Drangus\",\n\t\t\t\t\"lastlogoff\":
+        1414123204,\n\t\t\t\t\"profileurl\": \"http://steamcommunity.com/id/Squattingbear99/\",\n\t\t\t\t\"avatar\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/9d/9d0c939ac0be1f803323cfed53c609c61905f016.jpg\",\n\t\t\t\t\"avatarmedium\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/9d/9d0c939ac0be1f803323cfed53c609c61905f016_medium.jpg\",\n\t\t\t\t\"avatarfull\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/9d/9d0c939ac0be1f803323cfed53c609c61905f016_full.jpg\",\n\t\t\t\t\"personastate\":
+        0,\n\t\t\t\t\"realname\": \"Dan\",\n\t\t\t\t\"primaryclanid\": \"103582791429564709\",\n\t\t\t\t\"timecreated\":
+        1187569962,\n\t\t\t\t\"personastateflags\": 0,\n\t\t\t\t\"loccountrycode\":
+        \"US\",\n\t\t\t\t\"locstatecode\": \"TX\",\n\t\t\t\t\"loccityid\": 3577\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"steamid\":
+        \"76561198026508218\",\n\t\t\t\t\"communityvisibilitystate\": 1,\n\t\t\t\t\"profilestate\":
+        1,\n\t\t\t\t\"personaname\": \"[ODIN]11Bullets\",\n\t\t\t\t\"lastlogoff\":
+        1414110052,\n\t\t\t\t\"profileurl\": \"http://steamcommunity.com/profiles/76561198026508218/\",\n\t\t\t\t\"avatar\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/93/93cf1fbceee00a72a657f6cd54b4b669fb71ad90.jpg\",\n\t\t\t\t\"avatarmedium\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/93/93cf1fbceee00a72a657f6cd54b4b669fb71ad90_medium.jpg\",\n\t\t\t\t\"avatarfull\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/93/93cf1fbceee00a72a657f6cd54b4b669fb71ad90_full.jpg\",\n\t\t\t\t\"personastate\":
+        0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"steamid\": \"76561198047040418\",\n\t\t\t\t\"communityvisibilitystate\":
+        3,\n\t\t\t\t\"profilestate\": 1,\n\t\t\t\t\"personaname\": \"weshawkins\",\n\t\t\t\t\"lastlogoff\":
+        1400014838,\n\t\t\t\t\"profileurl\": \"http://steamcommunity.com/id/weshawkins/\",\n\t\t\t\t\"avatar\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/fe/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb.jpg\",\n\t\t\t\t\"avatarmedium\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/fe/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_medium.jpg\",\n\t\t\t\t\"avatarfull\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/fe/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_full.jpg\",\n\t\t\t\t\"personastate\":
+        0,\n\t\t\t\t\"realname\": \"Wes Hawkins\",\n\t\t\t\t\"primaryclanid\": \"103582791429521408\",\n\t\t\t\t\"timecreated\":
+        1313552155,\n\t\t\t\t\"personastateflags\": 0,\n\t\t\t\t\"loccountrycode\":
+        \"US\",\n\t\t\t\t\"locstatecode\": \"AL\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"steamid\":
+        \"76561198009220906\",\n\t\t\t\t\"communityvisibilitystate\": 3,\n\t\t\t\t\"profilestate\":
+        1,\n\t\t\t\t\"personaname\": \"mike.salazar78\",\n\t\t\t\t\"lastlogoff\":
+        1402344974,\n\t\t\t\t\"profileurl\": \"http://steamcommunity.com/profiles/76561198009220906/\",\n\t\t\t\t\"avatar\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/fe/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb.jpg\",\n\t\t\t\t\"avatarmedium\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/fe/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_medium.jpg\",\n\t\t\t\t\"avatarfull\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/fe/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_full.jpg\",\n\t\t\t\t\"personastate\":
+        0,\n\t\t\t\t\"primaryclanid\": \"103582791429521408\",\n\t\t\t\t\"timecreated\":
+        1240245531,\n\t\t\t\t\"personastateflags\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"steamid\":
+        \"76561197972533015\",\n\t\t\t\t\"communityvisibilitystate\": 3,\n\t\t\t\t\"profilestate\":
+        1,\n\t\t\t\t\"personaname\": \"Bongo Shaftsbury\",\n\t\t\t\t\"lastlogoff\":
+        1414171992,\n\t\t\t\t\"profileurl\": \"http://steamcommunity.com/id/rewtguy/\",\n\t\t\t\t\"avatar\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/59/590fff65b086d1877e2d707561750ccd26adc484.jpg\",\n\t\t\t\t\"avatarmedium\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/59/590fff65b086d1877e2d707561750ccd26adc484_medium.jpg\",\n\t\t\t\t\"avatarfull\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/59/590fff65b086d1877e2d707561750ccd26adc484_full.jpg\",\n\t\t\t\t\"personastate\":
+        4,\n\t\t\t\t\"realname\": \"Rewt\",\n\t\t\t\t\"primaryclanid\": \"103582791436156981\",\n\t\t\t\t\"timecreated\":
+        1104211685,\n\t\t\t\t\"personastateflags\": 0,\n\t\t\t\t\"loccountrycode\":
+        \"US\",\n\t\t\t\t\"locstatecode\": \"TX\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"steamid\":
+        \"76561198139251454\",\n\t\t\t\t\"communityvisibilitystate\": 3,\n\t\t\t\t\"profilestate\":
+        1,\n\t\t\t\t\"personaname\": \"cadete_olvera\",\n\t\t\t\t\"lastlogoff\": 1413086576,\n\t\t\t\t\"profileurl\":
+        \"http://steamcommunity.com/profiles/76561198139251454/\",\n\t\t\t\t\"avatar\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/28/280aa64a6d1e3659063fb2f891845bab99dbceec.jpg\",\n\t\t\t\t\"avatarmedium\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/28/280aa64a6d1e3659063fb2f891845bab99dbceec_medium.jpg\",\n\t\t\t\t\"avatarfull\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/28/280aa64a6d1e3659063fb2f891845bab99dbceec_full.jpg\",\n\t\t\t\t\"personastate\":
+        0,\n\t\t\t\t\"realname\": \"isaac\",\n\t\t\t\t\"primaryclanid\": \"103582791429521408\",\n\t\t\t\t\"timecreated\":
+        1401940498,\n\t\t\t\t\"personastateflags\": 0,\n\t\t\t\t\"loccountrycode\":
+        \"MX\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"steamid\": \"76561198051831682\",\n\t\t\t\t\"communityvisibilitystate\":
+        3,\n\t\t\t\t\"profilestate\": 1,\n\t\t\t\t\"personaname\": \"Kirkula\",\n\t\t\t\t\"lastlogoff\":
+        1414174620,\n\t\t\t\t\"profileurl\": \"http://steamcommunity.com/profiles/76561198051831682/\",\n\t\t\t\t\"avatar\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/67/67bd8e8ef81bebd04c926b1635e1e2a4ac62f0b0.jpg\",\n\t\t\t\t\"avatarmedium\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/67/67bd8e8ef81bebd04c926b1635e1e2a4ac62f0b0_medium.jpg\",\n\t\t\t\t\"avatarfull\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/67/67bd8e8ef81bebd04c926b1635e1e2a4ac62f0b0_full.jpg\",\n\t\t\t\t\"personastate\":
+        1,\n\t\t\t\t\"realname\": \"Kirk Petersen\",\n\t\t\t\t\"primaryclanid\": \"103582791433904246\",\n\t\t\t\t\"timecreated\":
+        1320464195,\n\t\t\t\t\"personastateflags\": 0,\n\t\t\t\t\"gameextrainfo\":
+        \"Supreme Commander: Forged Alliance\",\n\t\t\t\t\"gameid\": \"9420\",\n\t\t\t\t\"loccountrycode\":
+        \"US\",\n\t\t\t\t\"locstatecode\": \"MO\",\n\t\t\t\t\"loccityid\": 2259\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"steamid\":
+        \"76561198056433829\",\n\t\t\t\t\"communityvisibilitystate\": 3,\n\t\t\t\t\"profilestate\":
+        1,\n\t\t\t\t\"personaname\": \"MC AkAd3M1Ks\",\n\t\t\t\t\"lastlogoff\": 1387412934,\n\t\t\t\t\"profileurl\":
+        \"http://steamcommunity.com/profiles/76561198056433829/\",\n\t\t\t\t\"avatar\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/93/930a19e7f4cf16c3d2f8b6c9ab2ac12cf22fb35d.jpg\",\n\t\t\t\t\"avatarmedium\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/93/930a19e7f4cf16c3d2f8b6c9ab2ac12cf22fb35d_medium.jpg\",\n\t\t\t\t\"avatarfull\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/93/930a19e7f4cf16c3d2f8b6c9ab2ac12cf22fb35d_full.jpg\",\n\t\t\t\t\"personastate\":
+        0,\n\t\t\t\t\"primaryclanid\": \"103582791431143121\",\n\t\t\t\t\"timecreated\":
+        1325697502,\n\t\t\t\t\"personastateflags\": 0,\n\t\t\t\t\"loccountrycode\":
+        \"US\",\n\t\t\t\t\"locstatecode\": \"CO\",\n\t\t\t\t\"loccityid\": 616\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"steamid\":
+        \"76561198005129680\",\n\t\t\t\t\"communityvisibilitystate\": 3,\n\t\t\t\t\"profilestate\":
+        1,\n\t\t\t\t\"personaname\": \"mzniko\",\n\t\t\t\t\"lastlogoff\": 1414211794,\n\t\t\t\t\"profileurl\":
+        \"http://steamcommunity.com/id/mzniko/\",\n\t\t\t\t\"avatar\": \"http://media.steampowered.com/steamcommunity/public/images/avatars/30/308cc73efdae6c1539768fc0595479918b5e9e19.jpg\",\n\t\t\t\t\"avatarmedium\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/30/308cc73efdae6c1539768fc0595479918b5e9e19_medium.jpg\",\n\t\t\t\t\"avatarfull\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/30/308cc73efdae6c1539768fc0595479918b5e9e19_full.jpg\",\n\t\t\t\t\"personastate\":
+        0,\n\t\t\t\t\"realname\": \"Marko Nikolovski\",\n\t\t\t\t\"primaryclanid\":
+        \"103582791434672565\",\n\t\t\t\t\"timecreated\": 1231793785,\n\t\t\t\t\"personastateflags\":
+        0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"steamid\": \"76561198053159586\",\n\t\t\t\t\"communityvisibilitystate\":
+        3,\n\t\t\t\t\"profilestate\": 1,\n\t\t\t\t\"personaname\": \"grifter9111\",\n\t\t\t\t\"lastlogoff\":
+        1411509149,\n\t\t\t\t\"profileurl\": \"http://steamcommunity.com/profiles/76561198053159586/\",\n\t\t\t\t\"avatar\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/13/13b7afb60bd35ef63c3314912a24abba2dbae975.jpg\",\n\t\t\t\t\"avatarmedium\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/13/13b7afb60bd35ef63c3314912a24abba2dbae975_medium.jpg\",\n\t\t\t\t\"avatarfull\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/13/13b7afb60bd35ef63c3314912a24abba2dbae975_full.jpg\",\n\t\t\t\t\"personastate\":
+        0,\n\t\t\t\t\"realname\": \"Chris Austin\",\n\t\t\t\t\"primaryclanid\": \"103582791429521408\",\n\t\t\t\t\"timecreated\":
+        1321989165,\n\t\t\t\t\"personastateflags\": 0,\n\t\t\t\t\"loccountrycode\":
+        \"US\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"steamid\": \"76561198072218295\",\n\t\t\t\t\"communityvisibilitystate\":
+        3,\n\t\t\t\t\"profilestate\": 1,\n\t\t\t\t\"personaname\": \"Project Silverback\",\n\t\t\t\t\"lastlogoff\":
+        1414217407,\n\t\t\t\t\"profileurl\": \"http://steamcommunity.com/profiles/76561198072218295/\",\n\t\t\t\t\"avatar\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/64/64c79c2d915d671c41c6afa31a5d476e10ae7646.jpg\",\n\t\t\t\t\"avatarmedium\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/64/64c79c2d915d671c41c6afa31a5d476e10ae7646_medium.jpg\",\n\t\t\t\t\"avatarfull\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/64/64c79c2d915d671c41c6afa31a5d476e10ae7646_full.jpg\",\n\t\t\t\t\"personastate\":
+        0,\n\t\t\t\t\"realname\": \"Justin Baker\",\n\t\t\t\t\"primaryclanid\": \"103582791433821536\",\n\t\t\t\t\"timecreated\":
+        1348441979,\n\t\t\t\t\"personastateflags\": 0,\n\t\t\t\t\"loccountrycode\":
+        \"US\",\n\t\t\t\t\"locstatecode\": \"CA\",\n\t\t\t\t\"loccityid\": 412\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"steamid\":
+        \"76561198129078372\",\n\t\t\t\t\"communityvisibilitystate\": 3,\n\t\t\t\t\"profilestate\":
+        1,\n\t\t\t\t\"personaname\": \"Red Music\",\n\t\t\t\t\"lastlogoff\": 1414208775,\n\t\t\t\t\"profileurl\":
+        \"http://steamcommunity.com/id/redmusic/\",\n\t\t\t\t\"avatar\": \"http://media.steampowered.com/steamcommunity/public/images/avatars/62/6247ab60cd33963bb4245c640d43a8daf38874f2.jpg\",\n\t\t\t\t\"avatarmedium\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/62/6247ab60cd33963bb4245c640d43a8daf38874f2_medium.jpg\",\n\t\t\t\t\"avatarfull\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/62/6247ab60cd33963bb4245c640d43a8daf38874f2_full.jpg\",\n\t\t\t\t\"personastate\":
+        1,\n\t\t\t\t\"realname\": \"Fernando Chavez\",\n\t\t\t\t\"primaryclanid\":
+        \"103582791429521408\",\n\t\t\t\t\"timecreated\": 1394428021,\n\t\t\t\t\"personastateflags\":
+        0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"steamid\": \"76561198134716933\",\n\t\t\t\t\"communityvisibilitystate\":
+        3,\n\t\t\t\t\"profilestate\": 1,\n\t\t\t\t\"personaname\": \"ProjSB\",\n\t\t\t\t\"lastlogoff\":
+        1400477980,\n\t\t\t\t\"profileurl\": \"http://steamcommunity.com/profiles/76561198134716933/\",\n\t\t\t\t\"avatar\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/fe/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb.jpg\",\n\t\t\t\t\"avatarmedium\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/fe/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_medium.jpg\",\n\t\t\t\t\"avatarfull\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/fe/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_full.jpg\",\n\t\t\t\t\"personastate\":
+        0,\n\t\t\t\t\"primaryclanid\": \"103582791429521408\",\n\t\t\t\t\"timecreated\":
+        1398567212,\n\t\t\t\t\"personastateflags\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"steamid\":
+        \"76561197970623174\",\n\t\t\t\t\"communityvisibilitystate\": 3,\n\t\t\t\t\"profilestate\":
+        1,\n\t\t\t\t\"personaname\": \"]NsR[ Trof\",\n\t\t\t\t\"lastlogoff\": 1414214561,\n\t\t\t\t\"profileurl\":
+        \"http://steamcommunity.com/profiles/76561197970623174/\",\n\t\t\t\t\"avatar\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/c3/c31d18ad931fd685ca3af5700db6a461e10bcfe8.jpg\",\n\t\t\t\t\"avatarmedium\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/c3/c31d18ad931fd685ca3af5700db6a461e10bcfe8_medium.jpg\",\n\t\t\t\t\"avatarfull\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/c3/c31d18ad931fd685ca3af5700db6a461e10bcfe8_full.jpg\",\n\t\t\t\t\"personastate\":
+        0,\n\t\t\t\t\"primaryclanid\": \"103582791430956357\",\n\t\t\t\t\"timecreated\":
+        1100733327,\n\t\t\t\t\"personastateflags\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"steamid\":
+        \"76561197978638574\",\n\t\t\t\t\"communityvisibilitystate\": 3,\n\t\t\t\t\"profilestate\":
+        1,\n\t\t\t\t\"personaname\": \"spaz\",\n\t\t\t\t\"lastlogoff\": 1414180930,\n\t\t\t\t\"profileurl\":
+        \"http://steamcommunity.com/profiles/76561197978638574/\",\n\t\t\t\t\"avatar\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/7c/7c8e46ee5259cec25c229bc930514b706805e7e2.jpg\",\n\t\t\t\t\"avatarmedium\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/7c/7c8e46ee5259cec25c229bc930514b706805e7e2_medium.jpg\",\n\t\t\t\t\"avatarfull\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/7c/7c8e46ee5259cec25c229bc930514b706805e7e2_full.jpg\",\n\t\t\t\t\"personastate\":
+        0,\n\t\t\t\t\"primaryclanid\": \"103582791434293256\",\n\t\t\t\t\"timecreated\":
+        1129261526,\n\t\t\t\t\"personastateflags\": 0,\n\t\t\t\t\"loccountrycode\":
+        \"US\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"steamid\": \"76561198001830898\",\n\t\t\t\t\"communityvisibilitystate\":
+        3,\n\t\t\t\t\"profilestate\": 1,\n\t\t\t\t\"personaname\": \"BadRobot\",\n\t\t\t\t\"lastlogoff\":
+        1386628851,\n\t\t\t\t\"profileurl\": \"http://steamcommunity.com/profiles/76561198001830898/\",\n\t\t\t\t\"avatar\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/ae/ae1c0d6e39daa146ea1ce001374d08d4c88cf653.jpg\",\n\t\t\t\t\"avatarmedium\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/ae/ae1c0d6e39daa146ea1ce001374d08d4c88cf653_medium.jpg\",\n\t\t\t\t\"avatarfull\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/ae/ae1c0d6e39daa146ea1ce001374d08d4c88cf653_full.jpg\",\n\t\t\t\t\"personastate\":
+        0,\n\t\t\t\t\"realname\": \"Matthew McGuire\",\n\t\t\t\t\"primaryclanid\":
+        \"103582791429521408\",\n\t\t\t\t\"timecreated\": 1223841655,\n\t\t\t\t\"personastateflags\":
+        0,\n\t\t\t\t\"loccountrycode\": \"US\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"steamid\":
+        \"76561198050505998\",\n\t\t\t\t\"communityvisibilitystate\": 3,\n\t\t\t\t\"profilestate\":
+        1,\n\t\t\t\t\"personaname\": \"Jobo\",\n\t\t\t\t\"lastlogoff\": 1414207716,\n\t\t\t\t\"profileurl\":
+        \"http://steamcommunity.com/profiles/76561198050505998/\",\n\t\t\t\t\"avatar\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/5c/5c581ca5157cd55a78004b5b8d98346713270046.jpg\",\n\t\t\t\t\"avatarmedium\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/5c/5c581ca5157cd55a78004b5b8d98346713270046_medium.jpg\",\n\t\t\t\t\"avatarfull\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/5c/5c581ca5157cd55a78004b5b8d98346713270046_full.jpg\",\n\t\t\t\t\"personastate\":
+        4,\n\t\t\t\t\"primaryclanid\": \"103582791434324880\",\n\t\t\t\t\"timecreated\":
+        1318559333,\n\t\t\t\t\"personastateflags\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"steamid\":
+        \"76561197964282412\",\n\t\t\t\t\"communityvisibilitystate\": 3,\n\t\t\t\t\"profilestate\":
+        1,\n\t\t\t\t\"personaname\": \"Roamin\",\n\t\t\t\t\"lastlogoff\": 1414118350,\n\t\t\t\t\"profileurl\":
+        \"http://steamcommunity.com/id/Grapeopotamus/\",\n\t\t\t\t\"avatar\": \"http://media.steampowered.com/steamcommunity/public/images/avatars/53/538d63a3eeb3dc1636c40aef37c8616627af4c4b.jpg\",\n\t\t\t\t\"avatarmedium\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/53/538d63a3eeb3dc1636c40aef37c8616627af4c4b_medium.jpg\",\n\t\t\t\t\"avatarfull\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/53/538d63a3eeb3dc1636c40aef37c8616627af4c4b_full.jpg\",\n\t\t\t\t\"personastate\":
+        1,\n\t\t\t\t\"realname\": \"Kevin\",\n\t\t\t\t\"primaryclanid\": \"103582791429584315\",\n\t\t\t\t\"timecreated\":
+        1075854720,\n\t\t\t\t\"personastateflags\": 0,\n\t\t\t\t\"gameextrainfo\":
+        \"Supreme Commander: Forged Alliance\",\n\t\t\t\t\"gameid\": \"9420\",\n\t\t\t\t\"loccountrycode\":
+        \"US\",\n\t\t\t\t\"locstatecode\": \"PA\"\n\t\t\t}\n\t\t]\n\t\t\n\t}\n}"
+    http_version: 
+  recorded_at: Sat, 25 Oct 2014 06:12:45 GMT
+recorded_with: VCR 2.9.3

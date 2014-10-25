@@ -1,0 +1,200 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=<API_KEY>&steamids=76561198139251454
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 25 Oct 2014 05:57:44 GMT
+      Expires:
+      - Sat, 25 Oct 2014 05:57:44 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '883'
+    body:
+      encoding: UTF-8
+      string: "{\n\t\"response\": {\n\t\t\"players\": [\n\t\t\t{\n\t\t\t\t\"steamid\":
+        \"76561198139251454\",\n\t\t\t\t\"communityvisibilitystate\": 3,\n\t\t\t\t\"profilestate\":
+        1,\n\t\t\t\t\"personaname\": \"cadete_olvera\",\n\t\t\t\t\"lastlogoff\": 1413086576,\n\t\t\t\t\"profileurl\":
+        \"http://steamcommunity.com/profiles/76561198139251454/\",\n\t\t\t\t\"avatar\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/28/280aa64a6d1e3659063fb2f891845bab99dbceec.jpg\",\n\t\t\t\t\"avatarmedium\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/28/280aa64a6d1e3659063fb2f891845bab99dbceec_medium.jpg\",\n\t\t\t\t\"avatarfull\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/28/280aa64a6d1e3659063fb2f891845bab99dbceec_full.jpg\",\n\t\t\t\t\"personastate\":
+        0,\n\t\t\t\t\"realname\": \"isaac\",\n\t\t\t\t\"primaryclanid\": \"103582791429521408\",\n\t\t\t\t\"timecreated\":
+        1401940498,\n\t\t\t\t\"personastateflags\": 0,\n\t\t\t\t\"loccountrycode\":
+        \"MX\"\n\t\t\t}\n\t\t]\n\t\t\n\t}\n}"
+    http_version: 
+  recorded_at: Sat, 25 Oct 2014 05:57:44 GMT
+- request:
+    method: get
+    uri: http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=<API_KEY>&steamids=76561198134716933
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 25 Oct 2014 06:09:33 GMT
+      Expires:
+      - Sat, 25 Oct 2014 06:09:33 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '823'
+    body:
+      encoding: UTF-8
+      string: "{\n\t\"response\": {\n\t\t\"players\": [\n\t\t\t{\n\t\t\t\t\"steamid\":
+        \"76561198134716933\",\n\t\t\t\t\"communityvisibilitystate\": 3,\n\t\t\t\t\"profilestate\":
+        1,\n\t\t\t\t\"personaname\": \"ProjSB\",\n\t\t\t\t\"lastlogoff\": 1400477980,\n\t\t\t\t\"profileurl\":
+        \"http://steamcommunity.com/profiles/76561198134716933/\",\n\t\t\t\t\"avatar\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/fe/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb.jpg\",\n\t\t\t\t\"avatarmedium\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/fe/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_medium.jpg\",\n\t\t\t\t\"avatarfull\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/fe/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_full.jpg\",\n\t\t\t\t\"personastate\":
+        0,\n\t\t\t\t\"primaryclanid\": \"103582791429521408\",\n\t\t\t\t\"timecreated\":
+        1398567212,\n\t\t\t\t\"personastateflags\": 0\n\t\t\t}\n\t\t]\n\t\t\n\t}\n}"
+    http_version: 
+  recorded_at: Sat, 25 Oct 2014 06:09:33 GMT
+- request:
+    method: get
+    uri: http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=<API_KEY>&steamids=76561198129078372
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 25 Oct 2014 06:09:34 GMT
+      Expires:
+      - Sat, 25 Oct 2014 06:09:34 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '846'
+    body:
+      encoding: UTF-8
+      string: "{\n\t\"response\": {\n\t\t\"players\": [\n\t\t\t{\n\t\t\t\t\"steamid\":
+        \"76561198129078372\",\n\t\t\t\t\"communityvisibilitystate\": 3,\n\t\t\t\t\"profilestate\":
+        1,\n\t\t\t\t\"personaname\": \"Red Music\",\n\t\t\t\t\"lastlogoff\": 1414208775,\n\t\t\t\t\"profileurl\":
+        \"http://steamcommunity.com/id/redmusic/\",\n\t\t\t\t\"avatar\": \"http://media.steampowered.com/steamcommunity/public/images/avatars/62/6247ab60cd33963bb4245c640d43a8daf38874f2.jpg\",\n\t\t\t\t\"avatarmedium\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/62/6247ab60cd33963bb4245c640d43a8daf38874f2_medium.jpg\",\n\t\t\t\t\"avatarfull\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/62/6247ab60cd33963bb4245c640d43a8daf38874f2_full.jpg\",\n\t\t\t\t\"personastate\":
+        1,\n\t\t\t\t\"realname\": \"Fernando Chavez\",\n\t\t\t\t\"primaryclanid\":
+        \"103582791429521408\",\n\t\t\t\t\"timecreated\": 1394428021,\n\t\t\t\t\"personastateflags\":
+        0\n\t\t\t}\n\t\t]\n\t\t\n\t}\n}"
+    http_version: 
+  recorded_at: Sat, 25 Oct 2014 06:09:34 GMT
+- request:
+    method: get
+    uri: http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=<API_KEY>&steamids=76561198122509603
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 25 Oct 2014 06:09:36 GMT
+      Expires:
+      - Sat, 25 Oct 2014 06:09:36 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '826'
+    body:
+      encoding: UTF-8
+      string: "{\n\t\"response\": {\n\t\t\"players\": [\n\t\t\t{\n\t\t\t\t\"steamid\":
+        \"76561198122509603\",\n\t\t\t\t\"communityvisibilitystate\": 3,\n\t\t\t\t\"profilestate\":
+        1,\n\t\t\t\t\"personaname\": \"Ben Dover\",\n\t\t\t\t\"lastlogoff\": 1410207191,\n\t\t\t\t\"profileurl\":
+        \"http://steamcommunity.com/profiles/76561198122509603/\",\n\t\t\t\t\"avatar\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/44/44aa0ce2d9b3e94bdcc5bfd39914273468b78030.jpg\",\n\t\t\t\t\"avatarmedium\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/44/44aa0ce2d9b3e94bdcc5bfd39914273468b78030_medium.jpg\",\n\t\t\t\t\"avatarfull\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/44/44aa0ce2d9b3e94bdcc5bfd39914273468b78030_full.jpg\",\n\t\t\t\t\"personastate\":
+        0,\n\t\t\t\t\"primaryclanid\": \"103582791429521408\",\n\t\t\t\t\"timecreated\":
+        1389413305,\n\t\t\t\t\"personastateflags\": 0\n\t\t\t}\n\t\t]\n\t\t\n\t}\n}"
+    http_version: 
+  recorded_at: Sat, 25 Oct 2014 06:09:36 GMT
+- request:
+    method: get
+    uri: http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=<API_KEY>&steamids=76561198072218295
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 25 Oct 2014 06:09:38 GMT
+      Expires:
+      - Sat, 25 Oct 2014 06:09:38 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '943'
+    body:
+      encoding: UTF-8
+      string: "{\n\t\"response\": {\n\t\t\"players\": [\n\t\t\t{\n\t\t\t\t\"steamid\":
+        \"76561198072218295\",\n\t\t\t\t\"communityvisibilitystate\": 3,\n\t\t\t\t\"profilestate\":
+        1,\n\t\t\t\t\"personaname\": \"Project Silverback\",\n\t\t\t\t\"lastlogoff\":
+        1414122150,\n\t\t\t\t\"profileurl\": \"http://steamcommunity.com/profiles/76561198072218295/\",\n\t\t\t\t\"avatar\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/64/64c79c2d915d671c41c6afa31a5d476e10ae7646.jpg\",\n\t\t\t\t\"avatarmedium\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/64/64c79c2d915d671c41c6afa31a5d476e10ae7646_medium.jpg\",\n\t\t\t\t\"avatarfull\":
+        \"http://media.steampowered.com/steamcommunity/public/images/avatars/64/64c79c2d915d671c41c6afa31a5d476e10ae7646_full.jpg\",\n\t\t\t\t\"personastate\":
+        3,\n\t\t\t\t\"realname\": \"Justin Baker\",\n\t\t\t\t\"primaryclanid\": \"103582791433821536\",\n\t\t\t\t\"timecreated\":
+        1348441979,\n\t\t\t\t\"personastateflags\": 0,\n\t\t\t\t\"loccountrycode\":
+        \"US\",\n\t\t\t\t\"locstatecode\": \"CA\",\n\t\t\t\t\"loccityid\": 412\n\t\t\t}\n\t\t]\n\t\t\n\t}\n}"
+    http_version: 
+  recorded_at: Sat, 25 Oct 2014 06:09:38 GMT
+recorded_with: VCR 2.9.3

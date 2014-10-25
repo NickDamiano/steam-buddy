@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141024160117) do
+ActiveRecord::Schema.define(version: 20141025025414) do
 
   create_table "friend_games", force: true do |t|
     t.datetime "created_at"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20141024160117) do
     t.integer  "primary_clan_id"
     t.datetime "time_created"
     t.string   "loc_country_code"
+    t.integer  "user_id"
   end
 
   create_table "game_genres", force: true do |t|
