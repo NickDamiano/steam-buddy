@@ -23,7 +23,7 @@ RSpec.describe SteamRepo do
         url = "    "
         hash = SteamRepo.get_user_summary(url)
         expect(hash[:success?]).to be false
-        expect(hash[:error]).to eq("Invalid Steam name")
+        expect(hash[:error]).to eq("Invalid Steam URL")
       end
     end
 
@@ -32,7 +32,7 @@ RSpec.describe SteamRepo do
         url = "http://steamcommunity.com/id/blitzcat/home"
         hash = SteamRepo.get_user_summary(url)
         expect(hash[:success?]).to be false
-        expect(hash[:error]).to eq("The specified profile is private.")
+        expect(hash[:error]).to eq("The specified URL has a private profile.")
       end
     end
   end
