@@ -1,5 +1,10 @@
 <%= form_tag("/filters/#{@id}", method: 'post', :id => "filter") do %>
-	<%= label_tag(:filter, "Multiplayer") %>
-	<%= check_box("filters", "multiplayer", {checked: false}) %>
+	<%= label_tag(:filter, "Multiplayer?") %>
+	<%= check_box("filters", "multiplayer", {checked: false}) %></br>
+	<%= label_tag(:filter, "Select Genres") %></br>
+	<% @genres.each do |genre| %>
+		<%= label_tag(:filter, genre) %>
+		<%= check_box("genres", genre, {checked: false}) %></br>
+	<% end %>
 	<%= submit_tag("Submit") %>
 <% end %> 
