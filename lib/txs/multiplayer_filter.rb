@@ -1,11 +1,10 @@
 class MultiplayerFilter
   def self.run(user, num)
     if num == "1"
-      mp = true
+      pool = user.games.where(multiplayer: true)
     else
-      mp = false
+      pool = user.games
     end
-    pool = user.games.where(multiplayer: mp)
     return {
       success?: true,
       pool: pool
