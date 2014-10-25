@@ -10,6 +10,6 @@ class FilterController < ApplicationController
     pool = MultiplayerFilter.run(user, params[:filters][:multiplayer])[:pool]
     pool = GenresFilter.run(pool, params[:genres])
     game = pool.sample
-    redirect_to "/result/#{game.steam_appid}"
+    redirect_to "/result/#{game.steam_appid}/#{user.steam_id_64}"
   end
 end

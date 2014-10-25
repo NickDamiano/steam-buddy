@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   get '/users/:name', to: 'user#index'
   get '/filters/:id', to: 'filter#index'
   post '/filters/:id', to: 'filter#apply_filters'
-  get '/result/:id', to: 'home#show'
+  get '/result/:id/:user_id', to: 'home#show'
 end
