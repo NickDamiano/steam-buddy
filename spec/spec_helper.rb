@@ -1,11 +1,10 @@
 require 'vcr'
-
 require 'rails_helper.rb'
-require_relative '../lib/repos/steam_repo.rb'
-# require_relative '../lib/txs/save_user.rb'
 require_relative '../lib/txs/get_games_not_assigned.rb'
 require_relative '../lib/txs/find_new_games.rb'
 require_relative '../lib/txs/assign_games_to_user.rb'
+require_relative '../lib/txs/multiplayer_filter.rb'
+require_relative '../lib/repos/steam_repo.rb'
 require_relative '../lib/repos/friend_repo.rb'
 
 VCR.configure do |c|

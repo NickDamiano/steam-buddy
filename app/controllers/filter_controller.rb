@@ -1,17 +1,14 @@
 class FilterController < ApplicationController
   def index
+    user = User.find_by(steam_id_64: params[:id])
     @id = params[:id]
+    @genres = FindGenres.run(user)
   end
 
   def apply_filters
-    multiplayer = params[:filters][:multiplayer]
-    if multiplayer == "1"
-      multiplayer = true
-    else
-      multiplayer = false
-    end
     user = User.find_by(steam_id_64: params[:id])
-    pool = user.games.where(multiplayer: multiplayer)
+    pool = MultiplayerFilter.run(user, params[:filters][:multiplayer])[:pool]
+    pool = GenresFilter.run(pool, params[:genres])
     game = pool.sample
     redirect_to "/result/#{game.steam_appid}"
   end
