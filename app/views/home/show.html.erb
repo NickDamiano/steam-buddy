@@ -1,45 +1,41 @@
+<h2><%= @game.name %></h2>
+<img src="<%= @game.header_image %>">
+<p>You have played this game for <%=@playtime%> minute(s)</p>
 <div class="row">
-  <div class="col-md-3"></div>
-  <div class="col-md-6">
-	<%= @game.name %>
-	<img src="<%= @game.header_image %>">
-	<p>You have played this game for <%=@playtime%> minute(s)</p>
+<div id="carousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+  <% @screenshots.each_with_index do |ss, i| %>
+  	<% if i == 0 %>
+  		<li data-target="#carousel" data-slide-to="0" class="active"></li>
+  	<% else %>
+  		<li data-target="#carousel" data-slide-to="<%=i%>"></li>
+  	<% end %>
+  <% end %>
+  </ol>
 
-	<div id="carousel" class="carousel slide" data-ride="carousel">
-	  <!-- Indicators -->
-	  <ol class="carousel-indicators">
-	  <% @screenshots.each_with_index do |ss, i| %>
-	  	<% if i == 0 %>
-	  		<li data-target="#carousel" data-slide-to="0" class="active"></li>
-	  	<% else %>
-	  		<li data-target="#carousel" data-slide-to="<%=i%>"></li>
-	  	<% end %>
-	  <% end %>
-	  </ol>
-
-	  <!-- Wrapper for slides -->
-	  <div class="carousel-inner">
-	  	<% @screenshots.each_with_index do |ss, i| %>
-	  		<% if i == 0 %>
-	  		<div class='item active'>
-				<img src="<%= ss.url %>" alt="<%=@game.name%>">
-			</div>
-	  		<% else %>
-	  		<div class='item'>
-				<img src="<%= ss.url %>" alt="<%=@game.name%>">
-			</div>
-			<% end %>
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+  	<% @screenshots.each_with_index do |ss, i| %>
+  		<% if i == 0 %>
+  		<div class='item active'>
+			<img src="<%= ss.url %>" alt="<%=@game.name%>">
+		</div>
+  		<% else %>
+  		<div class='item'>
+			<img src="<%= ss.url %>" alt="<%=@game.name%>">
+		</div>
 		<% end %>
-	  </div>
-
-	  <!-- Controls -->
-	  <a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
-	    <span class="glyphicon glyphicon-chevron-left"></span>
-	  </a>
-	  <a class="right carousel-control" href="#carousel" role="button" data-slide="next">
-	    <span class="glyphicon glyphicon-chevron-right"></span>
-	  </a>
-	</div>
+	<% end %>
   </div>
-  <div class="col-md-3"></div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div>
+</div>
 </div>
