@@ -40,6 +40,24 @@ RSpec.describe FriendRepo do
       end
     end
   end
+
+  describe '.get_friend_games' do 
+    it 'should save a list of games connected to friend when one of the friends is private' do 
+      VCR.use_cassette('get_friend_games_when_private') do
+        friends = []
+        friend_ids = ["76561197964282412", "76561197970623174", "76561198002572492"] 
+        friend_ids.each do |friend|
+          friends.push(Friend.create(:steam_id_64 => friend))
+        end
+
+        hash = FriendRepo.get_friends_games(friends)
+
+        expect(hash[:success?]).to be true
+        expect(hash[:friends_games]).to_not be nil
+      end
+    end
+  end
+  
   describe 'compare_friends_games' do 
     it 'should get a list of friends ids from steam api' do 
       VCR.use_cassette('compare_user_friends') do
