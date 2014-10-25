@@ -1,4 +1,4 @@
-<%= form_tag("/filters", method: 'post', :id => "filter") do %>
+<%= form_tag("/filters/#{@id}", method: 'post', :id => "filter") do %>
 	<%= label_tag(:filter, "Multiplayer") %>
 	<%= check_box("filters", "multiplayer", {checked: false}) %>
 	<%= submit_tag("Submit") %>
