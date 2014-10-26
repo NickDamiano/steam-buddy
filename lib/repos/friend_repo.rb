@@ -105,7 +105,6 @@ class FriendRepo
     # user_games_objects.each do |game_obj|
     #   user_games.push(game_obj.steam_appid)
     # end
-    binding.pry
     user_games = []
     common_games = friends_games.first[1]
     friends_games.each do |id, games|
