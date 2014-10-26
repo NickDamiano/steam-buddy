@@ -1,0 +1,32 @@
+
+[1mFrom:[0m /home/vagrant/code/mks/steam-game-picker/app/controllers/home_controller.rb @ line 37 HomeController#main:
+
+    [1;34m19[0m: [32mdef[0m [1;34mmain[0m
+    [1;34m20[0m:   @user_name = params[[33m:user[0m]
+    [1;34m21[0m:   user_hash = [1;34;4mSteamRepo[0m.get_user_summary(@user_name)
+    [1;34m22[0m: 
+    [1;34m23[0m:   [32mif[0m !user_hash[[33m:success?[0m]
+    [1;34m24[0m:     @error = user_hash[[33m:error[0m]
+    [1;34m25[0m:     @user_text = params[[33m:user[0m]
+    [1;34m26[0m:     render [33m:index[0m [32mand[0m [32mreturn[0m
+    [1;34m27[0m:   [32mend[0m
+    [1;34m28[0m:   db_check = [1;34;4mSaveUser[0m.checkDb(user_hash[[33m:profile[0m][[31m[1;31m"[0m[31msteamID64[1;31m"[0m[31m[0m])
+    [1;34m29[0m:   user_to_save = [31m[1;31m"[0m[31m[1;31m"[0m[31m[0m
+    [1;34m30[0m:   [32mif[0m db_check[[33m:success?[0m]
+    [1;34m31[0m:     user_to_save = db_check[[33m:result[0m]
+    [1;34m32[0m:   [32melse[0m
+    [1;34m33[0m:     user_to_save = [1;34;4mUser[0m.new
+    [1;34m34[0m:   [32mend[0m
+    [1;34m35[0m:   save_result = [1;34;4mSaveUser[0m.save(user_to_save, user_hash)
+    [1;34m36[0m:   binding.pry 
+ => [1;34m37[0m:   [1;34m1[0m
+    [1;34m38[0m:   [1;34m#get friends list[0m
+    [1;34m39[0m:   friends_hash = [1;34;4mFriendRepo[0m.get_friends(user_hash[[33m:profile[0m][[31m[1;31m"[0m[31msteamID64[1;31m"[0m[31m[0m])
+    [1;34m40[0m:   [1;34m#save friends into repo[0m
+    [1;34m41[0m:   friends_objects = [1;34;4mFriendRepo[0m.save_friends
+    [1;34m42[0m:   binding.pry
+    [1;34m43[0m:   [1;34m1[0m
+    [1;34m44[0m: 
+    [1;34m45[0m:   redirect_to [31m[1;31m"[0m[31m/games/#{save_result[:result].steam_id_64}[0m[31m[1;31m"[0m[31m[0m
+    [1;34m46[0m: [32mend[0m
+

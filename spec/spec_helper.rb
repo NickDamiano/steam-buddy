@@ -6,6 +6,7 @@ require_relative '../lib/txs/assign_games_to_user.rb'
 require_relative '../lib/txs/multiplayer_filter.rb'
 require_relative '../lib/repos/steam_repo.rb'
 require_relative '../lib/repos/friend_repo.rb'
+require_relative '../app/controllers/friend_controller.rb'
 
 VCR.configure do |c|
   c.filter_sensitive_data("<API_KEY>") { ENV["STEAM_KEY"] }

@@ -25,3 +25,10 @@
 		});
 	})
 </script>
+<div>
+	<ol>
+		<% @friends.each do |friend| %>
+			<li><%= friend.persona_name %></li>
+		<% end %>
+	</ol>
+</div>
