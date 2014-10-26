@@ -4,12 +4,25 @@
 			<%= check_box("filters", "multiplayer", {checked: false}) %>
 			<%= label_tag(:filters, "Multiplayer Only") %>
 		</div>
+		<div class="checkbox">
+			<%= check_box("filters", "singleplayer", {checked: false}) %>
+			<%= label_tag(:filters, "Singleplayer Only") %>
+		</div>
 	<div class="form-group">
 		<%= label_tag(:filter, "Select Genres +", class: 'genre-label') %>
 			<% @genres.each do |genre| %>
 				<div class="genres checkbox">
 					<%= check_box("genres", genre, {checked: false}) %>
 					<%= label_tag(:genres, genre) %>
+				</div>
+			<% end %>
+	</div>
+	<div class="form-group">
+		<%= label_tag(:filter, "Select friends +", class: 'friend-label') %>
+			<% @friends.each do |friend| %>
+				<div class="friends checkbox">
+					<%= check_box("friends", friend.persona_name, {checked: false}) %>
+					<%= label_tag(:friends, friend.persona_name) %>
 				</div>
 			<% end %>
 	</div>
@@ -23,12 +36,9 @@
 		$('.genre-label').on('click', function() {
 			$('.genres').slideToggle();
 		});
+		$('.friends').slideUp();
+		$('.friend-label').on('click', function() {
+			$('.friends').slideToggle();
+		});
 	})
 </script>
-<div>
-	<ol>
-		<% @friends.each do |friend| %>
-			<li><%= friend.persona_name %></li>
-		<% end %>
-	</ol>
-</div>
