@@ -6,11 +6,15 @@
 	margin-right: 2em;
 }
 
-.genre-label, .friend-label {
+.genre-label, .friend-label, .filter-error {
 	margin-left: 1em;
 }
 
 .filter-submit  {
 	margin-left: 1em;
 	margin-bottom: 1em;
+}
+
+.filter-error {
+	color: red
 }

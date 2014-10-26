@@ -14,7 +14,12 @@ class FilterController < ApplicationController
    friends_games = FriendRepo.get_friends_games(friends)
    pool = FriendRepo.compare_friends_games(friends_games[:friends_games], pool)[:games]
    pool = GenresFilter.run(pool, params[:genres])
-   game = pool.sample
-   redirect_to "/result/#{game.steam_appid}/#{user.steam_id_64}"
+   if pool.empty?
+    flash[:alert] = "No games matched these filters"
+    redirect_to :back
+   else
+    game = pool.sample
+    redirect_to "/result/#{game.steam_appid}/#{user.steam_id_64}"
+   end
  end
 end
