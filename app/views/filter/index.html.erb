@@ -1,8 +1,8 @@
 <div class="row filter-form-container">
 <%= form_tag("/filters/#{@id}", method: 'post', :id => "filter") do %>
 		<div class="checkbox">
-			<%= check_box("filter", "multiplayer", {checked: false}) %>
-			<%= label_tag(:filter, "Multiplayer Only") %>
+			<%= check_box("filters", "multiplayer", {checked: false}) %>
+			<%= label_tag(:filters, "Multiplayer Only") %>
 		</div>
 	<div class="form-group">
 		<%= label_tag(:filter, "Select Genres +", class: 'genre-label') %>
