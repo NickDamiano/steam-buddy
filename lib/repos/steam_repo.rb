@@ -20,7 +20,7 @@ class SteamRepo
     rescue
       return {
         success?: false,
-        error: "Something wen't wrong"
+        error: "Something went wrong"
       }
     end
     response_hash = Hash.from_xml(response.gsub("\n", ""))
