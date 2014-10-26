@@ -66,10 +66,11 @@ class FriendRepo
 
   def self.get_friends_games(friends)
     #only calls this if user selects friends in filter
+    #maybe make this so the friends are db objects
     friends_games = {}
     friends.each do |friend|
       games_list = []
-      url = "http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=#{ENV['STEAM_KEY']}&steamid=#{friend.steam_id_64}&format=json"
+      url = "http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=#{ENV['STEAM_KEY']}&steamid=#{friend}&format=json"
       begin
         response = open(url).read
       rescue OpenURI::HTTPError
@@ -82,25 +83,40 @@ class FriendRepo
       #check to see if user is private and empty hash is returned
       if games["response"] == {}
         #skip loop iteration
+        #add to private array to return to tell user friend was private
         next
       end
       games["response"]["games"].each do |game|
         games_list.push(game["appid"])
       end
-      friends_games[friend.steam_id_64] = games_list
+      friends_games[friend] = games_list
     end
     return {
       success?: true, 
       friends_games: friends_games
-      #returns data structure {1343434343 => [3434324,2342342]}
+      #returns data structure [{1343434343 => [3434324,2342342]}]
+      #go through the friends games and find common games
     }
   end
 
-  def self.compare_friends_games(friends_games, user_games)
-#     common = []
-# (friend1 & friend2 & friend3).each {|i| common.push(i)}
-    friends_games.each do |key, friend|
-      user_games = user_games & friend
+  def self.compare_friends_games(friends_games, user_games_objects)
+#     user_games_objects = [dbObject, dbObject]
+# => friends_games = {34343=>[343,343]}
+    # user_games_objects.each do |game_obj|
+    #   user_games.push(game_obj.steam_appid)
+    # end
+    binding.pry
+    user_games = []
+    common_games = friends_games.first[1]
+    friends_games.each do |id, games|
+      common_games =  common_games && games
+    end
+    user_games_objects.each do |game_obj|
+      common_games.each do |game_id|
+        if game_id == game_obj.steam_appid
+          user_games.push(game_obj)
+        end
+      end
     end
 
     return {success?: true, games: user_games}
