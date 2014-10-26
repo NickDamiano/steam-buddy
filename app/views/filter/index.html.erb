@@ -23,7 +23,10 @@
 		});
 	})
 </script>
-
-<% @friends_hash.each do |friend| %>
-	<%= friend %>
-<% end %>
+<div>
+	<ol>
+		<% @friends.each do |friend| %>
+			<li><%= friend.persona_name %></li>
+		<% end %>
+	</ol>
+</div>
