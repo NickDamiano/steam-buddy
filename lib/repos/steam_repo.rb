@@ -12,11 +12,15 @@ class SteamRepo
         url = "http://#{url}"
       end
       response = open("#{url}/?xml=1").read
-
     rescue URI::InvalidURIError
       return {
         success?: false,
         error: "Invalid Steam URL"
+      }
+    rescue
+      return {
+        success?: false,
+        error: "Something wen't wrong"
       }
     end
     response_hash = Hash.from_xml(response.gsub("\n", ""))

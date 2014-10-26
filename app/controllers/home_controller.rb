@@ -19,7 +19,6 @@ class HomeController < ApplicationController
   def main
     @user_name = params[:user]
     user_hash = SteamRepo.get_user_summary(@user_name)
-
     if !user_hash[:success?]
       @error = user_hash[:error]
       @user_text = params[:user]

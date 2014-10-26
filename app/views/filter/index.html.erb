@@ -23,7 +23,7 @@
 				</div>
 			<% end %>
 	</div>
-	<%= submit_tag("Submit", class: "filter-submit") %>
+	<%= submit_tag("Submit", class: "filter-submit loading") %>
 <% end %> 
 </div>
 </div>
@@ -38,5 +38,8 @@
 		$('.friend-label').on('click', function() {
 			$('.friends').slideToggle();
 		});
-	})
+		$('.loading').on('click', function() {
+			$(this).prop('value', 'Loading...');
+		});
+	});
 </script>

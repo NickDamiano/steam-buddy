@@ -48,6 +48,13 @@
   <h3 class="reselect-filters text">Didn't like this choice?</h3>
   <p class="reselect-filters text">You can reselect your filters!</p>
   <%= form_tag("/filters/#{@user.steam_id_64}", method: 'get', class: "reselect-filters") do %>
-    <%= submit_tag("Reselect Filters", class: "btn btn-default reselect-form-btn") %>
+    <%= submit_tag("Reselect Filters", class: "btn btn-default reselect-form-btn loading") %>
   <% end %>
 </div>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('.loading').on('click', function() {
+      $(this).prop('value', 'Loading...');
+    });
+  });
+</script>
