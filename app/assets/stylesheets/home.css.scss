@@ -8,7 +8,21 @@
 	color: white;
 	font-size: 7em;
 	margin: 40px;
-	font-family: 'Oswald', sans-serif;
+}
+
+.statistics {
+	text-align: center;
+}
+
+.screenshots-title {
+	text-align: center;
+}
+
+.game-header {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 1em;
 }
 
 .main-content {
@@ -50,4 +64,8 @@
 	margin-left: 1.5em;
 	margin-bottom: 1em;
 	margin-top: 1em;
+}
+
+.game-title {
+	text-align: center;
 }

@@ -18,6 +18,10 @@
 @import "bootstrap";
 @import url(http://fonts.googleapis.com/css?family=Oswald);
 
+* {
+	font-family: 'Oswald', sans-serif;
+}
+
 html { 
   background: linear-gradient(
       rgba(0, 0, 0, 0.55), 
@@ -41,4 +45,8 @@ html, body, .container {
 
 .checkbox {
 	margin-left: 2em;
+}
+
+.text {
+	color: white;
 }

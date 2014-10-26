@@ -3,23 +3,23 @@
 <%= form_tag("/filters/#{@id}", method: 'post', :id => "filter") do %>
 		<div class="checkbox">
 			<%= check_box("filters", "multiplayer", {checked: false}) %>
-			<%= label_tag(:filters, "Multiplayer Only") %>
+			<%= label_tag(:filters, "Multiplayer Only", class: 'text') %>
 		</div>
 	<div class="form-group">
-		<%= label_tag(:filter, "Select Genres +", class: 'genre-label') %>
+		<%= label_tag(:filter, "Select Genres +", class: 'genre-label text') %>
 			<% @genres.each do |genre| %>
 				<div class="genres checkbox">
 					<%= check_box("genres", genre, {checked: false}) %>
-					<%= label_tag(:genres, genre) %>
+					<%= label_tag(:genres, genre, class: 'text') %>
 				</div>
 			<% end %>
 	</div>
 	<div class="form-group">
-		<%= label_tag(:filter, "Select friends +", class: 'friend-label') %>
+		<%= label_tag(:filter, "Select friends +", class: 'friend-label text') %>
 			<% @friends.each do |friend| %>
 				<div class="friends checkbox">
 					<%= check_box("friends", friend.persona_name, {checked: false}) %>
-					<%= label_tag(:friends, friend.persona_name) %>
+					<%= label_tag(:friends, friend.persona_name, class: 'text') %>
 				</div>
 			<% end %>
 	</div>

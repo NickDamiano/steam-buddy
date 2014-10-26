@@ -1,8 +1,9 @@
 <div class="row main-content">
-<h2><%= @game.name %></h2>
-<img src="<%= @game.header_image %>">
+<h2 class="game-title text"><%= @game.name %></h2>
+<img src="<%= @game.header_image %>" class="game-header">
 </div>
 <div class="row main-content">
+<h3 class="screenshots-title text">Screenshots</h3>
 <div id="carousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
@@ -40,7 +41,7 @@
 </div>
 </div>
 <div class="row main-content">
-  <h4>Your statistics</h4>
-  <p>You have played this game for <%=@playtime%> minute(s)</p>
+  <h3 class="statistics statistics-title text">Your statistics</h3>
+  <p class="statistics text">You have played this game for <%=@playtime%> minute(s)</p>
 </div>
 </div>
