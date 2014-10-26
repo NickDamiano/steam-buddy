@@ -1,32 +1,33 @@
+<div class="row main-content">
 <h2><%= @game.name %></h2>
 <img src="<%= @game.header_image %>">
-<p>You have played this game for <%=@playtime%> minute(s)</p>
-<div class="row">
+</div>
+<div class="row main-content">
 <div id="carousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
   <% @screenshots.each_with_index do |ss, i| %>
-  	<% if i == 0 %>
-  		<li data-target="#carousel" data-slide-to="0" class="active"></li>
-  	<% else %>
-  		<li data-target="#carousel" data-slide-to="<%=i%>"></li>
-  	<% end %>
+    <% if i == 0 %>
+      <li data-target="#carousel" data-slide-to="0" class="active"></li>
+    <% else %>
+      <li data-target="#carousel" data-slide-to="<%=i%>"></li>
+    <% end %>
   <% end %>
   </ol>
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
-  	<% @screenshots.each_with_index do |ss, i| %>
-  		<% if i == 0 %>
-  		<div class='item active'>
-			<img class= "ss" src="<%= ss.url %>" alt="<%=@game.name%>">
-		</div>
-  		<% else %>
-  		<div class='item'>
-			<img src="<%= ss.url %>" alt="<%=@game.name%>">
-		</div>
-		<% end %>
-	<% end %>
+    <% @screenshots.each_with_index do |ss, i| %>
+      <% if i == 0 %>
+      <div class='item active'>
+      <img class= "ss" src="<%= ss.url %>" alt="<%=@game.name%>">
+    </div>
+      <% else %>
+      <div class='item'>
+      <img src="<%= ss.url %>" alt="<%=@game.name%>">
+    </div>
+    <% end %>
+  <% end %>
   </div>
 
   <!-- Controls -->
@@ -37,5 +38,9 @@
     <span class="glyphicon glyphicon-chevron-right"></span>
   </a>
 </div>
+</div>
+<div class="row main-content">
+  <h4>Your statistics</h4>
+  <p>You have played this game for <%=@playtime%> minute(s)</p>
 </div>
 </div>
