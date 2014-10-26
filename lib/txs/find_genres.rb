@@ -1,6 +1,5 @@
 class FindGenres 
   def self.run(user)
-    binding.pry
     pool = []
     user.games.find_each do |game|
       game.genres.each do |genre|

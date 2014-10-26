@@ -4,10 +4,6 @@
 			<%= check_box("filters", "multiplayer", {checked: false}) %>
 			<%= label_tag(:filters, "Multiplayer Only") %>
 		</div>
-		<div class="checkbox">
-			<%= check_box("filters", "singleplayer", {checked: false}) %>
-			<%= label_tag(:filters, "Singleplayer Only") %>
-		</div>
 	<div class="form-group">
 		<%= label_tag(:filter, "Select Genres +", class: 'genre-label') %>
 			<% @genres.each do |genre| %>

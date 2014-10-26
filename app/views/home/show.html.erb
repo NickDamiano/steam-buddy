@@ -19,7 +19,7 @@
   	<% @screenshots.each_with_index do |ss, i| %>
   		<% if i == 0 %>
   		<div class='item active'>
-			<img src="<%= ss.url %>" alt="<%=@game.name%>">
+			<img class= "ss" src="<%= ss.url %>" alt="<%=@game.name%>">
 		</div>
   		<% else %>
   		<div class='item'>

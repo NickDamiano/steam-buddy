@@ -3,7 +3,11 @@
 </header>
 
 <%= form_tag("/main", method: 'post', :id => "id1") do %>
-<div class="form-group">
+<% if @error %>
+	<div class="form-group has-error has-feedback">
+<% else %>
+	<div class="form-group">
+<% end %>
 	<% if @error %>
 		 <%= text_field_tag :user, @user_text, 
 		 :size => "35 X 10", class: "form-control"
@@ -14,11 +18,11 @@
 		 :size => "35 X 10", class: "form-control"
 		 %>
 	<% end %>
+	<% if @error %>
+		<p class="error"><%= @error %></p>
+	<% end %>
 </div>
-	<%= submit_tag("Submit", class: "btn btn-default") %>
-<% end %>
-<% if @error %>
-	<p><%= @error %></p>
+	<%= submit_tag("Submit", class: "btn btn-default initial-form-btn") %>
 <% end %>
 <div id='profile_suggestion'>
 	<a href='steam://url/SteamIDControlPage'>Look up your profile id (opens steam profile page - link at top)</a>
