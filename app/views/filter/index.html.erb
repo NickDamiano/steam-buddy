@@ -18,7 +18,7 @@
 		<%= label_tag(:filter, "Select friends +", class: 'friend-label text') %>
 			<% @friends.each do |friend| %>
 				<div class="friends checkbox">
-					<%= check_box("friends", friend.persona_name, {checked: false}) %>
+					<%= check_box("friends", friend.steam_id_64, {checked: false}) %>
 					<%= label_tag(:friends, friend.persona_name, class: 'text') %>
 				</div>
 			<% end %>

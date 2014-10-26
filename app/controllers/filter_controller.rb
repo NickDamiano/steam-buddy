@@ -4,6 +4,7 @@ class FilterController < ApplicationController
     @id = params[:id]
     @genres = FindGenres.run(user)
     @friends = User.find_by(steam_id_64: params[:id]).friends
+    
   end
 
   def apply_filters
