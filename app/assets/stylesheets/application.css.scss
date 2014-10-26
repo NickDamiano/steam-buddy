@@ -16,3 +16,24 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+html { 
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.55), 
+      rgba(0, 0, 0, 0.55)
+    ), url(gamelayoutdesign.jpg) no-repeat center center fixed; 
+  background-size: cover;
+}
+
+body {
+	background-color: transparent;
+}
+
+html, body, .container {
+	height: 100%;
+	width: 100%;
+}
+
+.home-form {
+	height: 100%;
+}
