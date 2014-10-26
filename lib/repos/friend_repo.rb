@@ -49,10 +49,13 @@ class FriendRepo
     end
     #after this loop we have all the friends from their friends list inside of new_friend_data in the same format as above
     friends_obj = []
+    existing_friends_in_db = user.friends
     new_friend_data.each do |friend_id, friend_data|
-      id = friend_id
+      id = friend_id.to_i
       name = friend_data[:name]
-      friends_obj.push(user.friends.create(:steam_id_64 => id, :persona_name => name))
+      if Friend.find_by(:steam_id_64 => id) == nil
+        friends_obj.push(user.friends.create(:steam_id_64 => id, :persona_name => name))        
+      end
     end
     #after this loop we have friends_obj as an array of db objects
     return {
