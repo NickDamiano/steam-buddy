@@ -1,8 +1,8 @@
 <header>
 	<h1 class="main-header">Steam Buddy</h1>
 </header>
-
-<%= form_tag("/main", method: 'post', :id => "id1") do %>
+<div class="row main-content">
+<%= form_tag("/main", method: 'post', :id => "id1", class: "name-form") do %>
 <% if @error %>
 	<div class="form-group has-error has-feedback">
 <% else %>
@@ -25,5 +25,6 @@
 	<%= submit_tag("Submit", class: "btn btn-default initial-form-btn") %>
 <% end %>
 <div id='profile_suggestion'>
-	<a href='steam://url/SteamIDControlPage'>Look up your profile id (opens steam profile page - link at top)</a>
+	<a href='steam://url/SteamIDControlPage'><p class="steam-lookup">Look up your profile id (opens steam profile page - link at top)</p></a>
+</div>
 </div>

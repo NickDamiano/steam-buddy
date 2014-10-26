@@ -6,8 +6,9 @@
 .main-header {
 	text-align: center;
 	color: white;
-	font-size: 4em;
+	font-size: 7em;
 	margin: 40px;
+	font-family: 'Oswald', sans-serif;
 }
 
 .main-content {
@@ -37,4 +38,16 @@
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.name-form {
+	margin-left: 1.5em;
+	margin-right: 1.5em;
+	margin-top: 1.5em
+}
+
+.steam-lookup {
+	margin-left: 1.5em;
+	margin-bottom: 1em;
+	margin-top: 1em;
 }

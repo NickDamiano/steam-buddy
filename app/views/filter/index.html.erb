@@ -1,4 +1,5 @@
-<div class="row filter-form-container">
+<div class="row main-content">
+<div class="filter-form-container">
 <%= form_tag("/filters/#{@id}", method: 'post', :id => "filter") do %>
 		<div class="checkbox">
 			<%= check_box("filters", "multiplayer", {checked: false}) %>
@@ -24,6 +25,7 @@
 	</div>
 	<%= submit_tag("Submit") %>
 <% end %> 
+</div>
 </div>
 
 <script type="text/javascript">
