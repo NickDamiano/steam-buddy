@@ -1,4 +1,4 @@
-RSpec.describe FriendRepo do 
+ RSpec.describe FriendRepo do 
   describe '.get_friends' do 
     it 'should get a list of friends ids from steam api' do 
       VCR.use_cassette('get_user_friends') do

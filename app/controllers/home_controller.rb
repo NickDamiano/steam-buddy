@@ -19,6 +19,7 @@ class HomeController < ApplicationController
   def main
     @user_name = params[:user]
     user_hash = SteamRepo.get_user_summary(@user_name)
+
     if !user_hash[:success?]
       @error = user_hash[:error]
       @user_text = params[:user]
@@ -32,7 +33,13 @@ class HomeController < ApplicationController
       user_to_save = User.new
     end
     save_result = SaveUser.save(user_to_save, user_hash)
-
+    #get friends list
+    friends_hash = FriendRepo.get_friends(user_hash[:profile]["steamID64"])
+    #save friends into repo
+    user = save_result[:result]
+    friends = friends_hash[:friends]
+    friends_objects = FriendRepo.save_friends(user, friends)
+    #friend_objects contains the database entries for all friends of user
     redirect_to "/games/#{save_result[:result].steam_id_64}"
   end
 end
