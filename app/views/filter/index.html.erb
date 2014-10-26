@@ -6,7 +6,7 @@
 <%= form_tag("/filters/#{@id}", method: 'post', :id => "filter") do %>
 		<div class="checkbox">
 			<%= check_box("filters", "multiplayer", {checked: false}) %>
-			<%= label_tag(:filters, "Multiplayer Only", class: 'text') %>
+			<%= label_tag(:filters, "Must Include Multiplayer", class: 'text') %>
 		</div>
 	<div class="form-group">
 		<%= label_tag(:filter, "Select Genres +", class: 'genre-label text') %>
@@ -18,7 +18,7 @@
 			<% end %>
 	</div>
 	<div class="form-group">
-		<%= label_tag(:filter, "Select friends +", class: 'friend-label text') %>
+		<%= label_tag(:filter, "Select Friends +", class: 'friend-label text') %>
 			<% @friends.each do |friend| %>
 				<div class="friends checkbox">
 					<%= check_box("friends", friend.steam_id_64, {checked: false}) %>
