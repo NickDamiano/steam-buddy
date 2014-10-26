@@ -44,4 +44,10 @@
   <h3 class="statistics statistics-title text">Your statistics</h3>
   <p class="statistics text">You have played this game for <%=@playtime%> minute(s)</p>
 </div>
+<div class="row main-content">
+  <h3 class="reselect-filters text">Didn't like this choice?</h3>
+  <p class="reselect-filters text">You can reselect your filters!</p>
+  <%= form_tag("/filters/#{@user.steam_id_64}", method: 'get', class: "reselect-filters") do %>
+    <%= submit_tag("Reselect Filters", class: "btn btn-default reselect-form-btn") %>
+  <% end %>
 </div>

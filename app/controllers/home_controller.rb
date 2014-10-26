@@ -6,9 +6,9 @@ class HomeController < ApplicationController
 
   def show
     @game = Game.find_by(steam_appid: params[:id])
-    user = User.find_by(steam_id_64: params[:user_id])
+    @user = User.find_by(steam_id_64: params[:user_id])
     @screenshots = @game.screenshots
-    usergame = Usergame.find_by(game_id: @game.id, user_id: user.id)
+    usergame = Usergame.find_by(game_id: @game.id, user_id: @user.id)
     if usergame.playtime.nil?
       @playtime = 0
     else
