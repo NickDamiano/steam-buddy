@@ -10,6 +10,7 @@ class FilterController < ApplicationController
    user = User.find_by(steam_id_64: params[:id])
    pool = MultiplayerFilter.run(user, params[:filters][:multiplayer])[:pool]
    pool = PlayedFilter.run(user, pool, params[:filters][:played])
+   pool = MetacriticFilter.run(pool, params[:metacritic])[:pool]
    friends = FriendsFilter.run(params[:friends])
    if !friends[:friends_selected].nil?
      friends_games = FriendRepo.get_friends_games(friends[:friends_selected])
