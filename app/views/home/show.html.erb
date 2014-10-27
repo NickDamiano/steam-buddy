@@ -5,6 +5,27 @@
 <h2 class="game-title text"><%= @game.name %></h2>
 <img src="<%= @game.header_image %>" class="game-header">
 </div>
+<div class="row description-row">
+  <button class="btn btn-primary btn-lg about-btn" data-toggle="modal" data-target="#myModal">
+    Learn more about this game
+  </button>
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <h4 class="modal-title" id="myModalLabel"><%= @game.name %></h4>
+        </div>
+        <div class="modal-body">
+          <%=@description%>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="row main-content">
 <h3 class="screenshots-title text">Screenshots</h3>
 <div id="carousel" class="carousel slide" data-ride="carousel">

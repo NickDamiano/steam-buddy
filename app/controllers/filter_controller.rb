@@ -4,14 +4,12 @@ class FilterController < ApplicationController
     @id = params[:id]
     @genres = FindGenres.run(user)
     @friends = User.find_by(steam_id_64: params[:id]).friends
-
   end
 
   def apply_filters
    user = User.find_by(steam_id_64: params[:id])
    pool = MultiplayerFilter.run(user, params[:filters][:multiplayer])[:pool]
    friends = FriendsFilter.run(params[:friends])
-   binding.pry
    if !friends[:friends_selected].nil?
      friends_games = FriendRepo.get_friends_games(friends[:friends_selected])
      pool = FriendRepo.compare_friends_games(friends_games[:friends_games], pool)[:games]
