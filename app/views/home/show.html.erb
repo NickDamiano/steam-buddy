@@ -6,9 +6,15 @@
 <img src="<%= @game.header_image %>" class="game-header">
 </div>
 <div class="row description-row">
-  <button class="btn btn-primary btn-lg about-btn" data-toggle="modal" data-target="#myModal">
+<a href="steam://checksysreqs/<%= @game.steam_appid %>">
+  <button class="btn btn-primary btn-lg show-btn">Can my PC run it?</button>
+  </a>
+  <button class="btn btn-success btn-lg about-btn show-btn" data-toggle="modal" data-target="#myModal">
     Learn more about this game
   </button>
+  <a href="steam://run/<%= @game.steam_appid %>">
+  <button class="btn btn-primary btn-lg show-btn">Launch this game!</button>
+  </a>
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
