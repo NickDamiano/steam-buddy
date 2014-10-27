@@ -14,9 +14,9 @@
 		<div class="checkbox">
 			<%= check_box("filters", "played", {checked: false}) %>
 			<%= label_tag(:filters, "Must be a game I haven't played", class: 'text') %>
-		<div class= "text-field form-group metacritic"> 
-			<%= label_tag(:metacritic, "Metacritic score greater than", class: "text") %>
-			<%= number_field_tag(:metacritic, 0, in: 0..99, class: "form-control")%>
+		<div class= "text-field form-group form-inline metacritic"> 
+			<%= label_tag(:metacritic, "Metacritic score greater than", class: " metacritic-label text") %>
+			<%= number_field_tag(:metacritic, 0, in: 0..99, class: "metacritic-field form-control")%>
 		</div>
 	<div class="form-group">
 		<%= label_tag(:filter, "Select Genres +", class: 'genre-label text') %>
