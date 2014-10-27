@@ -11,6 +11,7 @@ require './lib/txs/multiplayer_filter.rb'
 require './lib/txs/find_genres.rb'
 require './lib/txs/genres_filter.rb'
 require './lib/txs/friends_filter.rb'
+require './lib/txs/played_filter.rb'
 
 require 'rails/all'
 

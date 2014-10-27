@@ -11,6 +11,10 @@
 			<%= check_box("filters", "multiplayer", {checked: false}) %>
 			<%= label_tag(:filters, "Must Include Multiplayer", class: 'text') %>
 		</div>
+		<div class="checkbox">
+			<%= check_box("filters", "played", {checked: false}) %>
+			<%= label_tag(:filters, "Must be a game I haven't played", class: 'text') %>
+		</div>
 	<div class="form-group">
 		<%= label_tag(:filter, "Select Genres +", class: 'genre-label text') %>
 			<% @genres.each do |genre| %>
