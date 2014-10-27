@@ -9,7 +9,8 @@ class FriendsFilter
    end
    if selected_friends == []
     return {friends_selected: nil}
-  else
-   return {friends_selected: selected_friends}
+   else
+    return {friends_selected: selected_friends}
+  end
  end
 end
