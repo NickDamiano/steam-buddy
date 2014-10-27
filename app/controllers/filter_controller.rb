@@ -11,8 +11,11 @@ class FilterController < ApplicationController
    user = User.find_by(steam_id_64: params[:id])
    pool = MultiplayerFilter.run(user, params[:filters][:multiplayer])[:pool]
    friends = FriendsFilter.run(params[:friends])
-   friends_games = FriendRepo.get_friends_games(friends)
-   pool = FriendRepo.compare_friends_games(friends_games[:friends_games], pool)[:games]
+
+   if friends != []
+     friends_games = FriendRepo.get_friends_games(friends[:friends_selected])
+     pool = FriendRepo.compare_friends_games(friends_games[:friends_games], pool)[:games]
+   end
    pool = GenresFilter.run(pool, params[:genres])
    if pool.empty?
     flash[:alert] = "No games matched these filters"

@@ -7,6 +7,9 @@ class FriendsFilter
        selected_friends.push(friend)
      end
    end
-   return selected_friends
+   if selected_friends == []
+    return {friends_selected: nil}
+  else
+   return {friends_selected: selected_friends}
  end
 end
