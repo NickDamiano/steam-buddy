@@ -100,15 +100,10 @@ class FriendRepo
   end
 
   def self.compare_friends_games(friends_games, user_games_objects)
-#     user_games_objects = [dbObject, dbObject]
-# => friends_games = {34343=>[343,343]}
-    # user_games_objects.each do |game_obj|
-    #   user_games.push(game_obj.steam_appid)
-    # end
     user_games = []
     common_games = friends_games.first[1]
     friends_games.each do |id, games|
-      common_games =  common_games && games
+      common_games =  common_games & games
     end
     user_games_objects.each do |game_obj|
       common_games.each do |game_id|
@@ -117,7 +112,6 @@ class FriendRepo
         end
       end
     end
-
     return {success?: true, games: user_games}
   end
 
