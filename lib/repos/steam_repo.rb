@@ -70,7 +70,7 @@ class SteamRepo
     games = []
     steam_appids = []
     until(list.empty?) do
-      chunk = list.pop(10)
+      chunk = list.pop(1)
       chunk = chunk.join(',')
       url = "http://store.steampowered.com/api/appdetails/?appids=#{chunk}"
       begin
