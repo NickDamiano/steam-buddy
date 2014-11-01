@@ -1,5 +1,5 @@
 require 'open-uri'
-require 'JSON'
+require 'json'
 require 'active_support/core_ext/hash'
 
 class SteamRepo

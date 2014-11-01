@@ -24,5 +24,5 @@ production:
     adapter: mysql2
     database: rails
     username: rails
-    password: find_in_ssh_thing
+    password: <%= ENV["PG_KEY"] %>
     host: localhost

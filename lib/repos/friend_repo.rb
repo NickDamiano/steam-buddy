@@ -1,5 +1,5 @@
 require 'open-uri' 
-require 'JSON' 
+require 'json' 
 
 class FriendRepo
   def self.get_friends(user)
