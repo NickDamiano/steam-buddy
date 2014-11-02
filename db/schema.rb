@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141025025414) do
+ActiveRecord::Schema.define(version: 20141102001350) do
 
   create_table "friend_games", force: true do |t|
     t.datetime "created_at"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20141025025414) do
   end
 
   create_table "friends", force: true do |t|
-    t.integer  "steam_id_64"
+    t.integer  "steam_id_64",      limit: 8
     t.string   "persona_name"
     t.string   "profile_url"
     t.string   "avatar"
@@ -38,8 +38,8 @@ ActiveRecord::Schema.define(version: 20141025025414) do
     t.datetime "updated_at"
   end
 
-  add_index "game_genres", ["game_id"], name: "index_game_genres_on_game_id"
-  add_index "game_genres", ["genre_id"], name: "index_game_genres_on_genre_id"
+  add_index "game_genres", ["game_id"], name: "index_game_genres_on_game_id", using: :btree
+  add_index "game_genres", ["genre_id"], name: "index_game_genres_on_genre_id", using: :btree
 
   create_table "games", force: true do |t|
     t.string   "name"
@@ -85,7 +85,7 @@ ActiveRecord::Schema.define(version: 20141025025414) do
   end
 
   create_table "users", force: true do |t|
-    t.integer  "steam_id_64"
+    t.integer  "steam_id_64",        limit: 8
     t.string   "steam_id"
     t.string   "avatar_icon"
     t.boolean  "vac_banned"
@@ -93,7 +93,7 @@ ActiveRecord::Schema.define(version: 20141025025414) do
     t.datetime "member_since"
     t.string   "location"
     t.string   "real_name"
-    t.integer  "primary_group_id"
+    t.integer  "primary_group_id",   limit: 8
     t.string   "primary_group_name"
   end
 
