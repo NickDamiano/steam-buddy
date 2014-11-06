@@ -10,12 +10,9 @@ group :development do
   gem 'hirb'
 end
 
-group :test, :development do
-  gem 'sqlite3'
-end
-
 group :production do
   gem 'mysql2'
+  gem 'puma'
 end
 
 

@@ -4,6 +4,12 @@ require 'active_support/core_ext/hash'
 
 class SteamRepo
   def self.get_user_summary(url)
+    if !url.include?("steamcommunity.")
+      return {
+        success?: false,
+        error: "Invalid URL"
+      }
+    end
     begin
       if url[-5..-1] == "/home"
         url.slice!(-5..-1)

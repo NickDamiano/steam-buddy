@@ -36,9 +36,11 @@ test:
 
 production:
     adapter: mysql2
-    pool: 5
+    pool: 25
     timeout: 50000
     database: rails
     username: rails
     password: <%= ENV["MYSQL_PW"] %>
     host: localhost
+    socket: /var/run/mysqld/mysqld.sock
+    encoding: utf8mb4

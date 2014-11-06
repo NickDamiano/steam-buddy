@@ -43,7 +43,12 @@ class FriendRepo
       end
       json_players = JSON.parse(response)
       json_players["response"]["players"].each do |player|
-        new_friend_data[player["steamid"]] = {:id => player["steamid"], :name => player["personaname"] }
+        if player["communityvisibilitystate"] == 3
+          private_prof = false
+        else
+          private_prof = true
+        end
+        new_friend_data[player["steamid"]] = {:id => player["steamid"], :name => player["personaname"], :private => private_prof }
       end
       #after this loop we have current group of 99 in a hash like {4343939393 => {id: 4343939393, name: Blitzcat}, 34342343 => {id: 34342343, name: japutie}}
     end
@@ -53,8 +58,12 @@ class FriendRepo
     new_friend_data.each do |friend_id, friend_data|
       id = friend_id.to_i
       name = friend_data[:name]
-      if Friend.find_by(:steam_id_64 => id) == nil
-        friends_obj.push(user.friends.create(:steam_id_64 => id, :persona_name => name))        
+      private_prof = friend_data[:private]
+      if user.friends.find_by(steam_id_64: id)  
+        friends_obj.push(user.friends.find_by(steam_id_64: id))
+      else
+        obj = user.friends.create(steam_id_64: id, persona_name: name, private: private_prof)
+        friends_obj.push(obj)      
       end
     end
     #after this loop we have friends_obj as an array of db objects
