@@ -11,10 +11,12 @@ class FilterController < ApplicationController
    pool = MultiplayerFilter.run(user, params[:filters][:multiplayer])[:pool]
    pool = PlayedFilter.run(user, pool, params[:filters][:played])
    pool = MetacriticFilter.run(pool, params[:metacritic])[:pool]
-   friends = FriendsFilter.run(params[:friends])
-   if !friends[:friends_selected].nil?
-     friends_games = FriendRepo.get_friends_games(friends[:friends_selected])
-     pool = FriendRepo.compare_friends_games(friends_games[:friends_games], pool)[:games]
+   if params[:friends]
+     friends = FriendsFilter.run(params[:friends])
+     if !friends[:friends_selected].nil?
+       friends_games = FriendRepo.get_friends_games(friends[:friends_selected])
+       pool = FriendRepo.compare_friends_games(friends_games[:friends_games], pool)[:games]
+     end
    end
    pool = GenresFilter.run(pool, params[:genres])
    if pool.empty?
