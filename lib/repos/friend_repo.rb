@@ -62,8 +62,12 @@ class FriendRepo
       if user.friends.find_by(steam_id_64: id)  
         friends_obj.push(user.friends.find_by(steam_id_64: id))
       else
-        obj = user.friends.create(steam_id_64: id, persona_name: name, private: private_prof)
-        friends_obj.push(obj)      
+        begin
+          obj = user.friends.create(steam_id_64: id, persona_name: name, private: private_prof)
+          friends_obj.push(obj)
+        rescue
+          next
+        end      
       end
     end
     #after this loop we have friends_obj as an array of db objects
