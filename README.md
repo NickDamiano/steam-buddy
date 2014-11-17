@@ -33,4 +33,9 @@ Steam Buddy accesses a Steam user's profile to allow him to select filters befor
   7. Sort through user's games to get a list of genres.
   8. Redirect to the filters page with information about friends and genres.
 
-* Once on the filters page
+* When the user arrives on the filters page, the user selects the appropriate filters and hits submit.
+* Steam Buddy creates an original pool of user games from the database in the form of db objects in an array
+  * This pool gets passed from filter to filter, reducing the pool size, until it finally grabs a random game from the pool that matches all filters. 
+  * It accomplishes this specifically by: 
+     1. Executing the multiplayer filter
+       * Query the database for a list of objects
