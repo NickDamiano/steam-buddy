@@ -53,6 +53,10 @@ Steam Buddy accesses a Steam user's profile to allow him to select filters befor
 * Finally, select a random game from the remaining array of db game objects if there is one, otherwise inform the user no matching games were found. 
 * Present the game to the user on the results page along with a carosel of screenshots, blurb about the game, and links to check pc for requirements and launch the game. Below, the user is also offered the option to return to the filters page and see how many minutes they have played the game. 
        
-## Things about this project that we're proud of
+## Project Highlights and Challenges
 
-## Things we want to fix or add
+## Future Plans
+
+We are working on adding a filter that takes into account how long it takes the beat the game based off howlongtobeat.com
+
+
