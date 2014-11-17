@@ -46,3 +46,12 @@ Steam Buddy accesses a Steam user's profile to allow him to select filters befor
      4. Executing the genres filter
        * Same process for matching genre
      5. Executing the friends filter
+       * This one is a bit different - We first iterate through the friends passed in and do an API call for each to get the list of games they own. All games are added to a hash. The hash data structure has the friend's Steam 64 ID pointing to an array of game ids for the games they own. 
+         * ...
+         * friends_games = { '34395939392' => [343, 3839, 123, 535], '93953535' => [353, 343, 3839, 999, etc]}
+         * ...
+       * 
+       
+## Things about this project that we're proud of
+
+## Things we want to fix or add
