@@ -38,4 +38,7 @@ Steam Buddy accesses a Steam user's profile to allow him to select filters befor
   * This pool gets passed from filter to filter, reducing the pool size, until it finally grabs a random game from the pool that matches all filters. 
   * It accomplishes this specifically by: 
      1. Executing the multiplayer filter
-       * Query the database for a list of objects
+       * If the user selected "includes multiplayer" Steam Buddy queries the database for a list of objects in which multiplayer is true; otherwise, all user games are retrieved from the database and the array of game db objects is returned back from th service layer to be used on the next filter.
+     2. Executing the 'never played' filter
+       * If this filter was selected, the current pool is iterated through and a db query is made for each game to see if its playtime is nil. If so, the game is pushed in to a new pool which is then returned back to the filter controller. If the filter wasn't selected, the original games pool is returned. 
+     3. 
