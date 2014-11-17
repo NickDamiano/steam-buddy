@@ -41,4 +41,8 @@ Steam Buddy accesses a Steam user's profile to allow him to select filters befor
        * If the user selected "includes multiplayer" Steam Buddy queries the database for a list of objects in which multiplayer is true; otherwise, all user games are retrieved from the database and the array of game db objects is returned back from th service layer to be used on the next filter.
      2. Executing the 'never played' filter
        * If this filter was selected, the current pool is iterated through and a db query is made for each game to see if its playtime is nil. If so, the game is pushed in to a new pool which is then returned back to the filter controller. If the filter wasn't selected, the original games pool is returned. 
-     3. 
+     3. Executing the Metacritic filter
+       * The above process is repeated but for metacritic scores. Iterate through games, check db to see if games rating is above the filter number, add them to a new pool. Otherwise if not selected, pass original pool back to controller. 
+     4. Executing the genres filter
+       * Same process for matching genre
+     5. Executing the friends filter
