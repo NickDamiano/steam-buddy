@@ -3,7 +3,7 @@ Steam Buddy
 ###Summary
 Steam Buddy accesses a Steam user's profile to allow him to select filters before being presented one game recommendation from his library
 ###How it works
-* The user enters their steam profile url at [Steam-Buddy.com](steam-buddy.com)
+* The user enters their steam profile url at www.steam-buddy.com
   * If the user doesn't know their profile url, a simple Steam API url link on our page will launch Steam and open their profile page. They can copy it from the top and paste it into Steam Buddy. 
   
 * The User is presented with filters for:
