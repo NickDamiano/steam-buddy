@@ -42,15 +42,16 @@ Steam Buddy accesses a Steam user's profile to allow him to select filters befor
      2. Executing the 'never played' filter
        * If this filter was selected, the current pool is iterated through and a db query is made for each game to see if its playtime is nil. If so, the game is pushed in to a new pool which is then returned back to the filter controller. If the filter wasn't selected, the original games pool is returned. 
      3. Executing the Metacritic filter
-       * The above process is repeated but for metacritic scores. Iterate through games, check db to see if games rating is above the filter number, add them to a new pool. Otherwise if not selected, pass original pool back to controller. 
-     4. Executing the genres filter
-       * Same process for matching genre
-     5. Executing the friends filter
-       * This one is a bit different - We first iterate through the friends passed in and do an API call for each to get the list of games they own. All games are added to a hash. The hash data structure has the friend's Steam 64 ID pointing to an array of game ids for the games they own. 
-         * ...
-         * friends_games = { '34395939392' => [343, 3839, 123, 535], '93953535' => [353, 343, 3839, 999, etc]}
-         * ...
-       * 
+       * The above process is repeated but for metacritic scores. Iterate through games, check db to see if games rating is above the filter number, add them to a new pool. Otherwise if not selected, pass original pool back to controller.
+     4. Executing the friends filter
+       * First, iterate through the friends passed in and do an API call for each to get the list of games they own. All games are added to a hash. The hash data structure has the friend's Steam 64 ID pointing to an array of game ids for the games they own. 
+       * Second, loop through the above hash using the intersection operator to find common games between each friend's array of game ids.
+       * Finally, return the pool of games.
+     5. Executing the genres filter
+       * Look for genre selected within the remaining games that matches user genre, create new pool, push matching games into pool and return it. 
+       
+* Finally, select a random game from the remaining array of db game objects if there is one, otherwise inform the user no matching games were found. 
+* Present the game to the user on the results page along with a carosel of screenshots, blurb about the game, and links to check pc for requirements and launch the game. Below, the user is also offered the option to return to the filters page and see how many minutes they have played the game. 
        
 ## Things about this project that we're proud of
 
