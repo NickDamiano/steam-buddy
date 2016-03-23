@@ -36,6 +36,10 @@ gem 'pry-byebug'
 
 gem 'hirb'
 
+gem 'rails_12factor', group: :production
+
+ruby "2.2.0"
+
 
 
 # Use ActiveModel has_secure_password
