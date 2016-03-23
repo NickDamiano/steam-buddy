@@ -1,5 +1,5 @@
 require 'open-uri' 
-require 'JSON' 
+require 'json' 
 
 class FriendRepo
   def self.get_friends(user)
@@ -25,6 +25,9 @@ class FriendRepo
   end
 
   def self.save_friends(user, friends_array)
+    if friends_array == nil
+       friends_array = []
+    end 
     #user is a db object
     #friends_array is array of player_ids
     new_friend_data = {}

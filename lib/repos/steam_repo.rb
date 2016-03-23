@@ -1,5 +1,5 @@
 require 'open-uri'
-require 'JSON'
+require 'json'
 require 'active_support/core_ext/hash'
 
 class SteamRepo
@@ -70,17 +70,22 @@ class SteamRepo
     games = []
     steam_appids = []
     until(list.empty?) do
-      chunk = list.pop(10)
+      chunk = list.pop(1)
       chunk = chunk.join(',')
       url = "http://store.steampowered.com/api/appdetails/?appids=#{chunk}"
       begin
         response = open(url).read
-      rescue OpenURI::HTTPError
+      rescue OpenURI::HTTPError => e
+        puts "Failed"
+        list.push(chunk)
+        sleep 10
         return {
           success?: false,
           error: "Internal Server Error"
         }
       end
+      sleep 1
+      puts "Worked"
       json_games = JSON.parse(response)
       json_games.each do |id, data|
         games.push(data)
