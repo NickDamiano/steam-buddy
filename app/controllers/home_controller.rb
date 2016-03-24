@@ -17,7 +17,7 @@ class HomeController < ApplicationController
     end
   end
 
-  def main
+  def loading
     @user_name = params[:user]
     Resque.enqueue(Games, @user_name)
     #friend_objects contains the database entries for all friends of user
