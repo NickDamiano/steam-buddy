@@ -21,7 +21,7 @@ localStorage.setItem("steam_id", "<%=@user_id%>")
 
 	    var channel = pusher.subscribe('steam_buddy');
 	    channel.bind('games', function(data) {
-	      //window.location = window.location.origin + "/filters/" + data.id
+	      window.location = window.location.origin + "/filters/" + data.id
 	    });
 
 	    var count = 0;
