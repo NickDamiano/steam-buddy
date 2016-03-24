@@ -1,9 +1,10 @@
 class FilterController < ApplicationController
   def index
-    user = User.find_by(steam_id_64: params[:id])
-    @id = params[:id]
+    id_int = params[:id].to_i
+    user = User.find_by(steam_id_64: id_int)
+    @id = id_int
     @genres = FindGenres.run(user)
-    @friends = User.find_by(steam_id_64: params[:id]).friends
+    @friends = User.find_by(steam_id_64: id_int).friends
   end
 
   def apply_filters

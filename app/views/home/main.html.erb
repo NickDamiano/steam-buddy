@@ -1,3 +1,26 @@
 <script>
 localStorage.setItem("steam_id", "<%=@user_id%>")
 </script>
+
+<div class="row main-content">
+<p class="text" style="text-align: center; font-size:8rem;">Loading your games...</p>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+	    Pusher.log = function(message) {
+	      if (window.console && window.console.log) {
+	        window.console.log(message);
+	      }
+	    };
+
+	    var pusher = new Pusher('715444de2db181b0f68a', {
+	      encrypted: true
+	    });
+
+	    var channel = pusher.subscribe('steam_buddy');
+	    channel.bind('games', function(data) {
+	      window.location = window.location.origin + "/filters/" + data.id
+	    });
+	});
+</script>

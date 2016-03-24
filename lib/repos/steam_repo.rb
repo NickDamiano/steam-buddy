@@ -69,6 +69,8 @@ class SteamRepo
   def self.get_games_descriptions(list)
     games = []
     steam_appids = []
+    i = 0
+    size = list.length
     until(list.empty?) do
       chunk = list.pop(1)
       chunk = chunk.join(',')
@@ -79,13 +81,11 @@ class SteamRepo
         puts "Failed"
         list.push(chunk)
         sleep 10
-        return {
-          success?: false,
-          error: "Internal Server Error"
-        }
+        next
       end
       sleep 1
-      puts "Worked"
+      i = i + 1
+      puts "#{i} out of #{size}"
       json_games = JSON.parse(response)
       json_games.each do |id, data|
         games.push(data)
