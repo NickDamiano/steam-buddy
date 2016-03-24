@@ -3,7 +3,8 @@ localStorage.setItem("steam_id", "<%=@user_id%>")
 </script>
 
 <div class="row main-content">
-<p class="text" style="text-align: center; font-size:8rem;">Loading your games...</p>
+<p class="text loading-text" style="text-align: center; font-size:8rem;">Loading your games</p>
+<p class="text" style="text-align: center; font-size:2rem;">This may take a few minutes. Please don't refresh the page.</p>
 </div>
 
 <script type="text/javascript">
@@ -20,7 +21,19 @@ localStorage.setItem("steam_id", "<%=@user_id%>")
 
 	    var channel = pusher.subscribe('steam_buddy');
 	    channel.bind('games', function(data) {
-	      window.location = window.location.origin + "/filters/" + data.id
+	      //window.location = window.location.origin + "/filters/" + data.id
 	    });
+
+	    var count = 0;
+	    var origText = $('.loading-text').text();
+	    setInterval(function() {
+	    	var str = '';
+	    	var mod = count % 4;
+	    	for (var i = 0; i < mod; i++) {
+	    		str += '.'
+	    	}
+	    	count++;
+	    	$('.loading-text').text(origText + str);
+	    }, 1000);
 	});
 </script>
