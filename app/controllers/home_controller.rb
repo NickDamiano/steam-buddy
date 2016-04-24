@@ -18,10 +18,14 @@ class HomeController < ApplicationController
   end
 
   def loading
-    @user_name = params[:user]
-    Resque.enqueue(Games, @user_name)
-    #friend_objects contains the database entries for all friends of user
-    #redirect_to "/games/#{save_result[:result].steam_id_64}"
-    # return 200
+    user_name = params[:user]
+    user_hash = SteamRepo.get_user_summary(user_name)
+    if !user_hash[:success?]
+      Pusher.trigger("steam_buddy_#{user_hash[:profile]["steamID64"]}", 'error', {
+        message: user_hash[:error]
+      })
+    end
+    Resque.enqueue(Games, user_name)
+    @user_id = user_hash[:profile]["steamID64"]
   end
 end

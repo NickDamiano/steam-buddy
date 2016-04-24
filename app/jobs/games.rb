@@ -4,11 +4,9 @@ class Games
   def self.perform(user_name)
     user_hash = SteamRepo.get_user_summary(user_name)
     if !user_hash[:success?]
-      @error = user_hash[:error]
-      @user_text = params[:user]
-      #render :index and return
-      # display some error
-      puts 'user_hash error'
+      Pusher.trigger("steam_buddy_#{user_hash[:profile]['steamID64']}", 'error', {
+        message: user_hash[:error]
+      })
     end
     db_check = SaveUser.checkDb(user_hash[:profile]["steamID64"])
     user_to_save = ""
@@ -38,7 +36,7 @@ class Games
     to_be_assigned = GetGamesNotAssigned.run(user2, games_response[:games])
     AssignGamesToUser.run(to_be_assigned[:games], user2)
     UpdatePlaytimes.run(user2, games_response[:games], games_response[:playtimes])
-    Pusher.trigger('steam_buddy', 'games', {
+    Pusher.trigger("steam_buddy_#{user_hash[:profile]['steamID64']}", 'games', {
       id: user2.steam_id_64.to_s
     })
   end
