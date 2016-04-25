@@ -22,7 +22,7 @@ class Games
     user = save_result[:result]
     friends = friends_hash[:friends]
     friends_objects = FriendRepo.save_friends(user, friends)
-    user2 = User.find_by(steam_id_64: save_result[:result].steam_id_64)
+    user2 = User.includes(:games).find_by(steam_id_64: save_result[:result].steam_id_64)
     games_response = SteamRepo.get_user_games(user2.steam_id_64)
     if !games_response[:success?]
       # display some error

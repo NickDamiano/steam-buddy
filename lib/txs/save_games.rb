@@ -21,7 +21,7 @@ class SaveGames
         end
         if game_data["data"]["categories"]
           game_data["data"]["categories"].each do |cat|
-            if cat["id"] == "1" || cat["id"] == "9" || cat["id"] == "24"
+            if cat["id"] == 1 || cat["id"] == 9 || cat["id"] == 24
               game.multiplayer = true
               break
             else

@@ -1,5 +1,4 @@
 .filter-form-container {
-	margin-left: 26%;
 	font-size: 1.2em;
 }
 
@@ -12,14 +11,27 @@
 }
 
 .filter-submit  {
-	margin-left: 4em;
-	margin-bottom: 1em;
+	margin-left: 6em;
 }
 
 .filter-error {
-	color: red
+	color: red;
 }
 
 .metacritic-field {
 	margin-left: .4em;
+}
+
+.filter-page-container {
+	text-align: center;
+}
+
+.main-filter {
+	margin: 0;
+	text-align: left;
+	display: inline-block;
+}
+
+.filter-form-tag {
+	margin: 1em 1em 1em 0;
 }

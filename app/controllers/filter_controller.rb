@@ -8,7 +8,7 @@ class FilterController < ApplicationController
   end
 
   def apply_filters
-   user = User.find_by(steam_id_64: params[:id])
+   user = User.includes(:games).includes(:friends).find_by(steam_id_64: params[:id])
    pool = MultiplayerFilter.run(user, params[:filters][:multiplayer])[:pool]
    pool = PlayedFilter.run(user, pool, params[:filters][:played])
    pool = MetacriticFilter.run(pool, params[:metacritic])[:pool]
