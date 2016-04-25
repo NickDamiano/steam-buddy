@@ -32,7 +32,7 @@ class Games
     if !descriptions_response[:success?]
       # error
     end
-    SaveGames.run(descriptions_response[:games], descriptions_response[:steam_appids])
+    #SaveGames.run(descriptions_response[:games], descriptions_response[:steam_appids])
     to_be_assigned = GetGamesNotAssigned.run(user2, games_response[:games])
     AssignGamesToUser.run(to_be_assigned[:games], user2)
     UpdatePlaytimes.run(user2, games_response[:games], games_response[:playtimes])

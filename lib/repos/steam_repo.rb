@@ -67,34 +67,69 @@ class SteamRepo
   end
 
   def self.get_games_descriptions(list)
-    games = []
     steam_appids = []
+    error_ids = []
     i = 0
     size = list.length
     until(list.empty?) do
-      chunk = list.pop(1)
-      chunk = chunk.join(',')
-      url = "http://store.steampowered.com/api/appdetails/?appids=#{chunk}"
-      begin
-        response = open(url).read
-      rescue OpenURI::HTTPError => e
-        puts "Failed"
-        list.push(chunk)
-        sleep 10
-        next
+      games = []
+      appids = []
+
+      (0..10).each do |j|
+        gameid = list.pop(1)
+        gameid = gameid.join(',')
+        url = "http://store.steampowered.com/api/appdetails/?appids=#{gameid}"
+        begin
+          response = open(url).read
+        rescue OpenURI::HTTPError => e
+          puts "Failed"
+          error_ids.push(gameid)
+          sleep 10
+          next
+        end
+        sleep 1
+        i = i + 1
+        puts "getting number#{i} out of #{size} games"
+        json_games = JSON.parse(response)
+        json_games.each do |id, data|
+          games.push(data)
+          steam_appids.push(id)
+          appids.push(id)
+        end
       end
-      sleep 1
-      i = i + 1
-      puts "getting number#{i} out of #{size} missing games"
-      json_games = JSON.parse(response)
-      json_games.each do |id, data|
-        games.push(data)
-        steam_appids.push(id)
-      end
+
+      SaveGames.run(games, appids)
     end
+
+    until(error_ids.empty?) do
+      games = []
+      appids = []
+
+      (0..10).each do |j|
+        gameid = error_ids.pop(1)
+        gameid = gameid.join(',')
+        url = "http://store.steampowered.com/api/appdetails/?appids=#{gameid}"
+        begin
+          response = open(url).read
+        rescue OpenURI::HTTPError => e
+          puts "Failed again"
+          sleep 10
+          next
+        end
+        sleep 1
+        json_games = JSON.parse(response)
+        json_games.each do |id, data|
+          games.push(data)
+          steam_appids.push(id)
+          appids.push(id)
+        end
+      end
+
+      SaveGames.run(games, appids)
+    end
+
     return {
       success?: true,
-      games: games,
       steam_appids: steam_appids
     }
   end
