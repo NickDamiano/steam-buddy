@@ -5,6 +5,11 @@ group :test do
   gem 'webmock'
 end
 
+group :production do
+  gem 'unicorn'
+  gem 'pg'
+end
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
 # Use sqlite3 as the database for Active Record
@@ -32,29 +37,14 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
-gem 'pry-byebug'
+gem 'pry-byebug', group: :development
 
 gem 'hirb'
-
-gem 'rails_12factor', group: :production
 
 gem 'resque'
 
 gem 'pusher'
 
-#ruby "2.2.0"
+gem 'rack'
 
-
-
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
-
+ruby "2.2.1"
