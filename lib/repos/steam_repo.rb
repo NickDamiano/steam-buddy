@@ -90,7 +90,7 @@ class SteamRepo
         rescue OpenURI::HTTPError => e
           puts "Failed"
           error_ids.push(gameid)
-          sleep 10
+          sleep 5
           next
         end
         sleep 1
@@ -119,7 +119,7 @@ class SteamRepo
           response = open(url).read
         rescue OpenURI::HTTPError => e
           puts "Failed again"
-          sleep 10
+          sleep 5
           next
         end
         sleep 1
