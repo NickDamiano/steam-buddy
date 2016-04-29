@@ -13,7 +13,7 @@ namespace :yusef do
     missing = FindNewGames.run(games)
     puts "#{missing[:games].length} games are missing from the db"
     # save missing games 
-    SteamRepo.get_games_descriptions(missing)
+    SteamRepo.get_games_descriptions(missing[:games])
   end
 
 end
