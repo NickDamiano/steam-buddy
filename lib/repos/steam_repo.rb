@@ -80,8 +80,8 @@ class SteamRepo
     until(list.empty?) do
       games = []
       appids = []
-
-      (0..10).each do |j|
+      max = list.length < 10 ? list.length : 10
+      (0...max).each do |j|
         gameid = list.pop(1)
         gameid = gameid.join(',')
         url = "http://store.steampowered.com/api/appdetails/?appids=#{gameid}"
@@ -90,10 +90,10 @@ class SteamRepo
         rescue OpenURI::HTTPError => e
           puts "Failed"
           error_ids.push(gameid)
-          sleep 5
+          sleep 3
           next
         end
-        sleep 1
+        sleep .5
         i = i + 1
         puts "getting number#{i} out of #{size} games"
         json_games = JSON.parse(response)
@@ -103,15 +103,15 @@ class SteamRepo
           appids.push(id)
         end
       end
-
       SaveGames.run(games, appids)
     end
 
     until(error_ids.empty?) do
       games = []
       appids = []
+      max = error_ids.length < 10 ? error_ids.length : 10
 
-      (0..10).each do |j|
+      (0...max).each do |j|
         gameid = error_ids.pop(1)
         gameid = gameid.join(',')
         url = "http://store.steampowered.com/api/appdetails/?appids=#{gameid}"
@@ -119,10 +119,10 @@ class SteamRepo
           response = open(url).read
         rescue OpenURI::HTTPError => e
           puts "Failed again"
-          sleep 5
+          sleep 3
           next
         end
-        sleep 1
+        sleep .5
         json_games = JSON.parse(response)
         json_games.each do |id, data|
           games.push(data)
