@@ -93,7 +93,7 @@ class SteamRepo
           sleep 3
           next
         end
-        sleep .5
+        sleep 0.5
         i = i + 1
         puts "getting number#{i} out of #{size} games"
         json_games = JSON.parse(response)
@@ -122,7 +122,7 @@ class SteamRepo
           sleep 3
           next
         end
-        sleep .5
+        sleep 0.5
         json_games = JSON.parse(response)
         json_games.each do |id, data|
           games.push(data)
