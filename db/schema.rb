@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160323034732) do
+ActiveRecord::Schema.define(version: 20160501182016) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20160323034732) do
     t.datetime "time_created"
     t.string   "loc_country_code"
     t.integer  "user_id"
+    t.boolean  "private"
   end
 
   create_table "game_genres", force: true do |t|
@@ -55,13 +56,6 @@ ActiveRecord::Schema.define(version: 20160323034732) do
     t.integer  "metacritic_score"
     t.boolean  "multiplayer"
     t.string   "release_date"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "games_genres", force: true do |t|
-    t.integer  "games_id"
-    t.integer  "genres_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
