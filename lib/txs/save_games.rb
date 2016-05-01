@@ -32,8 +32,14 @@ class SaveGames
         game.release_date = game_data["data"]["release_date"]["date"]
         game.save
         if game_data["data"]["genres"]
-          game_data["data"]["genres"].each do |genre| 
-            game.genres.create(:genre => genre["description"])
+          game_data["data"]["genres"].each do |genre|
+            genre_db = Genre.find_by(genre: genre["description"])
+            if genre_db.nil?
+              genre_db = Genre.new
+              genre_db.genre = genre["description"]
+              genre_db.save
+            end
+            game.genres << genre_db
           end
         end
         if game_data["data"]["screenshots"]
