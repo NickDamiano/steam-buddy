@@ -14,7 +14,7 @@
 
 	    var channel = pusher.subscribe('steam_buddy_<%=@user_id%>');
 	    channel.bind('games', function(data) {
-	      window.location = window.location.origin + "/filters/" + data.id;
+	      window.location.replace(window.location.origin + "/filters/" + data.id);
 	    });
 
 	   	channel.bind('error', function(data) {
