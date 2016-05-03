@@ -21,9 +21,9 @@ class HomeController < ApplicationController
     user_name = params[:user]
     user_hash = SteamRepo.get_user_summary(user_name)
     if !user_hash[:success?]
-      Pusher.trigger("steam_buddy_#{user_hash[:profile]["steamID64"]}", 'error', {
-        message: user_hash[:error]
-      })
+      @error = user_hash[:error]
+      @user_text = params[:user]
+      render :index and return
     end
     Resque.enqueue(Games, user_name)
     @user_id = user_hash[:profile]["steamID64"]

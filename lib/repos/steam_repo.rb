@@ -11,10 +11,13 @@ class SteamRepo
       }
     end
     begin
-      if url[-5..-1] == "/home"
+      if url.ends_with? "/home"
         url.slice!(-5..-1)
       end
-      if url[0..6] != 'http://'
+      if url.starts_with? 'https://'
+        url.sub! 'https://', 'http://'
+      end
+      if !url.starts_with? 'http://'
         url = "http://#{url}"
       end
       response = open("#{url}/?xml=1").read
