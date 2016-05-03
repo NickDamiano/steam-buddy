@@ -1,7 +1,7 @@
 
 
 <div class="row main-content">
-<p class="text loading-text" style="text-align: center; font-size:8rem;">Loading your games</p>
+<p class="text loading-text" style="text-align: center; font-size:8rem;"><%=@loading_text%></p>
 <p class="text" style="text-align: center; font-size:2rem;">This may take a few minutes. Please don't refresh the page.</p>
 </div>
 
@@ -15,6 +15,14 @@
 	    var channel = pusher.subscribe('steam_buddy_<%=@user_id%>');
 	    channel.bind('games', function(data) {
 	      window.location.replace(window.location.origin + "/filters/" + data.id);
+	    });
+	    channel.bind('filter', function(data) {
+	      if (!data.game_id) {
+	      	alert('No games found with these filters!');
+	      	window.location.replace(window.location.origin + "/filters/" + data.id);
+	      } else {
+	      	window.location.replace(window.location.origin + "/result/" + data.game_id + "/" + data.id);
+	      }
 	    });
 
 	   	channel.bind('error', function(data) {

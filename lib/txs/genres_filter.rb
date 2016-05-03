@@ -7,14 +7,12 @@ class GenresFilter
       end
     end
     if selected_genres.empty?
-      genres.each do |genre, val|
-        selected_genres.push(genre)
-      end
+      return pool
     end
     new_pool = []
     pool.each do |game|
       game.genres.each do |genre|
-        if selected_genres.include? genre.genre
+        if ((selected_genres.include? genre.genre) && (!new_pool.include? game))
           new_pool.push(game)
         end
       end

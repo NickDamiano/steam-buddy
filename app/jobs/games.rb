@@ -36,6 +36,7 @@ class Games
     to_be_assigned = GetGamesNotAssigned.run(user2, games_response[:games])
     AssignGamesToUser.run(to_be_assigned[:games], user2)
     UpdatePlaytimes.run(user2, games_response[:games], games_response[:playtimes])
+    sleep 1
     Pusher.trigger("steam_buddy_#{user_hash[:profile]['steamID64']}", 'games', {
       id: user2.steam_id_64.to_s
     })

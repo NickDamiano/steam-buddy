@@ -27,5 +27,7 @@ class HomeController < ApplicationController
     end
     Resque.enqueue(Games, user_name)
     @user_id = user_hash[:profile]["steamID64"]
+    @loading_text = 'Loading your games'
+    render :template => "home/loading"
   end
 end
