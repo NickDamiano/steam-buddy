@@ -31,7 +31,7 @@ class SaveGames
               category_db.category = cat["description"]
               category_db.save
             end
-            game.categories << category_db
+            game.categories << category_db unless game.categories.any? {|c| c.category == cat["description"]}
           end
         end
         game.release_date = game_data["data"]["release_date"]["date"]
@@ -44,7 +44,7 @@ class SaveGames
               genre_db.genre = genre["description"]
               genre_db.save
             end
-            game.genres << genre_db
+            game.genres << genre_db unless game.genres.any? {|g| g.genre == genre["description"]}
           end
         end
         if game_data["data"]["screenshots"]
