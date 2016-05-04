@@ -33,20 +33,23 @@ namespace :yusef do
         end
         sleep 1.4
         json_games = JSON.parse(response)
+        binding.pry
         json_games.each do |id, data|
           if data["success"]
             if !db_game.nil?
               puts "game found #{id}"
               if db_game.categories.empty?
-                data["data"]["categories"].each do |cat|
-                  category_db = Category.find_by(category: cat["description"])
-                  if category_db.nil?
-                    puts "category not found #{cat['description']}"
-                    category_db = Category.new
-                    category_db.category = cat["description"]
-                    category_db.save
+                if data["data"]["categories"]
+                  data["data"]["categories"].each do |cat|
+                    category_db = Category.find_by(category: cat["description"])
+                    if category_db.nil?
+                      puts "category not found #{cat['description']}"
+                      category_db = Category.new
+                      category_db.category = cat["description"]
+                      category_db.save
+                    end
+                    db_game.categories << category_db unless db_game.categories.any? {|c| c.category == cat["description"]}
                   end
-                  db_game.categories << category_db unless db_game.categories.any? {|c| c.category == cat["description"]}
                 end
               end
               db_game.save
