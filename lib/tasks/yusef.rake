@@ -21,36 +21,40 @@ namespace :yusef do
     parsed = JSON.parse(File.read('./games/games.json'))
     games = []
     for game in parsed["applist"]["apps"]
-      url = "http://store.steampowered.com/api/appdetails/?appids=#{game['appid']}"
-      begin
-        response = open(url).read
-      rescue OpenURI::HTTPError => e
-        puts "Failed"
-        sleep 3
-        next
-      end
-      sleep 1.4
-      json_games = JSON.parse(response)
-      json_games.each do |id, data|
-        if data["success"]
-          db_game = Game.includes(:categories).find_by(steam_appid: game["appid"])
-          if !db_game.nil?
-            puts "game found #{id}"
-            if db_game.categories.empty?
-              data["data"]["categories"].each do |id2, cat|
-                category_db = Category.find_by(category: cat["description"])
-                if category_db.nil?
-                  puts "category not found #{cat['description']}"
-                  category_db = Category.new
-                  category_db.category = cat["description"]
-                  category_db.save
+      db_game = Game.includes(:categories).find_by(steam_appid: game["appid"])
+      if !db_game.nil?
+        url = "http://store.steampowered.com/api/appdetails/?appids=#{game['appid']}"
+        begin
+          response = open(url).read
+        rescue OpenURI::HTTPError => e
+          puts "Failed"
+          sleep 3
+          next
+        end
+        sleep 1.4
+        json_games = JSON.parse(response)
+        json_games.each do |id, data|
+          if data["success"]
+            if !db_game.nil?
+              puts "game found #{id}"
+              if db_game.categories.empty?
+                data["data"]["categories"].each do |cat|
+                  category_db = Category.find_by(category: cat["description"])
+                  if category_db.nil?
+                    puts "category not found #{cat['description']}"
+                    category_db = Category.new
+                    category_db.category = cat["description"]
+                    category_db.save
+                  end
+                  db_game.categories << category_db unless db_game.categories.any? {|c| c.category == cat["description"]}
                 end
-                db_game.categories << category_db unless game.categories.any? {|c| c.category == cat["description"]}
               end
+              db_game.save
             end
-            db_game.save
           end
         end
+      else
+        puts "game not in db"
       end
     end
   end
