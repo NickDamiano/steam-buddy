@@ -12,7 +12,7 @@ class Filter
       pool = FriendRepo.compare_friends_games(friends_games[:friends_games], pool)[:games]
     end
     pool = GenresFilter.run(pool, params["genres"])
-    pool = CategoriesFilter.run(pool, params["categories"])
+    #pool = CategoriesFilter.run(pool, params["categories"])
     sleep 1
     Pusher.trigger("steam_buddy_#{user[:steam_id_64]}", 'filter', {
       id: user.steam_id_64.to_s,
