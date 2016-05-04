@@ -33,7 +33,6 @@ namespace :yusef do
         end
         sleep 1.4
         json_games = JSON.parse(response)
-        binding.pry
         json_games.each do |id, data|
           if data["success"]
             if !db_game.nil?
