@@ -29,6 +29,15 @@
 			<% end %>
 	</div>
 	<div class="form-group">
+		<%= label_tag(:category, "Select Categories +", class: 'category-label text') %>
+			<% @categories.each do |cat| %>
+				<div class="categories checkbox">
+					<%= check_box("categories", cat, {checked: false}) %>
+					<%= label_tag(:categories, cat, class: 'text') %>
+				</div>
+			<% end %>
+	</div>
+	<div class="form-group">
 		<%= label_tag(:filter, "Select Friends +", class: 'friend-label text') %>
 			<% @friends.each do |friend| %>
 			<% if friend.private %>
@@ -56,6 +65,10 @@
 		$('.genres').slideUp();
 		$('.genre-label').on('click', function() {
 			$('.genres').slideToggle();
+		});
+		$('.categories').slideUp();
+		$('.category-label').on('click', function() {
+			$('.categories').slideToggle();
 		});
 		$('.friends').slideUp();
 		$('.friend-label').on('click', function() {

@@ -3,7 +3,8 @@ class FilterController < ApplicationController
     id_int = params[:id].to_i
     user = User.find_by(steam_id_64: id_int)
     @id = id_int
-    @genres = FindGenres.run(user)
+    @genres = Genre.all.map {|g| g.genre}
+    @categories = Category.all.map {|c| c.category}
     @friends = User.find_by(steam_id_64: id_int).friends
   end
 

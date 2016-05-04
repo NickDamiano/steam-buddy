@@ -23,10 +23,15 @@ class SaveGames
           game_data["data"]["categories"].each do |cat|
             if cat["id"] == 1 || cat["id"] == 9 || cat["id"] == 24
               game.multiplayer = true
-              break
-            else
-              game.multiplayer = false
             end
+
+            category_db = Category.find_by(category: cat["description"])
+            if category_db.nil?
+              category_db = Category.new
+              category_db.category = cat["description"]
+              category_db.save
+            end
+            game.categories << category_db
           end
         end
         game.release_date = game_data["data"]["release_date"]["date"]
