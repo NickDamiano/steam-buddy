@@ -13,10 +13,14 @@ class Filter
     end
     pool = GenresFilter.run(pool, params["genres"])
     pool = CategoriesFilter.run(pool, params["categories"])
+    selection = pool.empty? ? nil : pool.sample[:steam_appid]
+    if (!selection.nil?)
+      CreateResult.run(user.id, selection)
+    end
     sleep 1
     Pusher.trigger("steam_buddy_#{user[:steam_id_64]}", 'filter', {
       id: user.steam_id_64.to_s,
-      game_id: pool.empty? ? "" : pool.sample[:steam_appid].to_s
+      game_id: selection.to_s
     })
   end
 end

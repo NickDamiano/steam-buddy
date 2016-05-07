@@ -8,4 +8,5 @@ class Game < ActiveRecord::Base
   has_many :usergames
   has_many :friends, through: :friend_games
   has_many :friend_games
+  has_many :results
 end
