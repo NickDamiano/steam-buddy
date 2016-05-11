@@ -146,6 +146,8 @@ GEM
       rspec-mocks (~> 3.0.0)
       rspec-support (~> 3.0.0)
     rspec-support (3.0.4)
+    rvm-capistrano (1.4.1)
+      capistrano (>= 2.0.0)
     safe_yaml (1.0.4)
     sass (3.2.19)
     sass-rails (4.0.5)
@@ -212,6 +214,7 @@ DEPENDENCIES
   rails (= 4.1.4)
   resque
   rspec-rails (~> 3.0.0)
+  rvm-capistrano
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   spring

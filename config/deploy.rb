@@ -1,5 +1,7 @@
+require "rvm/capistrano"
+
 set :application, "steam-buddy"
-set :repository,  "git@github.com:YusefOuda/steam-buddy.git"
+set :repository,  "https://YusefOuda:006b29gqB35@github.com/YusefOuda/steam-buddy.git"
 
 set :deploy_to, "/home/rails/steam-buddy"
 
