@@ -12,7 +12,7 @@ end
 
 group :development do 
   gem 'capistrano', '~> 2.14.2'
-  gem 'rvm-capistrano'
+  gem 'rvm-capistrano', require: false
 end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
