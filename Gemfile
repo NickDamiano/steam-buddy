@@ -7,12 +7,12 @@ end
 
 group :production do
   gem 'unicorn'
-  gem 'pg'
 end
 
 group :development do 
   gem 'capistrano', '~> 2.14.2'
   gem 'rvm-capistrano', require: false
+  gem 'capistrano-resque', '~> 0.2.2', require: false
 end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

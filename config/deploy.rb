@@ -22,6 +22,17 @@ default_run_options[:pty] = true
 
 server "steam-buddy.com", :app, :web, :db, :primary => true
 
+role :resque_worker, "steam-buddy.com"
+role :resque_scheduler, "steam-buddy.com"
+
+set :workers, { "games" => 2, "filter" => 2 }
+
+set :resque_extra_env, "RAILS_ENV=production"
+
+set :resque_environment_task, true
+
+after "deploy:restart", "resque:restart"
+
 # If you are using Passenger mod_rails uncomment this:
 # namespace :deploy do
 #   task :start do ; end
