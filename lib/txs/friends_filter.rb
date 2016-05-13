@@ -1,5 +1,8 @@
 class FriendsFilter
  def self.run(friends)
+   if friends == nil
+     friends = []
+   end
    #takes in the existing pool of games, and an array of friends names and whether or not they are selected. 
    selected_friends = []
    friends.each do |friend, val|

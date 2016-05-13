@@ -1,0 +1,5 @@
+RUNNING RAKE TASK TO GET MISSING GAMES:
+bundle exec rake yusef:get_missing_games RAILS_ENV=production
+
+RUNNING WORKER:
+VVERBOSE=1 rake RAILS_ENV=production resque:workers QUEUE=* BACKGROUND=yes COUNT=5

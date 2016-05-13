@@ -1,12 +1,13 @@
 <header>
 	<h2 class="main-header-filter">Select your filters</h2>
 </header>
-<div class="row main-content">
+<div class="filter-page-container">
+<div class="row main-content main-filter">
 <div class="filter-form-container">
 <% if flash[:alert] %>
 	<p class="filter-error text"><%=flash[:alert]%></p>
 <% end %>
-<%= form_tag("/filters/#{@id}", method: 'post', :id => "filter") do %>
+<%= form_tag("/filters/#{@id}", method: 'post', :id => "filter", :class => "filter-form-tag") do %>
 		<div class="checkbox">
 			<%= check_box("filters", "multiplayer", {checked: false}) %>
 			<%= label_tag(:filters, "Must Include Multiplayer", class: 'text') %>
@@ -27,18 +28,35 @@
 				</div>
 			<% end %>
 	</div>
+ 	<div class="form-group">
+		<%= label_tag(:category, "Select Categories +", class: 'category-label text') %>
+			<% @categories.each do |cat| %>
+				<div class="categories checkbox">
+					<%= check_box("categories", cat, {checked: false}) %>
+					<%= label_tag(:categories, cat, class: 'text') %>
+				</div>
+			<% end %>
+	</div>
 	<div class="form-group">
 		<%= label_tag(:filter, "Select Friends +", class: 'friend-label text') %>
 			<% @friends.each do |friend| %>
+			<% if friend.private %>
+				<div class="friends checkbox">
+					<%= check_box("friends", friend.steam_id_64, checked: false, disabled: 'disabled') %>
+					<%= label_tag(:friends, friend.persona_name + " (Private profile)", class: 'text') %>
+				</div>
+			<% else %>
 				<div class="friends checkbox">
 					<%= check_box("friends", friend.steam_id_64, {checked: false}) %>
 					<%= label_tag(:friends, friend.persona_name, class: 'text') %>
 				</div>
 			<% end %>
+			<% end %>
 	</div>
 
 	<%= submit_tag("Submit", class: "filter-submit loading") %>
 <% end %> 
+</div>
 </div>
 </div>
 
@@ -47,6 +65,10 @@
 		$('.genres').slideUp();
 		$('.genre-label').on('click', function() {
 			$('.genres').slideToggle();
+		});
+		$('.categories').slideUp();
+		$('.category-label').on('click', function() {
+			$('.categories').slideToggle();
 		});
 		$('.friends').slideUp();
 		$('.friend-label').on('click', function() {

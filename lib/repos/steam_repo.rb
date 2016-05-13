@@ -1,14 +1,23 @@
 require 'open-uri'
-require 'JSON'
+require 'json'
 require 'active_support/core_ext/hash'
 
 class SteamRepo
   def self.get_user_summary(url)
+    if !url.include?("steamcommunity.")
+      return {
+        success?: false,
+        error: "Invalid URL"
+      }
+    end
     begin
-      if url[-5..-1] == "/home"
+      if url.ends_with? "/home"
         url.slice!(-5..-1)
       end
-      if url[0..6] != 'http://'
+      if url.starts_with? 'https://'
+        url.sub! 'https://', 'http://'
+      end
+      if !url.starts_with? 'http://'
         url = "http://#{url}"
       end
       response = open("#{url}/?xml=1").read
@@ -67,29 +76,69 @@ class SteamRepo
   end
 
   def self.get_games_descriptions(list)
-    games = []
     steam_appids = []
+    error_ids = []
+    i = 0
+    size = list.length
     until(list.empty?) do
-      chunk = list.pop(10)
-      chunk = chunk.join(',')
-      url = "http://store.steampowered.com/api/appdetails/?appids=#{chunk}"
-      begin
-        response = open(url).read
-      rescue OpenURI::HTTPError
-        return {
-          success?: false,
-          error: "Internal Server Error"
-        }
+      games = []
+      appids = []
+      max = list.length < 10 ? list.length : 10
+      (0...max).each do |j|
+        gameid = list.pop(1)
+        gameid = gameid.join(',')
+        url = "http://store.steampowered.com/api/appdetails/?appids=#{gameid}"
+        begin
+          response = open(url).read
+        rescue OpenURI::HTTPError => e
+          puts "Failed"
+          error_ids.push(gameid)
+          sleep 3
+          next
+        end
+        sleep 1.4
+        i = i + 1
+        puts "getting number#{i} out of #{size} games"
+        json_games = JSON.parse(response)
+        json_games.each do |id, data|
+          games.push(data)
+          steam_appids.push(id)
+          appids.push(id)
+        end
       end
-      json_games = JSON.parse(response)
-      json_games.each do |id, data|
-        games.push(data)
-        steam_appids.push(id)
-      end
+      SaveGames.run(games, appids)
     end
+
+    until(error_ids.empty?) do
+      games = []
+      appids = []
+      max = error_ids.length < 10 ? error_ids.length : 10
+
+      (0...max).each do |j|
+        gameid = error_ids.pop(1)
+        gameid = gameid.join(',')
+        url = "http://store.steampowered.com/api/appdetails/?appids=#{gameid}"
+        begin
+          response = open(url).read
+        rescue OpenURI::HTTPError => e
+          puts "Failed again"
+          sleep 3
+          next
+        end
+        sleep 1.4
+        json_games = JSON.parse(response)
+        json_games.each do |id, data|
+          games.push(data)
+          steam_appids.push(id)
+          appids.push(id)
+        end
+      end
+
+      SaveGames.run(games, appids)
+    end
+
     return {
       success?: true,
-      games: games,
       steam_appids: steam_appids
     }
   end

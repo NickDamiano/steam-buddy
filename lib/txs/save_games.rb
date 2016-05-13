@@ -21,19 +21,30 @@ class SaveGames
         end
         if game_data["data"]["categories"]
           game_data["data"]["categories"].each do |cat|
-            if cat["id"] == "1" || cat["id"] == "9" || cat["id"] == "24"
+            if cat["id"] == 1 || cat["id"] == 9 || cat["id"] == 24
               game.multiplayer = true
-              break
-            else
-              game.multiplayer = false
             end
+
+            category_db = Category.find_by(category: cat["description"])
+            if category_db.nil?
+              category_db = Category.new
+              category_db.category = cat["description"]
+              category_db.save
+            end
+            game.categories << category_db unless game.categories.any? {|c| c.category == cat["description"]}
           end
         end
         game.release_date = game_data["data"]["release_date"]["date"]
         game.save
         if game_data["data"]["genres"]
-          game_data["data"]["genres"].each do |genre| 
-            game.genres.create(:genre => genre["description"])
+          game_data["data"]["genres"].each do |genre|
+            genre_db = Genre.find_by(genre: genre["description"])
+            if genre_db.nil?
+              genre_db = Genre.new
+              genre_db.genre = genre["description"]
+              genre_db.save
+            end
+            game.genres << genre_db unless game.genres.any? {|g| g.genre == genre["description"]}
           end
         end
         if game_data["data"]["screenshots"]

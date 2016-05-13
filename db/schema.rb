@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141025025414) do
+ActiveRecord::Schema.define(version: 20160505232512) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "categories", force: true do |t|
+    t.string   "category"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "friend_games", force: true do |t|
     t.datetime "created_at"
@@ -21,7 +30,7 @@ ActiveRecord::Schema.define(version: 20141025025414) do
   end
 
   create_table "friends", force: true do |t|
-    t.integer  "steam_id_64"
+    t.integer  "steam_id_64",      limit: 8
     t.string   "persona_name"
     t.string   "profile_url"
     t.string   "avatar"
@@ -29,7 +38,18 @@ ActiveRecord::Schema.define(version: 20141025025414) do
     t.datetime "time_created"
     t.string   "loc_country_code"
     t.integer  "user_id"
+    t.boolean  "private"
   end
+
+  create_table "game_categories", force: true do |t|
+    t.integer  "game_id"
+    t.integer  "category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "game_categories", ["category_id"], name: "index_game_categories_on_category_id", using: :btree
+  add_index "game_categories", ["game_id"], name: "index_game_categories_on_game_id", using: :btree
 
   create_table "game_genres", force: true do |t|
     t.integer  "game_id"
@@ -38,8 +58,8 @@ ActiveRecord::Schema.define(version: 20141025025414) do
     t.datetime "updated_at"
   end
 
-  add_index "game_genres", ["game_id"], name: "index_game_genres_on_game_id"
-  add_index "game_genres", ["genre_id"], name: "index_game_genres_on_genre_id"
+  add_index "game_genres", ["game_id"], name: "index_game_genres_on_game_id", using: :btree
+  add_index "game_genres", ["genre_id"], name: "index_game_genres_on_genre_id", using: :btree
 
   create_table "games", force: true do |t|
     t.string   "name"
@@ -56,18 +76,21 @@ ActiveRecord::Schema.define(version: 20141025025414) do
     t.datetime "updated_at"
   end
 
-  create_table "games_genres", force: true do |t|
-    t.integer  "games_id"
-    t.integer  "genres_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "genres", force: true do |t|
     t.string   "genre"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "results", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "game_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "results", ["game_id"], name: "index_results_on_game_id", using: :btree
+  add_index "results", ["user_id"], name: "index_results_on_user_id", using: :btree
 
   create_table "screenshots", force: true do |t|
     t.string   "url"
@@ -85,7 +108,7 @@ ActiveRecord::Schema.define(version: 20141025025414) do
   end
 
   create_table "users", force: true do |t|
-    t.integer  "steam_id_64"
+    t.integer  "steam_id_64",        limit: 8
     t.string   "steam_id"
     t.string   "avatar_icon"
     t.boolean  "vac_banned"
@@ -93,8 +116,10 @@ ActiveRecord::Schema.define(version: 20141025025414) do
     t.datetime "member_since"
     t.string   "location"
     t.string   "real_name"
-    t.integer  "primary_group_id"
+    t.integer  "primary_group_id",   limit: 8
     t.string   "primary_group_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

@@ -21,10 +21,10 @@ class SaveUser
     user.member_since = user_parsed_data[:profile]["memberSince"]
     user.location = user_parsed_data[:profile]["location"]
     user.real_name = user_parsed_data[:profile]["realname"]
-    if user_parsed_data[:profile]["groups"]
-      user.primary_group_id = user_parsed_data[:profile]["groups"]['group'].first["groupID64"]
-      user.primary_group_name = user_parsed_data[:profile]["groups"]['group'].first["groupName"]
-    end
+    # if user_parsed_data[:profile]["groups"]
+    #   user.primary_group_id = user_parsed_data[:profile]["groups"]['group'].first["groupID64"]
+    #   user.primary_group_name = user_parsed_data[:profile]["groups"]['group'].first["groupName"]
+    # end
     user.save
     if user.id == nil
       return {:success? => false, :error => 'Failed to save user'}

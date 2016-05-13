@@ -10,9 +10,11 @@ require './lib/txs/update_playtimes.rb'
 require './lib/txs/multiplayer_filter.rb'
 require './lib/txs/find_genres.rb'
 require './lib/txs/genres_filter.rb'
+require './lib/txs/categories_filter.rb'
 require './lib/txs/friends_filter.rb'
 require './lib/txs/played_filter.rb'
 require './lib/txs/metacritic_filter.rb'
+require './lib/txs/create_result.rb'
 
 require 'rails/all'
 

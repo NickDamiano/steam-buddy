@@ -2,8 +2,11 @@ class MetacriticFilter
   def self.run(pool, score)
     score = score.to_i
     #takes pool of db objects, metacritic score as string
-    if score == ""
-      return pool 
+    if score == 0
+      return {
+        success?: true,
+        pool: pool
+      }
     else
       new_pool = []
       pool.each do |game|
