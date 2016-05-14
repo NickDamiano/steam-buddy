@@ -10,7 +10,7 @@ group :production do
 end
 
 group :development do 
-  gem 'capistrano', '~> 2.14.2'
+  gem 'capistrano', '~> 2.15.1'
   gem 'rvm-capistrano', require: false
   gem 'capistrano-resque', '~> 0.2.2', require: false
 end

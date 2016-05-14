@@ -11,7 +11,7 @@ class FilterController < ApplicationController
   def apply_filters
    @user_id = params[:id]
    Resque.enqueue(Filter, params)
-   @loading_text = 'Selecting a game'
+   @loading_text = 'Loading'
    render :template => "home/loading"
  end
 end
